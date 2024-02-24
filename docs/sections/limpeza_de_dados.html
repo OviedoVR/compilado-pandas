@@ -267,7 +267,7 @@ window.Quarto = {
 <li>Criar funções anônimas - função <code>lambda</code> e método <code>.apply()</code>.</li>
 </ol>
 <p>Esses tópicos são fundamentais em processos de ETL (<strong><em>Extract, Transform and Load</em></strong>) em projetos envolvendo dados. Ao longo desse módulos, vamos trabalhar com o conjunto de dados `` que trata de clientes da <em>CifraOnline</em>, um banco digital fictício com 1000 linhas.</p>
-<div id="87b1ff68" class="cell" data-execution_count="1">
+<div id="246bd868" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline <span class="op">=</span> pd.read_csv(<span class="st">'dados/clientes-banco-cifraonline/clientes_cifraonline.csv'</span>)</span>
@@ -358,7 +358,7 @@ window.Quarto = {
 <li>Dados numéricos configurados como texto (coluna <code>salario</code>)</li>
 <li>Nomes despadronizados quanto à formatação (coluna <code>nome</code>).</li>
 </ol>
-<div id="1c2c5cb8" class="cell" data-execution_count="2">
+<div id="a4c772f0" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -383,7 +383,7 @@ memory usage: 62.6+ KB</code></pre>
 <p>Para renomear colunas em um <em>dataframe</em>, podemos utilizar o método <code>rename</code>, ilustrado abaixo.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dados <span class="op">=</span> dados.rename(columns<span class="op">=</span>{<span class="st">'coluna original'</span>: <span class="st">'coluna renomeada'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Vejamos na prática:</p>
-<div id="b5f75a27" class="cell" data-execution_count="3">
+<div id="a7736e27" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alterando nome de duas colunas:</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline <span class="op">=</span> clientes_cifraonline.rename(</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    columns <span class="op">=</span> {<span class="st">'nivel_educacional'</span>: <span class="st">'formacao'</span>, <span class="st">'sexo'</span>: <span class="st">'genero'</span>}</span>
@@ -489,7 +489,7 @@ Tip
 <section id="formatar-textos" class="level2">
 <h2 class="anchored" data-anchor-id="formatar-textos">2. Formatar textos</h2>
 <p>No conjunto de dados em questão, também temos nomes despadronizados (ora letras maiúsculas, ora minúsculas). Podemos lidar com esse tipo de situação (ver coluna <code>nome</code>) utilizando:</p>
-<div id="f8476b92" class="cell" data-execution_count="4">
+<div id="19469b9b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Texto em minúsculo:</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'nome'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'nome'</span>].<span class="bu">str</span>.lower()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -540,7 +540,7 @@ Tip
 </div>
 </div>
 </div>
-<div id="ea931727" class="cell" data-execution_count="5">
+<div id="92a9dd90" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Texto em maiúsculo:</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'nome'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'nome'</span>].<span class="bu">str</span>.upper()</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -591,7 +591,7 @@ Tip
 </div>
 </div>
 </div>
-<div id="d301cfa8" class="cell" data-execution_count="6">
+<div id="f8e20d46" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Texto com Primeira Letra em Maiúsculo:</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'nome'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'nome'</span>].<span class="bu">str</span>.title()</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -659,7 +659,7 @@ Tip
 <li>Aos clientes do gênero <strong>Feminino (F)</strong> será atribuídos o valor <strong>0</strong></li>
 <li>Aos clientes do gênero <strong>Masculino (M)</strong> será atribuídos o valor <strong>1</strong></li>
 </ol>
-<div id="7d145a19" class="cell" data-execution_count="7">
+<div id="a5401e6a" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Biblioteca numpy:</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -682,7 +682,7 @@ dtype: float64</code></pre>
 <blockquote class="blockquote">
 <p>Note que temos 0,7% de nulos no conjunto de dados agora.</p>
 </blockquote>
-<div id="f5b25f87" class="cell" data-execution_count="8">
+<div id="864b1757" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Codigicando a coluna gênero:</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'genero_cod'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'genero'</span>] <span class="co"># cópia da original</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Outra opção é usar o `inplace`:</span></span>
@@ -806,7 +806,7 @@ Tip
 </div>
 </div>
 <p>Como nesse caso os nulos representam apenas <strong>0,7%</strong> do conjunto de dados, podemos apenas eliminar essas linhas.</p>
-<div id="d106caa7" class="cell" data-execution_count="9">
+<div id="a625e8a9" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Total de linhas (originalmente):</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Total de linhas antes da remoçao de nulos: </span><span class="sc">{</span>clientes_cifraonline<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">'</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -835,7 +835,7 @@ Total de linhas após a remoçao de nulos: 993</code></pre>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># método 2:</span></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].astype(<span class="st">'float64'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Na prática, temos:</p>
-<div id="bc02fdf6" class="cell" data-execution_count="10">
+<div id="f84366b0" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Removendo o prefixo 'R$' e os caracteres '.0' da coluna 'salario':</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'salario'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'salario'</span>].<span class="bu">str</span>.replace(<span class="st">'R$'</span>, <span class="st">''</span>)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -933,7 +933,7 @@ Total de linhas após a remoçao de nulos: 993</code></pre>
 </div>
 </div>
 <p>Da mesma maneira, score poderia ser um inteiro:</p>
-<div id="a9736797" class="cell" data-execution_count="11">
+<div id="37ea5d39" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Conversão:</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'score_credito'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'score_credito'</span>].astype(<span class="st">'int64'</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1031,7 +1031,7 @@ Total de linhas após a remoçao de nulos: 993</code></pre>
 <p>Outra possilibdade é a utilização de funções anônimas - famosa função <code>lambda</code>. A sintaxe é dada por:</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">lambda</span> <span class="op">&lt;</span>variavel(eis)<span class="op">&gt;</span>: <span class="op">&lt;</span>expressao<span class="op">&gt;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Vamos supor que desejamos anualizar o salários do clientes, logo poderíamos aplicar uma função <code>lambda</code>:</p>
-<div id="eacd9aac" class="cell" data-execution_count="12">
+<div id="7e117b49" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cópia de `salario`:</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'salario_anual'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'salario'</span>]</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1084,7 +1084,7 @@ Total de linhas após a remoçao de nulos: 993</code></pre>
 </div>
 </div>
 <p>No caso da codificação do gênero, também poderia ser feita com uma função anônima:</p>
-<div id="0976fd63" class="cell" data-execution_count="13">
+<div id="ff325e6c" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Codificação utilizando função anônima:</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'genero_cod_lambda'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'genero'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> registro: </span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">0</span> <span class="cf">if</span> registro <span class="op">==</span> <span class="st">'F'</span> <span class="cf">else</span> <span class="dv">1</span></span>
@@ -1137,7 +1137,7 @@ Total de linhas após a remoçao de nulos: 993</code></pre>
 </div>
 </div>
 <p>Podemos também criar funções previamente definias e aplicar ao conjunto de dados utilizando o método <code>.apply()</code>.</p>
-<div id="97408d08" class="cell" data-execution_count="14">
+<div id="892fe747" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Função para categorizar score de crédito</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> categorizar_score(score):</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> score <span class="op">&lt;</span> <span class="dv">500</span>:</span>
