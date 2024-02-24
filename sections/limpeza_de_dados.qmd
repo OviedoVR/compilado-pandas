@@ -1,0 +1,273 @@
+---
+title: "Manipulação de Dados com Pandas"
+author: "Vinícius Oviedo"
+format:
+  bookup-html+darkonly:
+    embed-fonts: true
+    toc: true
+---
+
+# Limpeza de dados
+
+Nesta aula, vamos trabalhar com métodos aplicáveis à limpeza de dados com `Pandas`. Veremos os métodos para:
+
+1. Renomear colunas
+2. Formatar textos (minúsculo, maísculo, primeira letra em maiúscula)
+3. Realizar substituições com o método `.replace()`
+4. Tratar nulos - método `.fillna()`
+5. Converter tipos de dados em um *dataframe*
+6. Criar funções anônimas - função `lambda` e método `.apply()`.
+
+Esses tópicos são fundamentais em processos de ETL (***Extract, Transform and Load***) em projetos envolvendo dados. Ao longo desse módulos, vamos trabalhar com o conjunto de dados `` que trata de clientes da *CifraOnline*, um banco digital fictício com 1000 linhas.
+
+```{python}
+import pandas as pd
+
+clientes_cifraonline = pd.read_csv('dados/clientes-banco-cifraonline/clientes_cifraonline.csv')
+
+clientes_cifraonline.head()
+```
+
+Antes de inicar os tópicos, é importante notarmos que temos, dentre outras particularidades:
+
+1. Dados numéricos configurados como texto (coluna `salario`)
+2. Nomes despadronizados quanto à formatação (coluna `nome`).
+
+```{python}
+clientes_cifraonline.info()
+```
+
+## 1. Renomear colunas
+
+Para renomear colunas em um *dataframe*, podemos utilizar o método `rename`, ilustrado abaixo.
+
+```python
+dados = dados.rename(columns={'coluna original': 'coluna renomeada'})
+``` 
+
+Vejamos na prática:
+
+```{python}
+# Alterando nome de duas colunas:
+clientes_cifraonline = clientes_cifraonline.rename(
+    columns = {'nivel_educacional': 'formacao', 'sexo': 'genero'}
+)
+
+# Visualizando os resultados:
+clientes_cifraonline.head()
+```
+
+
+
+::: {.callout-tip}
+##
+Caso desejemos eliminar colunas, podemos utilizar:
+
+```python
+dados.drop(['coluna A'], axis=1, inplace=True)
+```
+:::
+
+
+## 2. Formatar textos
+
+No conjunto de dados em questão, também temos nomes despadronizados (ora letras maiúsculas, ora minúsculas). Podemos lidar com esse tipo de situação (ver coluna `nome`) utilizando:
+
+```{python}
+# Texto em minúsculo:
+clientes_cifraonline['nome'] = clientes_cifraonline['nome'].str.lower()
+clientes_cifraonline.head(2)
+```
+
+```{python}
+# Texto em maiúsculo:
+clientes_cifraonline['nome'] = clientes_cifraonline['nome'].str.upper()
+clientes_cifraonline.head(2)
+```
+
+```{python}
+# Texto com Primeira Letra em Maiúsculo:
+clientes_cifraonline['nome'] = clientes_cifraonline['nome'].str.title()
+clientes_cifraonline.head(2)
+```
+
+
+## 3. Substituições
+
+Frequentemente, vamos precisar substituir valores em um *dataframe*. Para isso, podemos utilizar o método `.replace()` conforme procede abaixo:
+
+```python
+# Subsitutuição em todo o dataframe:
+dados = dados.replace('Valor original', 'Valor substituído')
+
+# Substituição em uma coluna específica:
+dados['coluna A'] = dados['coluna A'].replace('Valor original', 'Valor substituído')
+
+# Também funciona com números:
+dados['coluna A'] = dados['coluna A'].replace(0, 50)
+```
+
+No nosso caso, vamos adicionar alguns dados nulos em nosso dataframe com o auxílio da biblioteca `numpy`. Além disso, vamos criar uma variável numérica para `genero`, onde:
+
+1. Aos clientes do gênero **Feminino (F)** será atribuídos o valor **0**
+2. Aos clientes do gênero **Masculino (M)** será atribuídos o valor **1**
+
+```{python}
+# Biblioteca numpy:
+import numpy as np
+
+# Adicionando nulos:
+clientes_cifraonline['score_credito'] = clientes_cifraonline['score_credito'].replace(793, np.nan).replace(831, np.nan).replace(719, np.nan)
+# Visualização dos resultados
+clientes_cifraonline.isna().sum()/len(clientes_cifraonline)*100
+```
+
+> Note que temos 0,7% de nulos no conjunto de dados agora.
+
+```{python}
+# Codigicando a coluna gênero:
+clientes_cifraonline['genero_cod'] = clientes_cifraonline['genero'] # cópia da original
+# Outra opção é usar o `inplace`:
+clientes_cifraonline['genero_cod'].replace('F', 0, inplace=True)
+clientes_cifraonline['genero_cod'].replace('M', 1, inplace=True)
+
+# Visualização dos resultados:
+clientes_cifraonline[['nome', 'genero', 'genero_cod']].head(10)
+```
+
+
+## 4. Tratar nulos
+
+Para o tratamento de nulos, poderímos usar algumas ténicas com o método `.fillna()`.
+
+```python
+# Preenchimento com 'zero':
+dados['coluna A'] = dados['coluna A'].fillna(0)
+
+# Preenchimento com a média:
+media_coluna_A = dados['Salário'].mean()
+dados['coluna A'] = dados['coluna A'].fillna(media_coluna_A)
+
+# Preenchimento com a mediana:
+mediana_coluna_A = dados['Salário'].median()
+dados['coluna A'] = dados['coluna A'].fillna(mediana_coluna_A)
+
+# Preenchimento com a moda:
+moda_coluna_A = dados['Salário'].mode()
+dados['coluna A'] = dados['coluna A'].fillna(moda_coluna_A)
+
+# Preenchimento com a texto:
+dados['coluna A'] = dados['coluna A'].fillna('Não informado')
+``` 
+
+::: {.callout-tip}
+##
+Note que também poderíamos preencher nulos utilizando algoritmos de **Machine Learning** (e.g., *K-Nearest Neighbors*, *Random Forest*, *IterativeImputer*, etc.). Entretando, esse assunto foge do escopo desse curso e não iremos abordá-lo.
+:::
+
+Como nesse caso os nulos representam apenas **0,7%** do conjunto de dados, podemos apenas eliminar essas linhas.
+
+```{python}
+# Total de linhas (originalmente):
+print(f'Total de linhas antes da remoçao de nulos: {clientes_cifraonline.shape[0]}')
+
+# Remoção de nulos:
+clientes_cifraonline.dropna(axis=0, inplace=True)
+# Impacto:
+print(f'Total de linhas após a remoçao de nulos: {clientes_cifraonline.shape[0]}')
+```
+
+## 5. Converter tipos de dados
+
+No conjunto de dados em questão, notamos que a coluna `salario` está marcada como objeto. Isso se dá pois temos os caracteres '**R$**', responsáveis por classificar a coluna salário como *string*. Para tratar essa coluna e obter valores numéricos, precisamos:
+
+1. Remover caracteres especiais
+2. Verificar separador decimal (se necessário, trocamos vírgula por ponto)
+3. Converter o tipo de dado (*object* $\rightarrow$ *int*) - métodos `pd.to_numeric()` e `.astype()`.
+
+Métodos:
+
+```python
+# método 1:
+dados['coluna A'] = pd.to_numeric(dados['coluna A'], errors='coerce')
+
+# método 2:
+dados['coluna A'] = dados['coluna A'].astype('float64')
+```
+
+Na prática, temos:
+
+```{python}
+# Removendo o prefixo 'R$' e os caracteres '.0' da coluna 'salario':
+clientes_cifraonline['salario'] = clientes_cifraonline['salario'].str.replace('R$', '')
+
+# Convertendo o tipo de dado para numérico, ignorando erros para lidar com valores não numéricos:
+clientes_cifraonline['salario'] = pd.to_numeric(clientes_cifraonline['salario'], errors='coerce')
+
+# Podemos converter esse inteiro para float:
+clientes_cifraonline['salario'] = clientes_cifraonline['salario'].astype('float64')
+
+clientes_cifraonline.head()
+```
+
+Da mesma maneira, score poderia ser um inteiro:
+
+```{python}
+# Conversão:
+clientes_cifraonline['score_credito'] = clientes_cifraonline['score_credito'].astype('int64')
+
+# Resultado:
+clientes_cifraonline.head()
+```
+
+## 6. Funções anônimas
+
+Outra possilibdade é a utilização de funções anônimas - famosa função `lambda`. A sintaxe é dada por:
+
+```python
+(lambda <variavel(eis)>: <expressao>)
+```
+
+Vamos supor que desejamos anualizar o salários do clientes, logo poderíamos aplicar uma função `lambda`:
+
+```{python}
+# Cópia de `salario`:
+clientes_cifraonline['salario_anual'] = clientes_cifraonline['salario']
+
+# Anualizando `salario`:
+clientes_cifraonline['salario_anual'] = clientes_cifraonline['salario_anual'].apply(lambda salario: salario * 12)
+
+clientes_cifraonline[['salario', 'salario_anual']].head()
+```
+
+No caso da codificação do gênero, também poderia ser feita com uma função anônima:
+
+```{python}
+
+# Codificação utilizando função anônima:
+clientes_cifraonline['genero_cod_lambda'] = clientes_cifraonline['genero'].apply(lambda registro: 
+    0 if registro == 'F' else 1
+)
+
+# Resultado:
+clientes_cifraonline[['genero', 'genero_cod_lambda']].tail()
+```
+
+Podemos também criar funções previamente definias e aplicar ao conjunto de dados utilizando o método `.apply()`.
+
+```{python}
+# Função para categorizar score de crédito
+def categorizar_score(score):
+    if score < 500:
+        return 'Baixo'
+    elif score < 700:
+        return 'Médio'
+    else:
+        return 'Alto'
+
+# Aplicar a função categorizar_score à coluna 'score_credito'
+clientes_cifraonline['faixa_score'] = clientes_cifraonline['score_credito'].apply(categorizar_score)
+
+# Resultado:
+clientes_cifraonline[['nome','genero','salario','score_credito','faixa_score']].head()
+```

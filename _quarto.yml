@@ -1,0 +1,42 @@
+project:
+  type: website
+
+website:
+
+  title: "🖥️ Compilado de Pandas"
+
+
+  navbar:
+    background: "#2e3f58"
+    left:
+      - href: index.qmd
+        text: Início
+      - text: Aulas
+        menu:       
+        - href: sections/leitura_arquivos.qmd
+          text: 1. Leitura de arquivos
+        - href: sections/metodos_basicos_pandas.qmd
+          text: 2. Métodos básicos                  
+        - href: sections/slicing_e_filtros.qmd
+          text: 3. Slicing e filtros
+        - href: sections/estatistica_com_pandas.qmd
+          text: 4. Métodos estatísticos                    
+        - href: sections/agregacoes.qmd
+          text: 5. Agregações
+        - href: sections/juncoes.qmd
+          text: 6. Junções   
+        - href: sections/limpeza_de_dados.qmd
+          text: 7. Limpeza de dados
+        - href: sections/visualizacao.qmd
+          text: 8. Visualização de dados                  
+
+format:
+  bookup-html+darkonly:
+    embed-fonts: true
+    css: styles.css
+    toc: true
+    code-tools: true
+    code-overflow: wrap
+execute:
+  warning: false
+jupyter: python3
