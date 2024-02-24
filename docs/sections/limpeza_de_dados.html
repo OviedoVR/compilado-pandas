@@ -1,0 +1,1942 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Vinícius Oviedo">
+
+<title>🖥️ Compilado de Pandas - Manipulação de Dados com Pandas</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/bookup_fonts_gwf-0.0/fonts-embed.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">🖥️ Compilado de Pandas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Início</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aulas" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Aulas</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-aulas">    
+        <li>
+    <a class="dropdown-item" href="../sections/leitura_arquivos.html">
+ <span class="dropdown-text">1. Leitura de arquivos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sections/metodos_basicos_pandas.html">
+ <span class="dropdown-text">2. Métodos básicos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sections/slicing_e_filtros.html">
+ <span class="dropdown-text">3. Slicing e filtros</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sections/estatistica_com_pandas.html">
+ <span class="dropdown-text">4. Métodos estatísticos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sections/agregacoes.html">
+ <span class="dropdown-text">5. Agregações</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sections/juncoes.html">
+ <span class="dropdown-text">6. Junções</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sections/limpeza_de_dados.html">
+ <span class="dropdown-text">7. Limpeza de dados</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sections/visualizacao.html">
+ <span class="dropdown-text">8. Visualização de dados</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#limpeza-de-dados" id="toc-limpeza-de-dados" class="nav-link active" data-scroll-target="#limpeza-de-dados">Limpeza de dados</a>
+  <ul class="collapse">
+  <li><a href="#renomear-colunas" id="toc-renomear-colunas" class="nav-link" data-scroll-target="#renomear-colunas">1. Renomear colunas</a></li>
+  <li><a href="#formatar-textos" id="toc-formatar-textos" class="nav-link" data-scroll-target="#formatar-textos">2. Formatar textos</a></li>
+  <li><a href="#substituições" id="toc-substituições" class="nav-link" data-scroll-target="#substituições">3. Substituições</a></li>
+  <li><a href="#tratar-nulos" id="toc-tratar-nulos" class="nav-link" data-scroll-target="#tratar-nulos">4. Tratar nulos</a></li>
+  <li><a href="#converter-tipos-de-dados" id="toc-converter-tipos-de-dados" class="nav-link" data-scroll-target="#converter-tipos-de-dados">5. Converter tipos de dados</a></li>
+  <li><a href="#funções-anônimas" id="toc-funções-anônimas" class="nav-link" data-scroll-target="#funções-anônimas">6. Funções anônimas</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Manipulação de Dados com Pandas</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Vinícius Oviedo </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="limpeza-de-dados" class="level1">
+<h1>Limpeza de dados</h1>
+<p>Nesta aula, vamos trabalhar com métodos aplicáveis à limpeza de dados com <code>Pandas</code>. Veremos os métodos para:</p>
+<ol type="1">
+<li>Renomear colunas</li>
+<li>Formatar textos (minúsculo, maísculo, primeira letra em maiúscula)</li>
+<li>Realizar substituições com o método <code>.replace()</code></li>
+<li>Tratar nulos - método <code>.fillna()</code></li>
+<li>Converter tipos de dados em um <em>dataframe</em></li>
+<li>Criar funções anônimas - função <code>lambda</code> e método <code>.apply()</code>.</li>
+</ol>
+<p>Esses tópicos são fundamentais em processos de ETL (<strong><em>Extract, Transform and Load</em></strong>) em projetos envolvendo dados. Ao longo desse módulos, vamos trabalhar com o conjunto de dados `` que trata de clientes da <em>CifraOnline</em>, um banco digital fictício com 1000 linhas.</p>
+<div id="87b1ff68" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline <span class="op">=</span> pd.read_csv(<span class="st">'dados/clientes-banco-cifraonline/clientes_cifraonline.csv'</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">nome</th>
+<th data-quarto-table-cell-role="th">idade</th>
+<th data-quarto-table-cell-role="th">sexo</th>
+<th data-quarto-table-cell-role="th">salario</th>
+<th data-quarto-table-cell-role="th">cidade</th>
+<th data-quarto-table-cell-role="th">status_emprego</th>
+<th data-quarto-table-cell-role="th">nivel_educacional</th>
+<th data-quarto-table-cell-role="th">score_credito</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>João</td>
+<td>62</td>
+<td>M</td>
+<td>R$ 6728</td>
+<td>São Paulo</td>
+<td>Desempregado</td>
+<td>Mestrado</td>
+<td>793</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Mariano</td>
+<td>65</td>
+<td>M</td>
+<td>R$ 7000</td>
+<td>Porto Alegre</td>
+<td>Autônomo</td>
+<td>Pós-graduação</td>
+<td>626</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Luiz</td>
+<td>71</td>
+<td>M</td>
+<td>R$ 6545</td>
+<td>Rio de Janeiro</td>
+<td>Autônomo</td>
+<td>Graduação</td>
+<td>438</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Paula</td>
+<td>18</td>
+<td>F</td>
+<td>R$ 3896</td>
+<td>Salvador</td>
+<td>Empregado</td>
+<td>Ensino Médio</td>
+<td>831</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Carlo</td>
+<td>21</td>
+<td>M</td>
+<td>R$ 12383</td>
+<td>Salvador</td>
+<td>Autônomo</td>
+<td>Graduação</td>
+<td>384</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Antes de inicar os tópicos, é importante notarmos que temos, dentre outras particularidades:</p>
+<ol type="1">
+<li>Dados numéricos configurados como texto (coluna <code>salario</code>)</li>
+<li>Nomes despadronizados quanto à formatação (coluna <code>nome</code>).</li>
+</ol>
+<div id="1c2c5cb8" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 8 columns):
+ #   Column             Non-Null Count  Dtype 
+---  ------             --------------  ----- 
+ 0   nome               1000 non-null   object
+ 1   idade              1000 non-null   int64 
+ 2   sexo               1000 non-null   object
+ 3   salario            1000 non-null   object
+ 4   cidade             1000 non-null   object
+ 5   status_emprego     1000 non-null   object
+ 6   nivel_educacional  1000 non-null   object
+ 7   score_credito      1000 non-null   int64 
+dtypes: int64(2), object(6)
+memory usage: 62.6+ KB</code></pre>
+</div>
+</div>
+<section id="renomear-colunas" class="level2">
+<h2 class="anchored" data-anchor-id="renomear-colunas">1. Renomear colunas</h2>
+<p>Para renomear colunas em um <em>dataframe</em>, podemos utilizar o método <code>rename</code>, ilustrado abaixo.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dados <span class="op">=</span> dados.rename(columns<span class="op">=</span>{<span class="st">'coluna original'</span>: <span class="st">'coluna renomeada'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vejamos na prática:</p>
+<div id="b5f75a27" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alterando nome de duas colunas:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline <span class="op">=</span> clientes_cifraonline.rename(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    columns <span class="op">=</span> {<span class="st">'nivel_educacional'</span>: <span class="st">'formacao'</span>, <span class="st">'sexo'</span>: <span class="st">'genero'</span>}</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizando os resultados:</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">nome</th>
+<th data-quarto-table-cell-role="th">idade</th>
+<th data-quarto-table-cell-role="th">genero</th>
+<th data-quarto-table-cell-role="th">salario</th>
+<th data-quarto-table-cell-role="th">cidade</th>
+<th data-quarto-table-cell-role="th">status_emprego</th>
+<th data-quarto-table-cell-role="th">formacao</th>
+<th data-quarto-table-cell-role="th">score_credito</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>João</td>
+<td>62</td>
+<td>M</td>
+<td>R$ 6728</td>
+<td>São Paulo</td>
+<td>Desempregado</td>
+<td>Mestrado</td>
+<td>793</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Mariano</td>
+<td>65</td>
+<td>M</td>
+<td>R$ 7000</td>
+<td>Porto Alegre</td>
+<td>Autônomo</td>
+<td>Pós-graduação</td>
+<td>626</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Luiz</td>
+<td>71</td>
+<td>M</td>
+<td>R$ 6545</td>
+<td>Rio de Janeiro</td>
+<td>Autônomo</td>
+<td>Graduação</td>
+<td>438</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Paula</td>
+<td>18</td>
+<td>F</td>
+<td>R$ 3896</td>
+<td>Salvador</td>
+<td>Empregado</td>
+<td>Ensino Médio</td>
+<td>831</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Carlo</td>
+<td>21</td>
+<td>M</td>
+<td>R$ 12383</td>
+<td>Salvador</td>
+<td>Autônomo</td>
+<td>Graduação</td>
+<td>384</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Caso desejemos eliminar colunas, podemos utilizar:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dados.drop([<span class="st">'coluna A'</span>], axis<span class="op">=</span><span class="dv">1</span>, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="formatar-textos" class="level2">
+<h2 class="anchored" data-anchor-id="formatar-textos">2. Formatar textos</h2>
+<p>No conjunto de dados em questão, também temos nomes despadronizados (ora letras maiúsculas, ora minúsculas). Podemos lidar com esse tipo de situação (ver coluna <code>nome</code>) utilizando:</p>
+<div id="f8476b92" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Texto em minúsculo:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'nome'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'nome'</span>].<span class="bu">str</span>.lower()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">nome</th>
+<th data-quarto-table-cell-role="th">idade</th>
+<th data-quarto-table-cell-role="th">genero</th>
+<th data-quarto-table-cell-role="th">salario</th>
+<th data-quarto-table-cell-role="th">cidade</th>
+<th data-quarto-table-cell-role="th">status_emprego</th>
+<th data-quarto-table-cell-role="th">formacao</th>
+<th data-quarto-table-cell-role="th">score_credito</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>joão</td>
+<td>62</td>
+<td>M</td>
+<td>R$ 6728</td>
+<td>São Paulo</td>
+<td>Desempregado</td>
+<td>Mestrado</td>
+<td>793</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>mariano</td>
+<td>65</td>
+<td>M</td>
+<td>R$ 7000</td>
+<td>Porto Alegre</td>
+<td>Autônomo</td>
+<td>Pós-graduação</td>
+<td>626</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="ea931727" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Texto em maiúsculo:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'nome'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'nome'</span>].<span class="bu">str</span>.upper()</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">nome</th>
+<th data-quarto-table-cell-role="th">idade</th>
+<th data-quarto-table-cell-role="th">genero</th>
+<th data-quarto-table-cell-role="th">salario</th>
+<th data-quarto-table-cell-role="th">cidade</th>
+<th data-quarto-table-cell-role="th">status_emprego</th>
+<th data-quarto-table-cell-role="th">formacao</th>
+<th data-quarto-table-cell-role="th">score_credito</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>JOÃO</td>
+<td>62</td>
+<td>M</td>
+<td>R$ 6728</td>
+<td>São Paulo</td>
+<td>Desempregado</td>
+<td>Mestrado</td>
+<td>793</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>MARIANO</td>
+<td>65</td>
+<td>M</td>
+<td>R$ 7000</td>
+<td>Porto Alegre</td>
+<td>Autônomo</td>
+<td>Pós-graduação</td>
+<td>626</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="d301cfa8" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Texto com Primeira Letra em Maiúsculo:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'nome'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'nome'</span>].<span class="bu">str</span>.title()</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">nome</th>
+<th data-quarto-table-cell-role="th">idade</th>
+<th data-quarto-table-cell-role="th">genero</th>
+<th data-quarto-table-cell-role="th">salario</th>
+<th data-quarto-table-cell-role="th">cidade</th>
+<th data-quarto-table-cell-role="th">status_emprego</th>
+<th data-quarto-table-cell-role="th">formacao</th>
+<th data-quarto-table-cell-role="th">score_credito</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>João</td>
+<td>62</td>
+<td>M</td>
+<td>R$ 6728</td>
+<td>São Paulo</td>
+<td>Desempregado</td>
+<td>Mestrado</td>
+<td>793</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Mariano</td>
+<td>65</td>
+<td>M</td>
+<td>R$ 7000</td>
+<td>Porto Alegre</td>
+<td>Autônomo</td>
+<td>Pós-graduação</td>
+<td>626</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="substituições" class="level2">
+<h2 class="anchored" data-anchor-id="substituições">3. Substituições</h2>
+<p>Frequentemente, vamos precisar substituir valores em um <em>dataframe</em>. Para isso, podemos utilizar o método <code>.replace()</code> conforme procede abaixo:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subsitutuição em todo o dataframe:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>dados <span class="op">=</span> dados.replace(<span class="st">'Valor original'</span>, <span class="st">'Valor substituído'</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Substituição em uma coluna específica:</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].replace(<span class="st">'Valor original'</span>, <span class="st">'Valor substituído'</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Também funciona com números:</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].replace(<span class="dv">0</span>, <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>No nosso caso, vamos adicionar alguns dados nulos em nosso dataframe com o auxílio da biblioteca <code>numpy</code>. Além disso, vamos criar uma variável numérica para <code>genero</code>, onde:</p>
+<ol type="1">
+<li>Aos clientes do gênero <strong>Feminino (F)</strong> será atribuídos o valor <strong>0</strong></li>
+<li>Aos clientes do gênero <strong>Masculino (M)</strong> será atribuídos o valor <strong>1</strong></li>
+</ol>
+<div id="7d145a19" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Biblioteca numpy:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Adicionando nulos:</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'score_credito'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'score_credito'</span>].replace(<span class="dv">793</span>, np.nan).replace(<span class="dv">831</span>, np.nan).replace(<span class="dv">719</span>, np.nan)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualização dos resultados</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.isna().<span class="bu">sum</span>()<span class="op">/</span><span class="bu">len</span>(clientes_cifraonline)<span class="op">*</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>nome              0.0
+idade             0.0
+genero            0.0
+salario           0.0
+cidade            0.0
+status_emprego    0.0
+formacao          0.0
+score_credito     0.7
+dtype: float64</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Note que temos 0,7% de nulos no conjunto de dados agora.</p>
+</blockquote>
+<div id="f5b25f87" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Codigicando a coluna gênero:</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'genero_cod'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'genero'</span>] <span class="co"># cópia da original</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Outra opção é usar o `inplace`:</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'genero_cod'</span>].replace(<span class="st">'F'</span>, <span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'genero_cod'</span>].replace(<span class="st">'M'</span>, <span class="dv">1</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualização dos resultados:</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[[<span class="st">'nome'</span>, <span class="st">'genero'</span>, <span class="st">'genero_cod'</span>]].head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">nome</th>
+<th data-quarto-table-cell-role="th">genero</th>
+<th data-quarto-table-cell-role="th">genero_cod</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>João</td>
+<td>M</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Mariano</td>
+<td>M</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Luiz</td>
+<td>M</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Paula</td>
+<td>F</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Carlo</td>
+<td>M</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Luiz</td>
+<td>M</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>Felipe</td>
+<td>M</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>Ana</td>
+<td>F</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>Paula</td>
+<td>F</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>Paulo</td>
+<td>M</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="tratar-nulos" class="level2">
+<h2 class="anchored" data-anchor-id="tratar-nulos">4. Tratar nulos</h2>
+<p>Para o tratamento de nulos, poderímos usar algumas ténicas com o método <code>.fillna()</code>.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Preenchimento com 'zero':</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].fillna(<span class="dv">0</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Preenchimento com a média:</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>media_coluna_A <span class="op">=</span> dados[<span class="st">'Salário'</span>].mean()</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].fillna(media_coluna_A)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Preenchimento com a mediana:</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>mediana_coluna_A <span class="op">=</span> dados[<span class="st">'Salário'</span>].median()</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].fillna(mediana_coluna_A)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Preenchimento com a moda:</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>moda_coluna_A <span class="op">=</span> dados[<span class="st">'Salário'</span>].mode()</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].fillna(moda_coluna_A)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Preenchimento com a texto:</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].fillna(<span class="st">'Não informado'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note que também poderíamos preencher nulos utilizando algoritmos de <strong>Machine Learning</strong> (e.g., <em>K-Nearest Neighbors</em>, <em>Random Forest</em>, <em>IterativeImputer</em>, etc.). Entretando, esse assunto foge do escopo desse curso e não iremos abordá-lo.</p>
+</div>
+</div>
+<p>Como nesse caso os nulos representam apenas <strong>0,7%</strong> do conjunto de dados, podemos apenas eliminar essas linhas.</p>
+<div id="d106caa7" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Total de linhas (originalmente):</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Total de linhas antes da remoçao de nulos: </span><span class="sc">{</span>clientes_cifraonline<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Remoção de nulos:</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Impacto:</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Total de linhas após a remoçao de nulos: </span><span class="sc">{</span>clientes_cifraonline<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Total de linhas antes da remoçao de nulos: 1000
+Total de linhas após a remoçao de nulos: 993</code></pre>
+</div>
+</div>
+</section>
+<section id="converter-tipos-de-dados" class="level2">
+<h2 class="anchored" data-anchor-id="converter-tipos-de-dados">5. Converter tipos de dados</h2>
+<p>No conjunto de dados em questão, notamos que a coluna <code>salario</code> está marcada como objeto. Isso se dá pois temos os caracteres ‘<strong>R$</strong>’, responsáveis por classificar a coluna salário como <em>string</em>. Para tratar essa coluna e obter valores numéricos, precisamos:</p>
+<ol type="1">
+<li>Remover caracteres especiais</li>
+<li>Verificar separador decimal (se necessário, trocamos vírgula por ponto)</li>
+<li>Converter o tipo de dado (<em>object</em> <span class="math inline">\(\rightarrow\)</span> <em>int</em>) - métodos <code>pd.to_numeric()</code> e <code>.astype()</code>.</li>
+</ol>
+<p>Métodos:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># método 1:</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> pd.to_numeric(dados[<span class="st">'coluna A'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># método 2:</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].astype(<span class="st">'float64'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Na prática, temos:</p>
+<div id="bc02fdf6" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Removendo o prefixo 'R$' e os caracteres '.0' da coluna 'salario':</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'salario'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'salario'</span>].<span class="bu">str</span>.replace(<span class="st">'R$'</span>, <span class="st">''</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertendo o tipo de dado para numérico, ignorando erros para lidar com valores não numéricos:</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'salario'</span>] <span class="op">=</span> pd.to_numeric(clientes_cifraonline[<span class="st">'salario'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Podemos converter esse inteiro para float:</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'salario'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'salario'</span>].astype(<span class="st">'float64'</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">nome</th>
+<th data-quarto-table-cell-role="th">idade</th>
+<th data-quarto-table-cell-role="th">genero</th>
+<th data-quarto-table-cell-role="th">salario</th>
+<th data-quarto-table-cell-role="th">cidade</th>
+<th data-quarto-table-cell-role="th">status_emprego</th>
+<th data-quarto-table-cell-role="th">formacao</th>
+<th data-quarto-table-cell-role="th">score_credito</th>
+<th data-quarto-table-cell-role="th">genero_cod</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Mariano</td>
+<td>65</td>
+<td>M</td>
+<td>7000.0</td>
+<td>Porto Alegre</td>
+<td>Autônomo</td>
+<td>Pós-graduação</td>
+<td>626.0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Luiz</td>
+<td>71</td>
+<td>M</td>
+<td>6545.0</td>
+<td>Rio de Janeiro</td>
+<td>Autônomo</td>
+<td>Graduação</td>
+<td>438.0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Carlo</td>
+<td>21</td>
+<td>M</td>
+<td>12383.0</td>
+<td>Salvador</td>
+<td>Autônomo</td>
+<td>Graduação</td>
+<td>384.0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Luiz</td>
+<td>77</td>
+<td>M</td>
+<td>1823.0</td>
+<td>Porto Alegre</td>
+<td>Autônomo</td>
+<td>Ensino Médio</td>
+<td>737.0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>Felipe</td>
+<td>21</td>
+<td>M</td>
+<td>1490.0</td>
+<td>Porto Alegre</td>
+<td>Autônomo</td>
+<td>Ensino Médio</td>
+<td>482.0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Da mesma maneira, score poderia ser um inteiro:</p>
+<div id="a9736797" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Conversão:</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'score_credito'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'score_credito'</span>].astype(<span class="st">'int64'</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Resultado:</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">nome</th>
+<th data-quarto-table-cell-role="th">idade</th>
+<th data-quarto-table-cell-role="th">genero</th>
+<th data-quarto-table-cell-role="th">salario</th>
+<th data-quarto-table-cell-role="th">cidade</th>
+<th data-quarto-table-cell-role="th">status_emprego</th>
+<th data-quarto-table-cell-role="th">formacao</th>
+<th data-quarto-table-cell-role="th">score_credito</th>
+<th data-quarto-table-cell-role="th">genero_cod</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Mariano</td>
+<td>65</td>
+<td>M</td>
+<td>7000.0</td>
+<td>Porto Alegre</td>
+<td>Autônomo</td>
+<td>Pós-graduação</td>
+<td>626</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Luiz</td>
+<td>71</td>
+<td>M</td>
+<td>6545.0</td>
+<td>Rio de Janeiro</td>
+<td>Autônomo</td>
+<td>Graduação</td>
+<td>438</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Carlo</td>
+<td>21</td>
+<td>M</td>
+<td>12383.0</td>
+<td>Salvador</td>
+<td>Autônomo</td>
+<td>Graduação</td>
+<td>384</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Luiz</td>
+<td>77</td>
+<td>M</td>
+<td>1823.0</td>
+<td>Porto Alegre</td>
+<td>Autônomo</td>
+<td>Ensino Médio</td>
+<td>737</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>Felipe</td>
+<td>21</td>
+<td>M</td>
+<td>1490.0</td>
+<td>Porto Alegre</td>
+<td>Autônomo</td>
+<td>Ensino Médio</td>
+<td>482</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="funções-anônimas" class="level2">
+<h2 class="anchored" data-anchor-id="funções-anônimas">6. Funções anônimas</h2>
+<p>Outra possilibdade é a utilização de funções anônimas - famosa função <code>lambda</code>. A sintaxe é dada por:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">lambda</span> <span class="op">&lt;</span>variavel(eis)<span class="op">&gt;</span>: <span class="op">&lt;</span>expressao<span class="op">&gt;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vamos supor que desejamos anualizar o salários do clientes, logo poderíamos aplicar uma função <code>lambda</code>:</p>
+<div id="eacd9aac" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cópia de `salario`:</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'salario_anual'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'salario'</span>]</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Anualizando `salario`:</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'salario_anual'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'salario_anual'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> salario: salario <span class="op">*</span> <span class="dv">12</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[[<span class="st">'salario'</span>, <span class="st">'salario_anual'</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">salario</th>
+<th data-quarto-table-cell-role="th">salario_anual</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>7000.0</td>
+<td>84000.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>6545.0</td>
+<td>78540.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>12383.0</td>
+<td>148596.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>1823.0</td>
+<td>21876.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>1490.0</td>
+<td>17880.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>No caso da codificação do gênero, também poderia ser feita com uma função anônima:</p>
+<div id="0976fd63" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Codificação utilizando função anônima:</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'genero_cod_lambda'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'genero'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> registro: </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">0</span> <span class="cf">if</span> registro <span class="op">==</span> <span class="st">'F'</span> <span class="cf">else</span> <span class="dv">1</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Resultado:</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[[<span class="st">'genero'</span>, <span class="st">'genero_cod_lambda'</span>]].tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">genero</th>
+<th data-quarto-table-cell-role="th">genero_cod_lambda</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">994</td>
+<td>F</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">995</td>
+<td>M</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">996</td>
+<td>F</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">998</td>
+<td>F</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">999</td>
+<td>M</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Podemos também criar funções previamente definias e aplicar ao conjunto de dados utilizando o método <code>.apply()</code>.</p>
+<div id="97408d08" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Função para categorizar score de crédito</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> categorizar_score(score):</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> score <span class="op">&lt;</span> <span class="dv">500</span>:</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Baixo'</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> score <span class="op">&lt;</span> <span class="dv">700</span>:</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Médio'</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Alto'</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicar a função categorizar_score à coluna 'score_credito'</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'faixa_score'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'score_credito'</span>].<span class="bu">apply</span>(categorizar_score)</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Resultado:</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[[<span class="st">'nome'</span>,<span class="st">'genero'</span>,<span class="st">'salario'</span>,<span class="st">'score_credito'</span>,<span class="st">'faixa_score'</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">nome</th>
+<th data-quarto-table-cell-role="th">genero</th>
+<th data-quarto-table-cell-role="th">salario</th>
+<th data-quarto-table-cell-role="th">score_credito</th>
+<th data-quarto-table-cell-role="th">faixa_score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Mariano</td>
+<td>M</td>
+<td>7000.0</td>
+<td>626</td>
+<td>Médio</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Luiz</td>
+<td>M</td>
+<td>6545.0</td>
+<td>438</td>
+<td>Baixo</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Carlo</td>
+<td>M</td>
+<td>12383.0</td>
+<td>384</td>
+<td>Baixo</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Luiz</td>
+<td>M</td>
+<td>1823.0</td>
+<td>737</td>
+<td>Alto</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>Felipe</td>
+<td>M</td>
+<td>1490.0</td>
+<td>482</td>
+<td>Baixo</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb24" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Manipulação de Dados com Pandas"</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Vinícius Oviedo"</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co">  bookup-html+darkonly:</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co">    embed-fonts: true</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="fu"># Limpeza de dados</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>Nesta aula, vamos trabalhar com métodos aplicáveis à limpeza de dados com <span class="in">`Pandas`</span>. Veremos os métodos para:</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Renomear colunas</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Formatar textos (minúsculo, maísculo, primeira letra em maiúscula)</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Realizar substituições com o método <span class="in">`.replace()`</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Tratar nulos - método <span class="in">`.fillna()`</span></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Converter tipos de dados em um *dataframe*</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Criar funções anônimas - função <span class="in">`lambda`</span> e método <span class="in">`.apply()`</span>.</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>Esses tópicos são fundamentais em processos de ETL (***Extract, Transform and Load***) em projetos envolvendo dados. Ao longo desse módulos, vamos trabalhar com o conjunto de dados `` que trata de clientes da *CifraOnline*, um banco digital fictício com 1000 linhas.</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline <span class="op">=</span> pd.read_csv(<span class="st">'dados/clientes-banco-cifraonline/clientes_cifraonline.csv'</span>)</span>
+<span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head()</span>
+<span id="cb24-31"><a href="#cb24-31" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a>Antes de inicar os tópicos, é importante notarmos que temos, dentre outras particularidades:</span>
+<span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Dados numéricos configurados como texto (coluna <span class="in">`salario`</span>)</span>
+<span id="cb24-36"><a href="#cb24-36" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Nomes despadronizados quanto à formatação (coluna <span class="in">`nome`</span>).</span>
+<span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-40"><a href="#cb24-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb24-41"><a href="#cb24-41" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.info()</span>
+<span id="cb24-42"><a href="#cb24-42" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-43"><a href="#cb24-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-44"><a href="#cb24-44" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1. Renomear colunas</span></span>
+<span id="cb24-45"><a href="#cb24-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-46"><a href="#cb24-46" aria-hidden="true" tabindex="-1"></a>Para renomear colunas em um *dataframe*, podemos utilizar o método <span class="in">`rename`</span>, ilustrado abaixo.</span>
+<span id="cb24-47"><a href="#cb24-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-48"><a href="#cb24-48" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb24-49"><a href="#cb24-49" aria-hidden="true" tabindex="-1"></a>dados <span class="op">=</span> dados.rename(columns<span class="op">=</span>{<span class="st">'coluna original'</span>: <span class="st">'coluna renomeada'</span>})</span>
+<span id="cb24-50"><a href="#cb24-50" aria-hidden="true" tabindex="-1"></a><span class="in">```</span> </span>
+<span id="cb24-51"><a href="#cb24-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-52"><a href="#cb24-52" aria-hidden="true" tabindex="-1"></a>Vejamos na prática:</span>
+<span id="cb24-53"><a href="#cb24-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-56"><a href="#cb24-56" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb24-57"><a href="#cb24-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Alterando nome de duas colunas:</span></span>
+<span id="cb24-58"><a href="#cb24-58" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline <span class="op">=</span> clientes_cifraonline.rename(</span>
+<span id="cb24-59"><a href="#cb24-59" aria-hidden="true" tabindex="-1"></a>    columns <span class="op">=</span> {<span class="st">'nivel_educacional'</span>: <span class="st">'formacao'</span>, <span class="st">'sexo'</span>: <span class="st">'genero'</span>}</span>
+<span id="cb24-60"><a href="#cb24-60" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb24-61"><a href="#cb24-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-62"><a href="#cb24-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizando os resultados:</span></span>
+<span id="cb24-63"><a href="#cb24-63" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head()</span>
+<span id="cb24-64"><a href="#cb24-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-65"><a href="#cb24-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-66"><a href="#cb24-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-67"><a href="#cb24-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-68"><a href="#cb24-68" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb24-69"><a href="#cb24-69" aria-hidden="true" tabindex="-1"></a>##</span>
+<span id="cb24-70"><a href="#cb24-70" aria-hidden="true" tabindex="-1"></a>Caso desejemos eliminar colunas, podemos utilizar:</span>
+<span id="cb24-71"><a href="#cb24-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-72"><a href="#cb24-72" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb24-73"><a href="#cb24-73" aria-hidden="true" tabindex="-1"></a>dados.drop([<span class="st">'coluna A'</span>], axis<span class="op">=</span><span class="dv">1</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb24-74"><a href="#cb24-74" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-75"><a href="#cb24-75" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb24-76"><a href="#cb24-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-77"><a href="#cb24-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-78"><a href="#cb24-78" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2. Formatar textos</span></span>
+<span id="cb24-79"><a href="#cb24-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-80"><a href="#cb24-80" aria-hidden="true" tabindex="-1"></a>No conjunto de dados em questão, também temos nomes despadronizados (ora letras maiúsculas, ora minúsculas). Podemos lidar com esse tipo de situação (ver coluna <span class="in">`nome`</span>) utilizando:</span>
+<span id="cb24-81"><a href="#cb24-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-84"><a href="#cb24-84" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb24-85"><a href="#cb24-85" aria-hidden="true" tabindex="-1"></a><span class="co"># Texto em minúsculo:</span></span>
+<span id="cb24-86"><a href="#cb24-86" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'nome'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'nome'</span>].<span class="bu">str</span>.lower()</span>
+<span id="cb24-87"><a href="#cb24-87" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head(<span class="dv">2</span>)</span>
+<span id="cb24-88"><a href="#cb24-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-89"><a href="#cb24-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-92"><a href="#cb24-92" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb24-93"><a href="#cb24-93" aria-hidden="true" tabindex="-1"></a><span class="co"># Texto em maiúsculo:</span></span>
+<span id="cb24-94"><a href="#cb24-94" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'nome'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'nome'</span>].<span class="bu">str</span>.upper()</span>
+<span id="cb24-95"><a href="#cb24-95" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head(<span class="dv">2</span>)</span>
+<span id="cb24-96"><a href="#cb24-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-97"><a href="#cb24-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-100"><a href="#cb24-100" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb24-101"><a href="#cb24-101" aria-hidden="true" tabindex="-1"></a><span class="co"># Texto com Primeira Letra em Maiúsculo:</span></span>
+<span id="cb24-102"><a href="#cb24-102" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'nome'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'nome'</span>].<span class="bu">str</span>.title()</span>
+<span id="cb24-103"><a href="#cb24-103" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head(<span class="dv">2</span>)</span>
+<span id="cb24-104"><a href="#cb24-104" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-105"><a href="#cb24-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-106"><a href="#cb24-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-107"><a href="#cb24-107" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3. Substituições</span></span>
+<span id="cb24-108"><a href="#cb24-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-109"><a href="#cb24-109" aria-hidden="true" tabindex="-1"></a>Frequentemente, vamos precisar substituir valores em um *dataframe*. Para isso, podemos utilizar o método <span class="in">`.replace()`</span> conforme procede abaixo:</span>
+<span id="cb24-110"><a href="#cb24-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-111"><a href="#cb24-111" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb24-112"><a href="#cb24-112" aria-hidden="true" tabindex="-1"></a><span class="co"># Subsitutuição em todo o dataframe:</span></span>
+<span id="cb24-113"><a href="#cb24-113" aria-hidden="true" tabindex="-1"></a>dados <span class="op">=</span> dados.replace(<span class="st">'Valor original'</span>, <span class="st">'Valor substituído'</span>)</span>
+<span id="cb24-114"><a href="#cb24-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-115"><a href="#cb24-115" aria-hidden="true" tabindex="-1"></a><span class="co"># Substituição em uma coluna específica:</span></span>
+<span id="cb24-116"><a href="#cb24-116" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].replace(<span class="st">'Valor original'</span>, <span class="st">'Valor substituído'</span>)</span>
+<span id="cb24-117"><a href="#cb24-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-118"><a href="#cb24-118" aria-hidden="true" tabindex="-1"></a><span class="co"># Também funciona com números:</span></span>
+<span id="cb24-119"><a href="#cb24-119" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].replace(<span class="dv">0</span>, <span class="dv">50</span>)</span>
+<span id="cb24-120"><a href="#cb24-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-121"><a href="#cb24-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-122"><a href="#cb24-122" aria-hidden="true" tabindex="-1"></a>No nosso caso, vamos adicionar alguns dados nulos em nosso dataframe com o auxílio da biblioteca <span class="in">`numpy`</span>. Além disso, vamos criar uma variável numérica para <span class="in">`genero`</span>, onde:</span>
+<span id="cb24-123"><a href="#cb24-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-124"><a href="#cb24-124" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Aos clientes do gênero **Feminino (F)** será atribuídos o valor **0**</span>
+<span id="cb24-125"><a href="#cb24-125" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Aos clientes do gênero **Masculino (M)** será atribuídos o valor **1**</span>
+<span id="cb24-126"><a href="#cb24-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-129"><a href="#cb24-129" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb24-130"><a href="#cb24-130" aria-hidden="true" tabindex="-1"></a><span class="co"># Biblioteca numpy:</span></span>
+<span id="cb24-131"><a href="#cb24-131" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb24-132"><a href="#cb24-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-133"><a href="#cb24-133" aria-hidden="true" tabindex="-1"></a><span class="co"># Adicionando nulos:</span></span>
+<span id="cb24-134"><a href="#cb24-134" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'score_credito'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'score_credito'</span>].replace(<span class="dv">793</span>, np.nan).replace(<span class="dv">831</span>, np.nan).replace(<span class="dv">719</span>, np.nan)</span>
+<span id="cb24-135"><a href="#cb24-135" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualização dos resultados</span></span>
+<span id="cb24-136"><a href="#cb24-136" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.isna().<span class="bu">sum</span>()<span class="op">/</span><span class="bu">len</span>(clientes_cifraonline)<span class="op">*</span><span class="dv">100</span></span>
+<span id="cb24-137"><a href="#cb24-137" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-138"><a href="#cb24-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-139"><a href="#cb24-139" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Note que temos 0,7% de nulos no conjunto de dados agora.</span></span>
+<span id="cb24-140"><a href="#cb24-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-143"><a href="#cb24-143" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb24-144"><a href="#cb24-144" aria-hidden="true" tabindex="-1"></a><span class="co"># Codigicando a coluna gênero:</span></span>
+<span id="cb24-145"><a href="#cb24-145" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'genero_cod'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'genero'</span>] <span class="co"># cópia da original</span></span>
+<span id="cb24-146"><a href="#cb24-146" aria-hidden="true" tabindex="-1"></a><span class="co"># Outra opção é usar o `inplace`:</span></span>
+<span id="cb24-147"><a href="#cb24-147" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'genero_cod'</span>].replace(<span class="st">'F'</span>, <span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb24-148"><a href="#cb24-148" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'genero_cod'</span>].replace(<span class="st">'M'</span>, <span class="dv">1</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb24-149"><a href="#cb24-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-150"><a href="#cb24-150" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualização dos resultados:</span></span>
+<span id="cb24-151"><a href="#cb24-151" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[[<span class="st">'nome'</span>, <span class="st">'genero'</span>, <span class="st">'genero_cod'</span>]].head(<span class="dv">10</span>)</span>
+<span id="cb24-152"><a href="#cb24-152" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-153"><a href="#cb24-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-154"><a href="#cb24-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-155"><a href="#cb24-155" aria-hidden="true" tabindex="-1"></a><span class="fu">## 4. Tratar nulos</span></span>
+<span id="cb24-156"><a href="#cb24-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-157"><a href="#cb24-157" aria-hidden="true" tabindex="-1"></a>Para o tratamento de nulos, poderímos usar algumas ténicas com o método <span class="in">`.fillna()`</span>.</span>
+<span id="cb24-158"><a href="#cb24-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-159"><a href="#cb24-159" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb24-160"><a href="#cb24-160" aria-hidden="true" tabindex="-1"></a><span class="co"># Preenchimento com 'zero':</span></span>
+<span id="cb24-161"><a href="#cb24-161" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].fillna(<span class="dv">0</span>)</span>
+<span id="cb24-162"><a href="#cb24-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-163"><a href="#cb24-163" aria-hidden="true" tabindex="-1"></a><span class="co"># Preenchimento com a média:</span></span>
+<span id="cb24-164"><a href="#cb24-164" aria-hidden="true" tabindex="-1"></a>media_coluna_A <span class="op">=</span> dados[<span class="st">'Salário'</span>].mean()</span>
+<span id="cb24-165"><a href="#cb24-165" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].fillna(media_coluna_A)</span>
+<span id="cb24-166"><a href="#cb24-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-167"><a href="#cb24-167" aria-hidden="true" tabindex="-1"></a><span class="co"># Preenchimento com a mediana:</span></span>
+<span id="cb24-168"><a href="#cb24-168" aria-hidden="true" tabindex="-1"></a>mediana_coluna_A <span class="op">=</span> dados[<span class="st">'Salário'</span>].median()</span>
+<span id="cb24-169"><a href="#cb24-169" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].fillna(mediana_coluna_A)</span>
+<span id="cb24-170"><a href="#cb24-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-171"><a href="#cb24-171" aria-hidden="true" tabindex="-1"></a><span class="co"># Preenchimento com a moda:</span></span>
+<span id="cb24-172"><a href="#cb24-172" aria-hidden="true" tabindex="-1"></a>moda_coluna_A <span class="op">=</span> dados[<span class="st">'Salário'</span>].mode()</span>
+<span id="cb24-173"><a href="#cb24-173" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].fillna(moda_coluna_A)</span>
+<span id="cb24-174"><a href="#cb24-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-175"><a href="#cb24-175" aria-hidden="true" tabindex="-1"></a><span class="co"># Preenchimento com a texto:</span></span>
+<span id="cb24-176"><a href="#cb24-176" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].fillna(<span class="st">'Não informado'</span>)</span>
+<span id="cb24-177"><a href="#cb24-177" aria-hidden="true" tabindex="-1"></a><span class="in">```</span> </span>
+<span id="cb24-178"><a href="#cb24-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-179"><a href="#cb24-179" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb24-180"><a href="#cb24-180" aria-hidden="true" tabindex="-1"></a>##</span>
+<span id="cb24-181"><a href="#cb24-181" aria-hidden="true" tabindex="-1"></a>Note que também poderíamos preencher nulos utilizando algoritmos de **Machine Learning** (e.g., *K-Nearest Neighbors*, *Random Forest*, *IterativeImputer*, etc.). Entretando, esse assunto foge do escopo desse curso e não iremos abordá-lo.</span>
+<span id="cb24-182"><a href="#cb24-182" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb24-183"><a href="#cb24-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-184"><a href="#cb24-184" aria-hidden="true" tabindex="-1"></a>Como nesse caso os nulos representam apenas **0,7%** do conjunto de dados, podemos apenas eliminar essas linhas.</span>
+<span id="cb24-185"><a href="#cb24-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-188"><a href="#cb24-188" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb24-189"><a href="#cb24-189" aria-hidden="true" tabindex="-1"></a><span class="co"># Total de linhas (originalmente):</span></span>
+<span id="cb24-190"><a href="#cb24-190" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Total de linhas antes da remoçao de nulos: </span><span class="sc">{</span>clientes_cifraonline<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb24-191"><a href="#cb24-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-192"><a href="#cb24-192" aria-hidden="true" tabindex="-1"></a><span class="co"># Remoção de nulos:</span></span>
+<span id="cb24-193"><a href="#cb24-193" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb24-194"><a href="#cb24-194" aria-hidden="true" tabindex="-1"></a><span class="co"># Impacto:</span></span>
+<span id="cb24-195"><a href="#cb24-195" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Total de linhas após a remoçao de nulos: </span><span class="sc">{</span>clientes_cifraonline<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb24-196"><a href="#cb24-196" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-197"><a href="#cb24-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-198"><a href="#cb24-198" aria-hidden="true" tabindex="-1"></a><span class="fu">## 5. Converter tipos de dados</span></span>
+<span id="cb24-199"><a href="#cb24-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-200"><a href="#cb24-200" aria-hidden="true" tabindex="-1"></a>No conjunto de dados em questão, notamos que a coluna <span class="in">`salario`</span> está marcada como objeto. Isso se dá pois temos os caracteres '**R$**', responsáveis por classificar a coluna salário como *string*. Para tratar essa coluna e obter valores numéricos, precisamos:</span>
+<span id="cb24-201"><a href="#cb24-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-202"><a href="#cb24-202" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Remover caracteres especiais</span>
+<span id="cb24-203"><a href="#cb24-203" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Verificar separador decimal (se necessário, trocamos vírgula por ponto)</span>
+<span id="cb24-204"><a href="#cb24-204" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Converter o tipo de dado (*object* $\rightarrow$ *int*) - métodos <span class="in">`pd.to_numeric()`</span> e <span class="in">`.astype()`</span>.</span>
+<span id="cb24-205"><a href="#cb24-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-206"><a href="#cb24-206" aria-hidden="true" tabindex="-1"></a>Métodos:</span>
+<span id="cb24-207"><a href="#cb24-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-208"><a href="#cb24-208" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb24-209"><a href="#cb24-209" aria-hidden="true" tabindex="-1"></a><span class="co"># método 1:</span></span>
+<span id="cb24-210"><a href="#cb24-210" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> pd.to_numeric(dados[<span class="st">'coluna A'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb24-211"><a href="#cb24-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-212"><a href="#cb24-212" aria-hidden="true" tabindex="-1"></a><span class="co"># método 2:</span></span>
+<span id="cb24-213"><a href="#cb24-213" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'coluna A'</span>] <span class="op">=</span> dados[<span class="st">'coluna A'</span>].astype(<span class="st">'float64'</span>)</span>
+<span id="cb24-214"><a href="#cb24-214" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-215"><a href="#cb24-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-216"><a href="#cb24-216" aria-hidden="true" tabindex="-1"></a>Na prática, temos:</span>
+<span id="cb24-217"><a href="#cb24-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-220"><a href="#cb24-220" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb24-221"><a href="#cb24-221" aria-hidden="true" tabindex="-1"></a><span class="co"># Removendo o prefixo 'R$' e os caracteres '.0' da coluna 'salario':</span></span>
+<span id="cb24-222"><a href="#cb24-222" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'salario'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'salario'</span>].<span class="bu">str</span>.replace(<span class="st">'R$'</span>, <span class="st">''</span>)</span>
+<span id="cb24-223"><a href="#cb24-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-224"><a href="#cb24-224" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertendo o tipo de dado para numérico, ignorando erros para lidar com valores não numéricos:</span></span>
+<span id="cb24-225"><a href="#cb24-225" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'salario'</span>] <span class="op">=</span> pd.to_numeric(clientes_cifraonline[<span class="st">'salario'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb24-226"><a href="#cb24-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-227"><a href="#cb24-227" aria-hidden="true" tabindex="-1"></a><span class="co"># Podemos converter esse inteiro para float:</span></span>
+<span id="cb24-228"><a href="#cb24-228" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'salario'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'salario'</span>].astype(<span class="st">'float64'</span>)</span>
+<span id="cb24-229"><a href="#cb24-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-230"><a href="#cb24-230" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head()</span>
+<span id="cb24-231"><a href="#cb24-231" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-232"><a href="#cb24-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-233"><a href="#cb24-233" aria-hidden="true" tabindex="-1"></a>Da mesma maneira, score poderia ser um inteiro:</span>
+<span id="cb24-234"><a href="#cb24-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-237"><a href="#cb24-237" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb24-238"><a href="#cb24-238" aria-hidden="true" tabindex="-1"></a><span class="co"># Conversão:</span></span>
+<span id="cb24-239"><a href="#cb24-239" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'score_credito'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'score_credito'</span>].astype(<span class="st">'int64'</span>)</span>
+<span id="cb24-240"><a href="#cb24-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-241"><a href="#cb24-241" aria-hidden="true" tabindex="-1"></a><span class="co"># Resultado:</span></span>
+<span id="cb24-242"><a href="#cb24-242" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head()</span>
+<span id="cb24-243"><a href="#cb24-243" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-244"><a href="#cb24-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-245"><a href="#cb24-245" aria-hidden="true" tabindex="-1"></a><span class="fu">## 6. Funções anônimas</span></span>
+<span id="cb24-246"><a href="#cb24-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-247"><a href="#cb24-247" aria-hidden="true" tabindex="-1"></a>Outra possilibdade é a utilização de funções anônimas - famosa função <span class="in">`lambda`</span>. A sintaxe é dada por:</span>
+<span id="cb24-248"><a href="#cb24-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-249"><a href="#cb24-249" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb24-250"><a href="#cb24-250" aria-hidden="true" tabindex="-1"></a>(<span class="kw">lambda</span> <span class="op">&lt;</span>variavel(eis)<span class="op">&gt;</span>: <span class="op">&lt;</span>expressao<span class="op">&gt;</span>)</span>
+<span id="cb24-251"><a href="#cb24-251" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-252"><a href="#cb24-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-253"><a href="#cb24-253" aria-hidden="true" tabindex="-1"></a>Vamos supor que desejamos anualizar o salários do clientes, logo poderíamos aplicar uma função <span class="in">`lambda`</span>:</span>
+<span id="cb24-254"><a href="#cb24-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-257"><a href="#cb24-257" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb24-258"><a href="#cb24-258" aria-hidden="true" tabindex="-1"></a><span class="co"># Cópia de `salario`:</span></span>
+<span id="cb24-259"><a href="#cb24-259" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'salario_anual'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'salario'</span>]</span>
+<span id="cb24-260"><a href="#cb24-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-261"><a href="#cb24-261" aria-hidden="true" tabindex="-1"></a><span class="co"># Anualizando `salario`:</span></span>
+<span id="cb24-262"><a href="#cb24-262" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'salario_anual'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'salario_anual'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> salario: salario <span class="op">*</span> <span class="dv">12</span>)</span>
+<span id="cb24-263"><a href="#cb24-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-264"><a href="#cb24-264" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[[<span class="st">'salario'</span>, <span class="st">'salario_anual'</span>]].head()</span>
+<span id="cb24-265"><a href="#cb24-265" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-266"><a href="#cb24-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-267"><a href="#cb24-267" aria-hidden="true" tabindex="-1"></a>No caso da codificação do gênero, também poderia ser feita com uma função anônima:</span>
+<span id="cb24-268"><a href="#cb24-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-271"><a href="#cb24-271" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb24-272"><a href="#cb24-272" aria-hidden="true" tabindex="-1"></a><span class="co"># Codificação utilizando função anônima:</span></span>
+<span id="cb24-273"><a href="#cb24-273" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'genero_cod_lambda'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'genero'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> registro: </span>
+<span id="cb24-274"><a href="#cb24-274" aria-hidden="true" tabindex="-1"></a>    <span class="dv">0</span> <span class="cf">if</span> registro <span class="op">==</span> <span class="st">'F'</span> <span class="cf">else</span> <span class="dv">1</span></span>
+<span id="cb24-275"><a href="#cb24-275" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb24-276"><a href="#cb24-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-277"><a href="#cb24-277" aria-hidden="true" tabindex="-1"></a><span class="co"># Resultado:</span></span>
+<span id="cb24-278"><a href="#cb24-278" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[[<span class="st">'genero'</span>, <span class="st">'genero_cod_lambda'</span>]].tail()</span>
+<span id="cb24-279"><a href="#cb24-279" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-280"><a href="#cb24-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-281"><a href="#cb24-281" aria-hidden="true" tabindex="-1"></a>Podemos também criar funções previamente definias e aplicar ao conjunto de dados utilizando o método <span class="in">`.apply()`</span>.</span>
+<span id="cb24-282"><a href="#cb24-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-285"><a href="#cb24-285" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb24-286"><a href="#cb24-286" aria-hidden="true" tabindex="-1"></a><span class="co"># Função para categorizar score de crédito</span></span>
+<span id="cb24-287"><a href="#cb24-287" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> categorizar_score(score):</span>
+<span id="cb24-288"><a href="#cb24-288" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> score <span class="op">&lt;</span> <span class="dv">500</span>:</span>
+<span id="cb24-289"><a href="#cb24-289" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Baixo'</span></span>
+<span id="cb24-290"><a href="#cb24-290" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> score <span class="op">&lt;</span> <span class="dv">700</span>:</span>
+<span id="cb24-291"><a href="#cb24-291" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Médio'</span></span>
+<span id="cb24-292"><a href="#cb24-292" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb24-293"><a href="#cb24-293" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Alto'</span></span>
+<span id="cb24-294"><a href="#cb24-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-295"><a href="#cb24-295" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicar a função categorizar_score à coluna 'score_credito'</span></span>
+<span id="cb24-296"><a href="#cb24-296" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'faixa_score'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'score_credito'</span>].<span class="bu">apply</span>(categorizar_score)</span>
+<span id="cb24-297"><a href="#cb24-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-298"><a href="#cb24-298" aria-hidden="true" tabindex="-1"></a><span class="co"># Resultado:</span></span>
+<span id="cb24-299"><a href="#cb24-299" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[[<span class="st">'nome'</span>,<span class="st">'genero'</span>,<span class="st">'salario'</span>,<span class="st">'score_credito'</span>,<span class="st">'faixa_score'</span>]].head()</span>
+<span id="cb24-300"><a href="#cb24-300" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
