@@ -130,11 +130,13 @@ vendas_europa['Order Priority'].value_counts(dropna=False)
 ```
 
 ### Dica
-> Podemos inclusive plotar essa contagem, mas isso veremos com mais calma adiante.
+> Podemos inclusive plotar essa contagem, mas isso veremos com mais calma adiante. Vejamos um exemplo com `Item Type`
 
-```{python}
+```python
 vendas_europa['Item Type'].value_counts().plot.barh(color='k', figsize=(6,4))
 ```
+
+![Contagem de Item Type]{assets/europesales-barplot-pandas.png}
 
 ## 7. Duplicatas
 

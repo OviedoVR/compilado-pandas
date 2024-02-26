@@ -230,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Método <code>agg</code></li>
 </ol>
 <p>Para isso, utilizaremos o conjunto de dados sobre <strong>vendas</strong>.</p>
-<div id="125e2e7e" class="cell" data-execution_count="1">
+<div id="bda077c7" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>vendas_europa <span class="op">=</span> pd.read_csv(<span class="st">'dados/vendas/EuropeSalesRecords.csv'</span>)</span>
@@ -357,7 +357,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p><strong>Qual foi o faturamento total por país? (usemos 1 casas decimal)</strong></p>
 </blockquote>
-<div id="16869330" class="cell" data-execution_count="2">
+<div id="d6b111ea" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>vendas_europa.groupby(<span class="st">'Country'</span>)[<span class="st">'Total Revenue'</span>].<span class="bu">sum</span>().<span class="bu">round</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>Country
@@ -416,7 +416,7 @@ Name: Total Revenue, dtype: float64</code></pre>
 <blockquote class="blockquote">
 <p><strong>Qual foi o lucro médio em cada país por canal de venda? listemos o top 5</strong></p>
 </blockquote>
-<div id="d68ddc37" class="cell" data-execution_count="3">
+<div id="6493fa73" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agregação:</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>lucro_medio_pais_e_canal <span class="op">=</span> vendas_europa.groupby(<span class="st">'Country'</span>, as_index<span class="op">=</span><span class="va">False</span>)[<span class="st">'Total Profit'</span>].<span class="bu">sum</span>().<span class="bu">round</span>(<span class="dv">1</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -475,7 +475,7 @@ Name: Total Revenue, dtype: float64</code></pre>
 <section id="método-agg" class="level2">
 <h2 class="anchored" data-anchor-id="método-agg">2. Método <code>agg</code></h2>
 <p>Esse metodo serve para utilizarmos mais de uma medida de agregação. No caso da pergunta anterior, só a média não nos diz muita coisa. Em outras palavras, é uma boa prática mostrar o desvio padrão junto à média. Assim, temos uma noção da variabilidade dos dados e se a média de fato representa bem nosso conjunto de dados. Vamos utilizar a mesma lógica da pergunta anterior, mas mostrando os 5 piores em termos de lucro.</p>
-<div id="f241c1a1" class="cell" data-execution_count="4">
+<div id="d0085eac" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agregação:</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>vendas_europa.groupby([<span class="st">'Country'</span>, <span class="st">'Sales Channel'</span>])[<span class="st">'Total Profit'</span>]<span class="op">\</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  .agg([<span class="st">'mean'</span>, <span class="st">'std'</span>, <span class="st">'median'</span>]).tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -541,7 +541,7 @@ Name: Total Revenue, dtype: float64</code></pre>
 </div>
 </div>
 <p>Outra opção é:</p>
-<div id="a40a5196" class="cell" data-execution_count="5">
+<div id="c8b14db2" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agregação:</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>vendas_europa.groupby([<span class="st">'Country'</span>, <span class="st">'Sales Channel'</span>])[<span class="st">'Total Profit'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">

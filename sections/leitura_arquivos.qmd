@@ -11,7 +11,7 @@ format:
 
 Primeiramente, é importante entendermos as duas estrturuas que o `Pandas` trabalha: **séries** e **dataframes**. Ambas estruturas estão ilustradas na Figura a seguir. Ao longo das aulas, iremos trabalhar majoriatiaramente com *dataframes*.
 
-![Series vs Dataframes](assets/series-vs-df.png){width=375}
+![Series vs Dataframes](assets/series-vs-df.png){width=450}
 
 O Pandas permite ler diversos formatos de dados, desde planilhas em Excel (`.xlsx`), arquivos separados por vírgula (`.csv`), tabelas em páginas `html`, arquivos de texto (`.txt`), arquivos `.json`, entre outras possibilidades. Abaixo temos algumas delas:
 

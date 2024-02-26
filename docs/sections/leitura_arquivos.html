@@ -233,7 +233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Primeiramente, é importante entendermos as duas estrturuas que o <code>Pandas</code> trabalha: <strong>séries</strong> e <strong>dataframes</strong>. Ambas estruturas estão ilustradas na Figura a seguir. Ao longo das aulas, iremos trabalhar majoriatiaramente com <em>dataframes</em>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="assets/series-vs-df.png" class="img-fluid figure-img" width="375"></p>
+<p><img src="assets/series-vs-df.png" class="img-fluid figure-img" width="450"></p>
 <figcaption>Series vs Dataframes</figcaption>
 </figure>
 </div>
@@ -256,13 +256,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># arquivo json:</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>dados <span class="op">=</span> pd.read_json(<span class="st">'ARQUIVO.json'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Prévio a coleta de dados, é sempre fundamental importar a biblioteca. Isso é realizado com o comando abaixo:</p>
-<div id="2062d576" class="cell" data-execution_count="1">
+<div id="5492dffa" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Feito isso, vejamos alguns exemplos a seguir.</p>
 <section id="planilha-de-excel" class="level2">
 <h2 class="anchored" data-anchor-id="planilha-de-excel">1. Planilha de Excel</h2>
-<div id="7ba933b6" class="cell" data-execution_count="2">
+<div id="97aa9fc8" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>preco_streamings <span class="op">=</span> pd.read_excel(<span class="st">'dados/preco_servicos_streaming/Streaming_prices.xlsx'</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>preco_streamings</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -355,7 +355,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="arquivo-csv" class="level2">
 <h2 class="anchored" data-anchor-id="arquivo-csv">2. Arquivo csv</h2>
-<div id="4b366c49" class="cell" data-execution_count="3">
+<div id="21d112e3" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>vendas_europa <span class="op">=</span> pd.read_csv(<span class="st">'dados/vendas/EuropeSalesRecords.csv'</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>vendas_europa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -580,7 +580,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="arquivo-txt" class="level2">
 <h2 class="anchored" data-anchor-id="arquivo-txt">3. Arquivo txt</h2>
-<div id="634a3d83" class="cell" data-execution_count="4">
+<div id="cf92f93c" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>enderecos_IP <span class="op">=</span> pd.read_fwf(<span class="st">'dados/enderecos_ip/ip_addresses.txt'</span>, delimiter<span class="op">=</span><span class="st">'; '</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>enderecos_IP</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -655,7 +655,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="tabela-html" class="level2">
 <h2 class="anchored" data-anchor-id="tabela-html">4. Tabela html</h2>
-<div id="38c30983" class="cell" data-execution_count="5">
+<div id="47a6bd7f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># OBS --- é preciso ter tabelas HTML para ler</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>URL <span class="op">=</span> <span class="st">'https://pt.wikipedia.org/wiki/Demografia_do_Brasil'</span></span>
@@ -721,7 +721,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>verificar quantas tabelas tem a página:</p>
 </blockquote>
-<div id="d0c20fa7" class="cell" data-execution_count="6">
+<div id="deb478b0" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>crescimento_populacional <span class="op">=</span> pd.read_html(URL)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(crescimento_populacional)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -732,7 +732,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="arquivo-json" class="level2">
 <h2 class="anchored" data-anchor-id="arquivo-json">5. Arquivo json</h2>
-<div id="965656f9" class="cell" data-execution_count="7">
+<div id="b993c19c" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>corridas_app <span class="op">=</span> pd.read_json(<span class="st">'dados/corridas/corridas.json'</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>corridas_app</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -1258,7 +1258,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>Primeiramente, é importante entendermos as duas estrturuas que o <span class="in">`Pandas`</span> trabalha: **séries** e **dataframes**. Ambas estruturas estão ilustradas na Figura a seguir. Ao longo das aulas, iremos trabalhar majoriatiaramente com *dataframes*.</span>
 <span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="al">![Series vs Dataframes](assets/series-vs-df.png)</span>{width=375}</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="al">![Series vs Dataframes](assets/series-vs-df.png)</span>{width=450}</span>
 <span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>O Pandas permite ler diversos formatos de dados, desde planilhas em Excel (<span class="in">`.xlsx`</span>), arquivos separados por vírgula (<span class="in">`.csv`</span>), tabelas em páginas <span class="in">`html`</span>, arquivos de texto (<span class="in">`.txt`</span>), arquivos <span class="in">`.json`</span>, entre outras possibilidades. Abaixo temos algumas delas:</span>
 <span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
