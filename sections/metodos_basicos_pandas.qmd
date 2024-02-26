@@ -136,7 +136,7 @@ vendas_europa['Order Priority'].value_counts(dropna=False)
 vendas_europa['Item Type'].value_counts().plot.barh(color='k', figsize=(6,4))
 ```
 
-![Contagem de Item Type]{assets/europesales-barplot-pandas.png}
+![Contagem de Item Type](assets/europesales-barplot-pandas.png)
 
 ## 7. Duplicatas
 

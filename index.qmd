@@ -9,7 +9,7 @@ format:
 
 # Sobre o material
 
-Esse é um material de apoio para o curso "**Manipulacao de Dados com Pandas**" disponível na [Udemy](https://udemy.com.br) - em breve.
+Esse é um material de apoio para o curso "**Manipulação de Dados com Pandas**" disponível na [Udemy](https://udemy.com.br) - em breve.
 
 O curso trata sobre 8 módulos:
 
