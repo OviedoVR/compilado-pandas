@@ -245,7 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Criar novas colunas.</li>
 </ol>
 <p>Entretanto, vamos carregar os dados a partir do bloco de código abaixo:</p>
-<div id="46039138" class="cell" data-execution_count="1">
+<div id="245c64f4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>vendas_europa <span class="op">=</span> pd.read_csv(<span class="st">'dados/vendas/EuropeSalesRecords.csv'</span>)</span>
@@ -472,7 +472,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Dito isso, nada melhor que o velho “<strong><em>hands-on</em></strong>”.</p>
 <section id="primeirasúltimas-n-linhas" class="level2">
 <h2 class="anchored" data-anchor-id="primeirasúltimas-n-linhas">1. Primeiras/últimas <em>N</em> linhas</h2>
-<div id="9a2875ff" class="cell" data-execution_count="2">
+<div id="9cf24341" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dafault: N=5</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>vendas_europa.head()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -591,7 +591,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="85647282" class="cell" data-execution_count="3">
+<div id="9811370d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># É possível selecionar o numero de linhas a mostrar:</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>vendas_europa.head(<span class="dv">2</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -662,7 +662,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p><strong>Últimas cinco linhas:</strong></p>
 </blockquote>
-<div id="abaedda7" class="cell" data-execution_count="4">
+<div id="4931302e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>vendas_europa.tail()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
@@ -780,7 +780,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="9ed3cd01" class="cell" data-execution_count="5">
+<div id="85246ccd" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>vendas_europa.tail(<span class="dv">2</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
@@ -851,7 +851,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="tamanho-do-dataframe" class="level2">
 <h2 class="anchored" data-anchor-id="tamanho-do-dataframe">2. Tamanho do dataframe</h2>
 <p>Podemos verificar utilizando o método <code>.shape</code>. Isso retorna uma tupla de dois números: (linhas, colunas).</p>
-<div id="8887be20" class="cell" data-execution_count="6">
+<div id="a5c40f2d" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>vendas_europa.shape</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>(1330, 14)</code></pre>
@@ -860,7 +860,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p><strong>Uma maneira mais organizada</strong></p>
 </blockquote>
-<div id="bff5d8f3" class="cell" data-execution_count="7">
+<div id="2ac89c0f" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>linhas, colunas <span class="op">=</span> vendas_europa.shape</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Linhas: </span><span class="sc">{</span>linhas<span class="sc">}</span><span class="ss">, Colunas: </span><span class="sc">{</span>colunas<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -871,7 +871,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="tipo-de-dados-e-informações-gerais" class="level2">
 <h2 class="anchored" data-anchor-id="tipo-de-dados-e-informações-gerais">3. Tipo de dados e informações gerais</h2>
 <p>Com o método <code>.info()</code> podemos verificar o tipo de dado em cada coluna, o número total de linhas e colunas, o total de nulos e não-nulos no conjunto de dados, além do espaço ocupado em memória.</p>
-<div id="3ccd75bf" class="cell" data-execution_count="8">
+<div id="e309aec0" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>vendas_europa.info()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -898,7 +898,7 @@ memory usage: 145.6+ KB</code></pre>
 </div>
 </div>
 <p>É possível ainda listar as colunas do <em>dataframe</em>.</p>
-<div id="26fddb7c" class="cell" data-execution_count="9">
+<div id="6306c5c8" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>vendas_europa.columns</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>Index(['Region', 'Country', 'Item Type', 'Sales Channel', 'Order Priority',
@@ -914,7 +914,7 @@ memory usage: 145.6+ KB</code></pre>
 <blockquote class="blockquote">
 <p><strong>Total de nulos:</strong></p>
 </blockquote>
-<div id="b9f86ee2" class="cell" data-execution_count="10">
+<div id="2d4a3dd7" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>vendas_europa.isna().<span class="bu">sum</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>Region            0
@@ -937,7 +937,7 @@ dtype: int64</code></pre>
 <blockquote class="blockquote">
 <p><strong>Percentual de nulos:</strong></p>
 </blockquote>
-<div id="db03f584" class="cell" data-execution_count="11">
+<div id="06d5fd8f" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>vendas_europa.isna().<span class="bu">sum</span>() <span class="op">/</span> <span class="bu">len</span>(vendas_europa) <span class="op">*</span> <span class="dv">100</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>Region            0.000000
@@ -962,7 +962,7 @@ dtype: float64</code></pre>
 <section id="valores-disintos" class="level2">
 <h2 class="anchored" data-anchor-id="valores-disintos">5. Valores disintos</h2>
 <p>A partir do método <code>.unique()</code> podemos verificar os valores distintos em determinada coluna do conjunto de dados. Consideremos a coluna <code>Item Type</code>, podemos verificar os valores distintos dessa coluna por meio do seguinte código:</p>
-<div id="9d1a71c6" class="cell" data-execution_count="12">
+<div id="2412ee94" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>vendas_europa[<span class="st">'Item Type'</span>].unique()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>array(['Beverages', 'Clothes', 'Cereal', 'Office Supplies', 'Fruits',
@@ -971,7 +971,7 @@ dtype: float64</code></pre>
 </div>
 </div>
 <p>Analogamente, podemos mostrar quantas categorias temos em <code>Item Type</code> utilizando o método <code>.nunique()</code>.</p>
-<div id="a6f1b37e" class="cell" data-execution_count="13">
+<div id="defb3f20" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>vendas_europa[<span class="st">'Item Type'</span>].nunique()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>12</code></pre>
@@ -981,7 +981,7 @@ dtype: float64</code></pre>
 <section id="contagem-de-valores" class="level2">
 <h2 class="anchored" data-anchor-id="contagem-de-valores">6. Contagem de valores</h2>
 <p>A partir do método <code>.value_counts()</code> podemos realizar a contagem em determinada coluna do conjunto de dados. Consideremos a coluna <code>Item Type</code>, podemos verificar quais valores distintos temos por meio do seguinte código:</p>
-<div id="18e31810" class="cell" data-execution_count="14">
+<div id="fc01ee02" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>vendas_europa[<span class="st">'Item Type'</span>].value_counts()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>Item Type
@@ -1001,7 +1001,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Se optarmos por incluir os <strong>dados nulos</strong>, podemos utilizar a opção <code>dropna=False</code>.</p>
-<div id="f62d356c" class="cell" data-execution_count="15">
+<div id="b743ea7d" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>vendas_europa[<span class="st">'Order Priority'</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>Order Priority
@@ -1030,7 +1030,7 @@ Name: count, dtype: int64</code></pre>
 <section id="duplicatas" class="level2">
 <h2 class="anchored" data-anchor-id="duplicatas">7. Duplicatas</h2>
 <p>Sabemos que a coluna <code>Sales Channel</code> vai ter várias duplicatas (pois só poucas opções de valores para o canal de vendas). Logo vamos listar quais são os valores que contém duplicatas.</p>
-<div id="f387a82a" class="cell" data-execution_count="16">
+<div id="f5e1589a" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>vendas_europa[<span class="st">'Sales Channel'</span>].drop_duplicates()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>0    Offline
@@ -1039,7 +1039,7 @@ Name: Sales Channel, dtype: object</code></pre>
 </div>
 </div>
 <p>Alternativamente, podemos listar um <code>subset</code> e listar duplicatas em relação a ele:</p>
-<div id="55849e8d" class="cell" data-execution_count="17">
+<div id="686a5f4d" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>vendas_europa.drop_duplicates(subset<span class="op">=</span>[<span class="st">'Country'</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <div>
@@ -1893,7 +1893,7 @@ Name: Sales Channel, dtype: object</code></pre>
 <section id="novas-colunas" class="level2">
 <h2 class="anchored" data-anchor-id="novas-colunas">8. Novas colunas</h2>
 <p>Podemos também criar novas colunas. Vamos supor que se deseja obter os valores de <code>Total Profit</code> em real brasileiro (BRL ou R$) ao invés de dólar (USD). Considerando 1 BRL = 4,96 USD (16/02/2024, 12h50). Tem-se:</p>
-<div id="7617366d" class="cell" data-execution_count="18">
+<div id="3a03043b" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformando Total Profit em inteiro:</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>vendas_europa[<span class="st">'Total Profit'</span>] <span class="op">=</span> vendas_europa[<span class="st">'Total Profit'</span>].astype(<span class="st">'int'</span>) </span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1947,7 +1947,7 @@ Name: Sales Channel, dtype: object</code></pre>
 </div>
 </div>
 <p>Outro exemplo seria:</p>
-<div id="079450e5" class="cell" data-execution_count="19">
+<div id="12c4b21d" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Marcando a versão:</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>vendas_europa[<span class="st">'Version'</span>] <span class="op">=</span> <span class="st">'001'</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
