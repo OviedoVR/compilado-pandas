@@ -17,7 +17,7 @@ O Pandas permite ler diversos formatos de dados, desde planilhas em Excel (`.xls
 
 ```python
 # arquivo de MS Excel:
-dados = pd.read_xlsx('ARQUIVO.xlsx', sheet_name='planilha')
+dados = pd.read_excel('ARQUIVO.xlsx', sheet_name='planilha')
 
 # arquivo csv (separado por vírgulas):
 dados = pd.read_csv('ARQUIVO.csv', delimiter=';')
