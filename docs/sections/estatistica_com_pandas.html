@@ -272,7 +272,7 @@ window.Quarto = {
 <li>Correlação entre variáveis.</li>
 </ol>
 <p>Primeiramente, vamos carregar o conjunto de dados <code>tips</code>, além das bibliotecas necessárias:</p>
-<div id="614243ec" class="cell" data-execution_count="1">
+<div id="eac6068f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -355,7 +355,7 @@ window.Quarto = {
 <section id="estatísticas-descritivas" class="level2">
 <h2 class="anchored" data-anchor-id="estatísticas-descritivas">1. Estatísticas descritivas</h2>
 <p>As estatísticas descritivas podem ser obtidas pelo método <code>.describe()</code></p>
-<div id="c341746a" class="cell" data-execution_count="2">
+<div id="bb8ef9b9" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos mostrar a tabela transposta (T) fins de visualização (linhas viram colunas):</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tips.describe().T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -472,7 +472,7 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p><strong>Qual foi a gorjeta mínima?</strong></p>
 </blockquote>
-<div id="5a4a0bce" class="cell" data-execution_count="3">
+<div id="e724034b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">'tip'</span>].<span class="bu">min</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>1.0</code></pre>
@@ -481,7 +481,7 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p><strong>Qual foi a maior conta (máximo <code>total_bill</code>)?</strong></p>
 </blockquote>
-<div id="faeb95f0" class="cell" data-execution_count="4">
+<div id="2173bc0a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">'total_bill'</span>].<span class="bu">max</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>50.81</code></pre>
@@ -491,7 +491,7 @@ window.Quarto = {
 <p><span class="math display">\[
 A = Max - Min
 \]</span></p>
-<div id="ba4d297b" class="cell" data-execution_count="5">
+<div id="7ca47002" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>amplitude_gorjetas <span class="op">=</span> tips[<span class="st">'tip'</span>].<span class="bu">max</span>() <span class="op">-</span> tips[<span class="st">'tip'</span>].<span class="bu">min</span>()</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>amplitude_gorjetas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -504,7 +504,7 @@ A = Max - Min
 <blockquote class="blockquote">
 <p><strong>Média</strong></p>
 </blockquote>
-<div id="e3c2872f" class="cell" data-execution_count="6">
+<div id="8a21eab5" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">'tip'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>2.99827868852459</code></pre>
@@ -513,7 +513,7 @@ A = Max - Min
 <blockquote class="blockquote">
 <p><strong>Mediana</strong></p>
 </blockquote>
-<div id="36ce87b9" class="cell" data-execution_count="7">
+<div id="8b44acf0" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">'total_bill'</span>].mode()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>0    13.42
@@ -523,7 +523,7 @@ Name: total_bill, dtype: float64</code></pre>
 <blockquote class="blockquote">
 <p><strong>Moda</strong></p>
 </blockquote>
-<div id="03d7fd50" class="cell" data-execution_count="8">
+<div id="05bd4ff0" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">'day'</span>].mode()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>0    Sat
@@ -532,7 +532,7 @@ Categories (4, object): ['Thur', 'Fri', 'Sat', 'Sun']</code></pre>
 </div>
 </div>
 <p>Conferindo:</p>
-<div id="6ae3d8e4" class="cell" data-execution_count="9">
+<div id="262bb210" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">'day'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>day
@@ -549,7 +549,7 @@ Name: count, dtype: int64</code></pre>
 <blockquote class="blockquote">
 <p><strong>Desvio Padrão</strong></p>
 </blockquote>
-<div id="3aadb93e" class="cell" data-execution_count="10">
+<div id="736b667a" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Amostra (padrão, ddof=1):</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips[<span class="st">'tip'</span>].std())</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -563,7 +563,7 @@ Name: count, dtype: int64</code></pre>
 <blockquote class="blockquote">
 <p><strong>Variância</strong></p>
 </blockquote>
-<div id="05eecb05" class="cell" data-execution_count="11">
+<div id="9b663148" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Amostra (padrão, ddof=1):</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips[<span class="st">'tip'</span>].var())</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -577,7 +577,7 @@ Name: count, dtype: int64</code></pre>
 <blockquote class="blockquote">
 <p><strong>Coeficiente de variação (CV)</strong></p>
 </blockquote>
-<div id="0b792043" class="cell" data-execution_count="12">
+<div id="4f96c8df" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Amostra:</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>cv_gorjeta <span class="op">=</span> tips[<span class="st">'tip'</span>].std(ddof<span class="op">=</span><span class="dv">1</span>) <span class="op">/</span> tips[<span class="st">'tip'</span>].mean() <span class="op">*</span><span class="dv">100</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>cv_gorjeta <span class="op">=</span> <span class="bu">round</span>(cv_gorjeta, <span class="dv">2</span>)</span>
@@ -592,7 +592,7 @@ Name: count, dtype: int64</code></pre>
 <blockquote class="blockquote">
 <p><strong>Quartis</strong></p>
 </blockquote>
-<div id="297c3b93" class="cell" data-execution_count="13">
+<div id="9349f809" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>Q1 <span class="op">=</span> tips[<span class="st">'tip'</span>].quantile(<span class="fl">0.25</span>)</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>Q2 <span class="op">=</span> tips[<span class="st">'tip'</span>].quantile(<span class="fl">0.5</span>)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>Q3 <span class="op">=</span> tips[<span class="st">'tip'</span>].quantile(<span class="fl">0.75</span>)</span>
@@ -617,7 +617,7 @@ Q3 (75%): 3.5625</code></pre>
 <blockquote class="blockquote">
 <p><strong>Percentis</strong></p>
 </blockquote>
-<div id="b9e3b0f7" class="cell" data-execution_count="14">
+<div id="df3edf71" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Percentil 90°:</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">'tip'</span>].quantile(<span class="fl">0.9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
@@ -635,7 +635,7 @@ Outliers \ Inferiores = Q_1 - 1.5 IQR
 Outliers \ Superiores = Q_3 + 1.5 IQR
 \]</span></p>
 <p>Assim, vamos encontrar outliers para a coluna <code>total_bill</code>.</p>
-<div id="8ca75114" class="cell" data-execution_count="15">
+<div id="aff07890" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>IQR <span class="op">=</span> tips[<span class="st">'total_bill'</span>].quantile(<span class="fl">0.75</span>) <span class="op">-</span> tips[<span class="st">'total_bill'</span>].quantile(<span class="fl">0.25</span>)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>outliers_inf <span class="op">=</span> tips[<span class="st">'total_bill'</span>].quantile(<span class="fl">0.25</span>) <span class="op">-</span> <span class="fl">1.5</span><span class="op">*</span>IQR</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>outliers_sup <span class="op">=</span> tips[<span class="st">'total_bill'</span>].quantile(<span class="fl">0.75</span>) <span class="op">+</span> <span class="fl">1.5</span><span class="op">*</span>IQR</span>
@@ -661,7 +661,7 @@ Outliers superiores: 40.29749999999999</code></pre>
 <blockquote class="blockquote">
 <p><strong>Paramétrica</strong></p>
 </blockquote>
-<div id="a5ca2514" class="cell" data-execution_count="16">
+<div id="8fbdb9e4" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Default: .corr(method='pearson')</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>correlacoes <span class="op">=</span> tips[[<span class="st">'tip'</span>, <span class="st">'total_bill'</span>]].corr()</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>correlacoes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

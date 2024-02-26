@@ -22,11 +22,8 @@ dados = pd.read_excel('ARQUIVO.xlsx', sheet_name='planilha')
 # arquivo csv (separado por vírgulas):
 dados = pd.read_csv('ARQUIVO.csv', delimiter=';')
 
-# arquivo de texto:
-dados = pd.read_txt('ARQUIVO.txt')
-
 # outros formatos (asc, txt, dat): 
-dados = pd.read_fwf('ARQUIVO.asc')
+dados = pd.read_fwf('ARQUIVO.txt', delimiter='; ')
 
 # tabela de página web (html):
 dados = pd.read_html('URL')[indice_tabela]
