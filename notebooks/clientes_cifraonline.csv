@@ -1,0 +1,1001 @@
+nome,idade,sexo,salario,cidade,status_emprego,nivel_educacional,score_credito
+João,62,M,R$ 6728,São Paulo,Desempregado,Mestrado,793
+Mariano,65,M,R$ 7000,Porto Alegre,Autônomo,Pós-graduação,626
+Luiz,71,M,R$ 6545,Rio de Janeiro,Autônomo,Graduação,438
+Paula,18,F,R$ 3896,Salvador,Empregado,Ensino Médio,831
+Carlo,21,M,R$ 12383,Salvador,Autônomo,Graduação,384
+Luiz,77,M,R$ 1823,Porto Alegre,Autônomo,Ensino Médio,737
+Felipe,21,M,R$ 1490,Porto Alegre,Autônomo,Ensino Médio,482
+Ana,57,F,R$ 12548,São Paulo,Empregado,Graduação,848
+Paula,27,F,R$ 8432,São Paulo,Empregado,Graduação,728
+Paulo,37,M,R$ 13351,Belo Horizonte,Desempregado,Mestrado,693
+Felipe,39,F,R$ 4978,Salvador,Autônomo,Graduação,656
+Ano,68,M,R$ 7661,Belo Horizonte,Desempregado,Doutorado,387
+Maria,54,F,R$ 8195,Salvador,Desempregado,Pós-graduação,463
+Felipe,41,M,R$ 9641,Belo Horizonte,Desempregado,Mestrado,392
+Carla,24,F,R$ 629,São Paulo,Autônomo,Ensino Médio,318
+Luiz,42,F,R$ 112,Rio de Janeiro,Autônomo,Doutorado,448
+Luiz,42,M,R$ 7312,Porto Alegre,Empregado,Graduação,336
+Maria,30,F,R$ 5963,Salvador,Empregado,Graduação,668
+Mario,76,M,R$ 42,São Paulo,Desempregado,Doutorado,825
+Felipe,19,F,R$ 11684,São Paulo,Desempregado,Pós-graduação,788
+Felipe,56,M,R$ 4437,São Paulo,Autônomo,Doutorado,577
+Ano,57,M,R$ ,Belo Horizonte,Empregado,Ensino Médio,615
+Pedra,41,F,R$ nan,Porto Alegre,Desempregado,Doutorado,539
+Mariano,64,M,R$ 121,São Paulo,Desempregado,Mestrado,489
+Ano,42,M,R$ 43,Belo Horizonte,Empregado,Doutorado,780
+João,35,M,R$ 120,São Paulo,Autônomo,Doutorado,588
+Joãa,55,F,R$ nan,Belo Horizonte,Desempregado,Ensino Médio,330
+Carlo,43,M,R$ 73,Rio de Janeiro,Autônomo,Ensino Médio,391
+Felipe,31,F,R$ nan,Belo Horizonte,Desempregado,Pós-graduação,745
+Paulo,26,M,R$ 125,Salvador,Autônomo,Ensino Médio,648
+Carlo,27,M,R$ 13593,Porto Alegre,Desempregado,Ensino Médio,622
+Felipe,38,M,R$ 14652,Belo Horizonte,Desempregado,Ensino Médio,642
+Joãa,69,F,R$ 5248,Porto Alegre,Desempregado,Doutorado,740
+Mario,34,M,R$ 2739,Belo Horizonte,Autônomo,Doutorado,577
+Pedro,69,M,R$ 73,Porto Alegre,Empregado,Ensino Médio,475
+Joãa,23,F,R$ 6669,Rio de Janeiro,Autônomo,Graduação,721
+Felipe,33,F,R$ 137,Salvador,Autônomo,Ensino Médio,388
+Pedra,65,F,R$ 8,Salvador,Autônomo,Ensino Médio,739
+Felipe,18,M,R$ 12552,Salvador,Desempregado,Pós-graduação,825
+Joãa,36,F,R$ 4,Belo Horizonte,Desempregado,Ensino Médio,728
+Mariano,53,M,R$ 6267,Salvador,Autônomo,Ensino Médio,642
+Mariana,42,F,R$ 2178,São Paulo,Autônomo,Pós-graduação,647
+Mariana,67,F,R$ 154,São Paulo,Desempregado,Ensino Médio,741
+Ana,69,F,R$ 12348,Salvador,Empregado,Ensino Médio,461
+Luiz,47,F,R$ 79,Salvador,Desempregado,Mestrado,641
+Ana,37,F,R$ 4469,Belo Horizonte,Desempregado,Pós-graduação,366
+João,37,M,R$ 12872,Salvador,Autônomo,Pós-graduação,338
+Ano,32,M,R$ nan,Porto Alegre,Autônomo,Mestrado,708
+Mariana,57,F,R$ 977,Rio de Janeiro,Desempregado,Pós-graduação,509
+Mariano,50,M,R$ 6239,Belo Horizonte,Autônomo,Graduação,757
+Mariana,19,F,R$ 27,Belo Horizonte,Desempregado,Doutorado,837
+Carlo,27,M,R$ 11557,São Paulo,Empregado,Doutorado,337
+Fernando,75,M,R$ 7616,Belo Horizonte,Autônomo,Pós-graduação,667
+Joãa,50,F,R$ 5165,Belo Horizonte,Empregado,Doutorado,614
+Maria,49,F,R$ 73,Rio de Janeiro,Desempregado,Ensino Médio,368
+Luiz,28,M,R$ 9687,Porto Alegre,Empregado,Ensino Médio,580
+Paulo,70,M,R$ 115,Rio de Janeiro,Autônomo,Graduação,531
+Pedro,41,M,R$ 12417,Porto Alegre,Empregado,Mestrado,454
+Mariana,53,F,R$ 7146,São Paulo,Autônomo,Doutorado,550
+Joãa,29,F,R$ 836,Rio de Janeiro,Empregado,Graduação,544
+Mario,68,M,R$ 281,Rio de Janeiro,Autônomo,Doutorado,483
+Mario,73,M,R$ 12483,Rio de Janeiro,Desempregado,Ensino Médio,695
+João,46,M,R$ 5695,Salvador,Empregado,Graduação,498
+Mario,52,M,R$ 7715,Salvador,Empregado,Graduação,648
+Carlo,18,M,R$ nan,Rio de Janeiro,Empregado,Mestrado,558
+João,18,M,R$ 13385,Belo Horizonte,Autônomo,Ensino Médio,467
+Mariana,54,F,R$ nan,São Paulo,Empregado,Graduação,550
+Maria,71,F,R$ 12587,Belo Horizonte,Empregado,Ensino Médio,715
+Joãa,23,F,R$ 144,São Paulo,Autônomo,Ensino Médio,440
+Carla,56,F,R$ 11599,São Paulo,Autônomo,Pós-graduação,492
+Mariana,58,F,R$ 7612,Salvador,Empregado,Pós-graduação,683
+Felipe,70,F,R$ 579,São Paulo,Empregado,Mestrado,310
+Mariana,35,F,R$ 3682,Rio de Janeiro,Autônomo,Ensino Médio,619
+Joãa,33,F,R$ nan,Rio de Janeiro,Empregado,Pós-graduação,510
+Fernando,22,M,R$ 12291,São Paulo,Empregado,Doutorado,416
+Mario,59,M,R$ 14849,Salvador,Desempregado,Ensino Médio,475
+Paulo,60,M,R$ nan,Belo Horizonte,Desempregado,Graduação,438
+Carlo,76,M,R$ 4316,Salvador,Empregado,Ensino Médio,447
+Carlo,49,M,R$ 8767,Salvador,Desempregado,Graduação,377
+João,74,M,R$ nan,Belo Horizonte,Desempregado,Mestrado,485
+João,19,M,R$ 7,Rio de Janeiro,Autônomo,Pós-graduação,848
+Maria,19,F,R$ 138,Porto Alegre,Empregado,Doutorado,815
+Carlo,57,M,R$ 8957,Salvador,Empregado,Pós-graduação,719
+Mariana,59,F,R$ 5792,Rio de Janeiro,Desempregado,Graduação,384
+Luiz,75,M,R$ 125,São Paulo,Desempregado,Mestrado,308
+Felipe,53,F,R$ 4136,Salvador,Empregado,Graduação,765
+Fernando,56,M,R$ 8445,Salvador,Autônomo,Mestrado,680
+Carla,73,F,R$ 8527,São Paulo,Empregado,Mestrado,521
+Carla,29,F,R$ 8363,Porto Alegre,Autônomo,Doutorado,741
+Felipe,64,M,R$ 2165,Porto Alegre,Empregado,Doutorado,672
+Fernanda,36,F,R$ 2434,Belo Horizonte,Empregado,Pós-graduação,417
+Maria,45,F,R$ 3968,São Paulo,Autônomo,Doutorado,711
+Pedro,18,M,R$ 3228,Rio de Janeiro,Autônomo,Graduação,603
+Felipe,32,F,R$ 112,Rio de Janeiro,Autônomo,Graduação,750
+Carlo,53,M,R$ 74,Porto Alegre,Autônomo,Mestrado,311
+Mariano,71,M,R$ 43,Belo Horizonte,Autônomo,Pós-graduação,382
+Paulo,30,M,R$ 3198,Belo Horizonte,Autônomo,Pós-graduação,516
+Pedra,75,F,R$ 14174,Rio de Janeiro,Autônomo,Pós-graduação,836
+Luiz,60,F,R$ 135,Belo Horizonte,Desempregado,Mestrado,428
+Mariano,38,M,R$ 9579,Porto Alegre,Empregado,Doutorado,744
+João,29,M,R$ 56,Porto Alegre,Autônomo,Ensino Médio,500
+Ana,22,F,R$ 6966,Belo Horizonte,Desempregado,Graduação,387
+Ano,24,M,R$ 7517,Porto Alegre,Empregado,Mestrado,813
+Mariano,22,M,R$ 5588,Porto Alegre,Empregado,Graduação,551
+Ana,65,F,R$ nan,Belo Horizonte,Empregado,Doutorado,649
+Fernando,70,M,R$ 7391,Porto Alegre,Desempregado,Doutorado,347
+Maria,21,F,R$ 9197,São Paulo,Desempregado,Mestrado,530
+Paula,30,F,R$ 11166,Porto Alegre,Empregado,Mestrado,536
+Ano,54,M,R$ 9338,Salvador,Desempregado,Ensino Médio,734
+Ano,70,M,R$ 3227,Rio de Janeiro,Desempregado,Pós-graduação,511
+Ana,58,F,R$ nan,São Paulo,Autônomo,Ensino Médio,425
+Fernanda,32,F,R$ 9387,Belo Horizonte,Desempregado,Mestrado,807
+Maria,33,F,R$ 4582,Rio de Janeiro,Empregado,Ensino Médio,846
+Mario,38,M,R$ 9278,Salvador,Empregado,Graduação,781
+João,53,M,R$ 3492,Rio de Janeiro,Desempregado,Doutorado,775
+Mariana,76,F,R$ nan,Porto Alegre,Desempregado,Doutorado,661
+Fernando,41,M,R$ 3154,Rio de Janeiro,Empregado,Ensino Médio,808
+Fernando,33,M,R$ nan,Belo Horizonte,Empregado,Pós-graduação,511
+Felipe,31,F,R$ 11853,Porto Alegre,Desempregado,Mestrado,432
+Felipe,71,F,R$ 3664,Porto Alegre,Desempregado,Doutorado,735
+Mario,39,M,R$ 5423,Salvador,Autônomo,Ensino Médio,543
+Felipe,66,M,R$ 2184,Rio de Janeiro,Empregado,Mestrado,371
+Luiz,67,M,R$ 9278,Salvador,Desempregado,Doutorado,740
+Ano,23,M,R$ 13974,Porto Alegre,Desempregado,Ensino Médio,523
+Fernanda,59,F,R$ 74,Porto Alegre,Desempregado,Mestrado,361
+Luiz,53,F,R$ 124,Salvador,Empregado,Pós-graduação,667
+Felipe,18,F,R$ 9726,Porto Alegre,Autônomo,Ensino Médio,453
+Fernanda,49,F,R$ 79,Rio de Janeiro,Desempregado,Ensino Médio,681
+Ano,23,M,R$ 4765,São Paulo,Autônomo,Ensino Médio,522
+Fernando,48,M,R$ nan,Salvador,Empregado,Doutorado,544
+Fernanda,18,F,R$ 8462,Belo Horizonte,Autônomo,Pós-graduação,349
+João,67,M,R$ 2293,São Paulo,Autônomo,Pós-graduação,765
+Paulo,68,M,R$ 51,Belo Horizonte,Autônomo,Ensino Médio,484
+Maria,54,F,R$ 6983,Porto Alegre,Empregado,Ensino Médio,457
+João,52,M,R$ 092,São Paulo,Empregado,Pós-graduação,503
+Felipe,66,M,R$ 12555,Porto Alegre,Desempregado,Mestrado,489
+Mario,47,M,R$ 14627,Porto Alegre,Desempregado,Ensino Médio,718
+Carla,21,F,R$ nan,Salvador,Desempregado,Pós-graduação,548
+Ano,52,M,R$ 11576,Belo Horizonte,Autônomo,Doutorado,810
+Fernanda,60,F,R$ 9769,Rio de Janeiro,Autônomo,Pós-graduação,456
+Fernanda,31,F,R$ 14271,Salvador,Autônomo,Mestrado,834
+João,66,M,R$ 5869,Salvador,Empregado,Ensino Médio,389
+Ana,57,F,R$ 11268,Belo Horizonte,Desempregado,Pós-graduação,317
+Carla,39,F,R$ 128,Salvador,Empregado,Graduação,333
+Carlo,27,M,R$ nan,Belo Horizonte,Autônomo,Ensino Médio,768
+Mario,18,M,R$ 7393,Salvador,Desempregado,Ensino Médio,679
+Ano,28,M,R$ 832,São Paulo,Empregado,Graduação,307
+Carlo,68,M,R$ 13943,Belo Horizonte,Desempregado,Ensino Médio,492
+Mario,61,M,R$ nan,Rio de Janeiro,Desempregado,Doutorado,568
+Joãa,76,F,R$ 36,Salvador,Desempregado,Doutorado,541
+Ana,41,F,R$ 385,São Paulo,Autônomo,Mestrado,627
+Luiz,77,F,R$ nan,Rio de Janeiro,Autônomo,Mestrado,302
+Carlo,20,M,R$ 3146,Salvador,Desempregado,Pós-graduação,490
+Fernanda,75,F,R$ 4737,Salvador,Autônomo,Pós-graduação,606
+Fernanda,52,F,R$ 14519,Porto Alegre,Empregado,Doutorado,824
+Fernando,53,M,R$ 76,Salvador,Empregado,Ensino Médio,787
+Mariana,48,F,R$ 3345,Rio de Janeiro,Empregado,Graduação,713
+Carlo,77,M,R$ 3365,Rio de Janeiro,Autônomo,Doutorado,486
+Ano,21,M,R$ 4482,São Paulo,Desempregado,Mestrado,626
+Fernando,36,M,R$ nan,Porto Alegre,Empregado,Mestrado,366
+Mario,64,M,R$ 12854,São Paulo,Empregado,Mestrado,605
+Fernanda,53,F,R$ 75,São Paulo,Autônomo,Graduação,761
+Pedra,38,F,R$ 12229,Salvador,Autônomo,Mestrado,548
+Luiz,35,F,R$ 676,São Paulo,Autônomo,Mestrado,318
+Joãa,68,F,R$ 4199,Belo Horizonte,Desempregado,Pós-graduação,741
+Maria,45,F,R$ 41,Porto Alegre,Desempregado,Ensino Médio,646
+Fernando,32,M,R$ 41,Salvador,Autônomo,Ensino Médio,415
+Carla,59,F,R$ nan,Belo Horizonte,Empregado,Graduação,714
+Pedro,76,M,R$ 89,Rio de Janeiro,Autônomo,Mestrado,705
+Maria,19,F,R$ 942,Porto Alegre,Empregado,Pós-graduação,591
+Felipe,54,F,R$ 5185,Rio de Janeiro,Autônomo,Ensino Médio,482
+Ana,28,F,R$ 347,Rio de Janeiro,Desempregado,Graduação,474
+Ana,40,F,R$ nan,Salvador,Empregado,Pós-graduação,468
+Paula,61,F,R$ 3537,Belo Horizonte,Desempregado,Mestrado,624
+Luiz,58,M,R$ 4313,Porto Alegre,Empregado,Graduação,713
+Carlo,29,M,R$ 143,Salvador,Empregado,Pós-graduação,351
+Mariana,20,F,R$ 3873,São Paulo,Autônomo,Ensino Médio,354
+Pedra,69,F,R$ 14683,Porto Alegre,Empregado,Doutorado,356
+Paulo,34,M,R$ 7184,Salvador,Autônomo,Ensino Médio,401
+Pedro,50,M,R$ 4295,Porto Alegre,Desempregado,Doutorado,787
+Mariana,72,F,R$ 7955,Porto Alegre,Autônomo,Graduação,366
+Fernanda,18,F,R$ 5577,Salvador,Desempregado,Pós-graduação,845
+Pedra,56,F,R$ 246,Rio de Janeiro,Desempregado,Pós-graduação,770
+Joãa,37,F,R$ 3316,Rio de Janeiro,Autônomo,Pós-graduação,306
+Fernando,64,M,R$ 133,Salvador,Empregado,Mestrado,332
+Luiz,60,M,R$ 211,Porto Alegre,Desempregado,Ensino Médio,707
+Paulo,69,M,R$ 07,Rio de Janeiro,Empregado,Doutorado,465
+Mario,74,M,R$ 5781,Belo Horizonte,Desempregado,Mestrado,621
+Mariano,78,M,R$ 68,São Paulo,Desempregado,Graduação,815
+Ano,58,M,R$ 8781,São Paulo,Desempregado,Graduação,489
+Mariana,31,F,R$ 7289,Belo Horizonte,Autônomo,Mestrado,495
+Joãa,48,F,R$ 28,Belo Horizonte,Autônomo,Doutorado,519
+Mario,42,M,R$ 44,Belo Horizonte,Desempregado,Graduação,349
+Carlo,79,M,R$ 4233,Porto Alegre,Autônomo,Ensino Médio,813
+Paulo,20,M,R$ 12336,Rio de Janeiro,Autônomo,Graduação,402
+Luiz,21,M,R$ 4326,Belo Horizonte,Desempregado,Doutorado,397
+Maria,48,F,R$ 3416,Salvador,Desempregado,Ensino Médio,663
+Felipe,52,F,R$ 6926,São Paulo,Autônomo,Mestrado,395
+Pedro,61,M,R$ 176,São Paulo,Autônomo,Doutorado,488
+Luiz,31,M,R$ 3193,Belo Horizonte,Desempregado,Ensino Médio,665
+Maria,66,F,R$ 158,Rio de Janeiro,Autônomo,Ensino Médio,505
+Felipe,58,M,R$ 294,Belo Horizonte,Desempregado,Ensino Médio,380
+Joãa,26,F,R$ 118,Salvador,Empregado,Doutorado,388
+Ana,37,F,R$ 4156,Belo Horizonte,Desempregado,Pós-graduação,601
+Pedro,49,M,R$ 27,Porto Alegre,Desempregado,Graduação,690
+Pedro,26,M,R$ 26,Belo Horizonte,Desempregado,Pós-graduação,574
+Maria,44,F,R$ 91,Porto Alegre,Empregado,Graduação,612
+Luiz,20,F,R$ 3841,Rio de Janeiro,Desempregado,Doutorado,820
+Paulo,74,M,R$ 14871,Rio de Janeiro,Desempregado,Graduação,446
+Fernanda,70,F,R$ 11639,Salvador,Desempregado,Doutorado,789
+Paulo,21,M,R$ 131,Rio de Janeiro,Empregado,Ensino Médio,821
+Mariano,62,M,R$ 97,Porto Alegre,Empregado,Mestrado,796
+Mariana,79,F,R$ nan,Rio de Janeiro,Autônomo,Pós-graduação,653
+Ana,32,F,R$ 14428,Porto Alegre,Empregado,Pós-graduação,555
+Felipe,50,M,R$ 4792,Salvador,Desempregado,Doutorado,733
+João,22,M,R$ 11441,Porto Alegre,Desempregado,Graduação,653
+Luiz,21,F,R$ 191,Belo Horizonte,Autônomo,Graduação,699
+Luiz,63,M,R$ 6814,Rio de Janeiro,Autônomo,Mestrado,538
+João,29,M,R$ 13791,São Paulo,Desempregado,Ensino Médio,467
+Luiz,78,M,R$ 112,Belo Horizonte,Autônomo,Graduação,626
+Pedra,40,F,R$ 3716,Porto Alegre,Empregado,Graduação,701
+Pedra,31,F,R$ 5911,Belo Horizonte,Desempregado,Ensino Médio,411
+Ana,75,F,R$ nan,Belo Horizonte,Desempregado,Mestrado,749
+Fernando,63,M,R$ 12568,Belo Horizonte,Empregado,Graduação,576
+Felipe,29,F,R$ 5333,Belo Horizonte,Desempregado,Doutorado,372
+Mariana,74,F,R$ 743,Porto Alegre,Desempregado,Ensino Médio,672
+Pedro,34,M,R$ 527,Rio de Janeiro,Empregado,Graduação,428
+Paulo,42,M,R$ 14111,Rio de Janeiro,Autônomo,Mestrado,332
+Maria,47,F,R$ 173,Belo Horizonte,Desempregado,Pós-graduação,770
+Carla,39,F,R$ 2662,São Paulo,Empregado,Doutorado,680
+Luiz,64,F,R$ 11433,Rio de Janeiro,Empregado,Doutorado,822
+Felipe,43,F,R$ 11,Porto Alegre,Autônomo,Doutorado,321
+Fernando,34,M,R$ 9998,Porto Alegre,Autônomo,Doutorado,623
+Felipe,78,F,R$ 989,Rio de Janeiro,Desempregado,Pós-graduação,497
+Ana,75,F,R$ 11993,Porto Alegre,Empregado,Pós-graduação,583
+Mariano,72,M,R$ 13659,Porto Alegre,Desempregado,Pós-graduação,518
+Carlo,71,M,R$ 13133,Salvador,Empregado,Pós-graduação,696
+Ana,79,F,R$ 8243,Porto Alegre,Empregado,Mestrado,620
+Mariana,37,F,R$ 13111,Rio de Janeiro,Desempregado,Graduação,303
+Ana,51,F,R$ nan,Rio de Janeiro,Desempregado,Pós-graduação,727
+Maria,58,F,R$ 9752,São Paulo,Empregado,Pós-graduação,320
+Fernanda,50,F,R$ 2255,Belo Horizonte,Empregado,Mestrado,836
+Felipe,54,M,R$ 035,Rio de Janeiro,Desempregado,Ensino Médio,588
+Pedro,77,M,R$ nan,Porto Alegre,Autônomo,Mestrado,629
+Ana,77,F,R$ 8385,São Paulo,Empregado,Ensino Médio,626
+Carlo,75,M,R$ 11527,Salvador,Autônomo,Doutorado,367
+Paula,24,F,R$ 11738,São Paulo,Desempregado,Mestrado,712
+Pedro,39,M,R$ 70,Porto Alegre,Autônomo,Doutorado,815
+Ana,49,F,R$ 7471,Rio de Janeiro,Autônomo,Ensino Médio,763
+Ana,31,F,R$ 3677,São Paulo,Empregado,Mestrado,524
+Fernando,25,M,R$ ,Porto Alegre,Empregado,Ensino Médio,722
+Carla,74,F,R$ 6151,Salvador,Autônomo,Ensino Médio,301
+Paula,42,F,R$ 8149,São Paulo,Empregado,Doutorado,445
+Joãa,33,F,R$ 599,Porto Alegre,Autônomo,Ensino Médio,490
+Maria,59,F,R$ 8186,Belo Horizonte,Autônomo,Graduação,731
+Paula,36,F,R$ 7735,Rio de Janeiro,Desempregado,Pós-graduação,564
+Felipe,58,F,R$ 3381,Porto Alegre,Autônomo,Mestrado,629
+Mariano,72,M,R$ 113,Belo Horizonte,Desempregado,Doutorado,736
+Ano,33,M,R$ 39,Rio de Janeiro,Empregado,Pós-graduação,324
+Mariana,29,F,R$ 96,Rio de Janeiro,Autônomo,Doutorado,371
+Maria,56,F,R$ 6248,Rio de Janeiro,Desempregado,Graduação,369
+João,65,M,R$ 59,Belo Horizonte,Desempregado,Pós-graduação,749
+Fernando,47,M,R$ 81,São Paulo,Desempregado,Mestrado,501
+Ano,75,M,R$ 5218,Belo Horizonte,Autônomo,Ensino Médio,646
+João,19,M,R$ 14351,Belo Horizonte,Empregado,Ensino Médio,468
+Luiz,49,F,R$ 7465,Porto Alegre,Autônomo,Pós-graduação,668
+Fernanda,72,F,R$ 3565,Porto Alegre,Empregado,Doutorado,658
+Ano,62,M,R$ 9461,Salvador,Desempregado,Mestrado,705
+Ano,42,M,R$ 4993,Belo Horizonte,Autônomo,Ensino Médio,632
+Mariano,79,M,R$ 7288,Belo Horizonte,Desempregado,Pós-graduação,370
+Mario,42,M,R$ 6593,Salvador,Empregado,Pós-graduação,716
+Mariana,21,F,R$ 122,Belo Horizonte,Desempregado,Graduação,726
+Mario,36,M,R$ 9391,Belo Horizonte,Desempregado,Mestrado,642
+Mariano,65,M,R$ 6199,Salvador,Empregado,Mestrado,320
+João,21,M,R$ 5339,Salvador,Empregado,Doutorado,409
+Fernanda,60,F,R$ 4,Salvador,Desempregado,Doutorado,487
+Mariana,30,F,R$ 181,Rio de Janeiro,Empregado,Pós-graduação,431
+Luiz,56,F,R$ 9615,Porto Alegre,Autônomo,Graduação,362
+Felipe,53,M,R$ 8286,Salvador,Autônomo,Pós-graduação,692
+Carla,40,F,R$ 114,Rio de Janeiro,Empregado,Doutorado,584
+Ana,79,F,R$ 8337,Porto Alegre,Autônomo,Ensino Médio,543
+Luiz,23,M,R$ 7241,Salvador,Desempregado,Graduação,313
+Luiz,41,F,R$ nan,Belo Horizonte,Empregado,Mestrado,771
+Luiz,61,M,R$ 2833,Belo Horizonte,Autônomo,Ensino Médio,682
+Carla,50,F,R$ 81,Porto Alegre,Empregado,Ensino Médio,811
+Paula,29,F,R$ 73,São Paulo,Autônomo,Mestrado,696
+Felipe,58,M,R$ 14236,Porto Alegre,Empregado,Pós-graduação,409
+Carlo,38,M,R$ 8216,Rio de Janeiro,Desempregado,Graduação,579
+Fernanda,28,F,R$ 4968,Belo Horizonte,Desempregado,Ensino Médio,531
+Ana,72,F,R$ 14435,Belo Horizonte,Empregado,Pós-graduação,487
+Pedro,61,M,R$ 8538,Salvador,Autônomo,Mestrado,549
+Maria,55,F,R$ 8663,Rio de Janeiro,Autônomo,Pós-graduação,418
+João,79,M,R$ 2948,São Paulo,Empregado,Ensino Médio,501
+Paulo,46,M,R$ 44,Rio de Janeiro,Autônomo,Graduação,531
+Mario,65,M,R$ nan,Rio de Janeiro,Autônomo,Graduação,311
+Luiz,58,F,R$ 7347,Rio de Janeiro,Empregado,Mestrado,309
+Luiz,20,F,R$ 14323,Rio de Janeiro,Autônomo,Pós-graduação,518
+Joãa,45,F,R$ nan,São Paulo,Desempregado,Doutorado,695
+Paula,37,F,R$ 3175,Rio de Janeiro,Autônomo,Graduação,614
+Pedra,43,F,R$ 121,São Paulo,Empregado,Doutorado,375
+Carlo,41,M,R$ 7749,Porto Alegre,Empregado,Pós-graduação,429
+Mariana,71,F,R$ 35,Rio de Janeiro,Empregado,Pós-graduação,421
+Luiz,69,M,R$ 66,Salvador,Desempregado,Doutorado,586
+Ano,64,M,R$ 7549,São Paulo,Autônomo,Mestrado,717
+Maria,38,F,R$ 14794,São Paulo,Empregado,Doutorado,536
+João,71,M,R$ 7551,Rio de Janeiro,Empregado,Ensino Médio,387
+Fernanda,47,F,R$ 123,Salvador,Empregado,Doutorado,620
+Fernando,21,M,R$ nan,Salvador,Autônomo,Doutorado,768
+Pedro,53,M,R$ 7779,Rio de Janeiro,Autônomo,Mestrado,465
+Mariano,57,M,R$ 3258,Salvador,Autônomo,Ensino Médio,598
+Paula,27,F,R$ 31,São Paulo,Autônomo,Pós-graduação,604
+Joãa,27,F,R$ 42,Rio de Janeiro,Autônomo,Ensino Médio,405
+Maria,59,F,R$ nan,Rio de Janeiro,Autônomo,Doutorado,320
+Felipe,41,F,R$ 2594,Rio de Janeiro,Empregado,Pós-graduação,691
+Paulo,21,M,R$ 3486,Porto Alegre,Desempregado,Mestrado,420
+Felipe,64,F,R$ 21,Rio de Janeiro,Empregado,Pós-graduação,729
+Luiz,44,F,R$ nan,Belo Horizonte,Desempregado,Mestrado,842
+Paulo,68,M,R$ 62,Belo Horizonte,Empregado,Doutorado,753
+Fernando,62,M,R$ 8834,São Paulo,Empregado,Ensino Médio,449
+Mariana,21,F,R$ 12274,Porto Alegre,Desempregado,Ensino Médio,497
+Felipe,49,M,R$ 2986,Porto Alegre,Empregado,Ensino Médio,316
+Felipe,27,F,R$ 715,Salvador,Desempregado,Ensino Médio,682
+Mario,28,M,R$ 4668,Rio de Janeiro,Desempregado,Ensino Médio,835
+Fernanda,45,F,R$ 5211,Belo Horizonte,Desempregado,Graduação,468
+Fernando,63,M,R$ 120,Porto Alegre,Empregado,Doutorado,721
+Maria,25,F,R$ 8564,Belo Horizonte,Autônomo,Ensino Médio,667
+Luiz,57,M,R$ 5966,Belo Horizonte,Empregado,Ensino Médio,727
+Joãa,79,F,R$ 5249,Rio de Janeiro,Empregado,Mestrado,437
+Fernanda,39,F,R$ 44,Belo Horizonte,Desempregado,Doutorado,736
+Mariana,51,F,R$ 97,São Paulo,Desempregado,Mestrado,353
+Pedra,62,F,R$ 7343,São Paulo,Autônomo,Ensino Médio,688
+Carla,52,F,R$ nan,Porto Alegre,Desempregado,Doutorado,797
+Paula,52,F,R$ 7936,Porto Alegre,Autônomo,Doutorado,335
+Pedro,42,M,R$ 6682,Salvador,Empregado,Doutorado,832
+Pedra,51,F,R$ 133,Belo Horizonte,Desempregado,Pós-graduação,562
+Felipe,23,M,R$ 7666,Porto Alegre,Empregado,Graduação,517
+Mariana,58,F,R$ 5532,Rio de Janeiro,Autônomo,Graduação,538
+João,54,M,R$ 41,Porto Alegre,Autônomo,Ensino Médio,697
+Pedra,18,F,R$ 9463,São Paulo,Autônomo,Graduação,445
+Ano,29,M,R$ 128,Belo Horizonte,Empregado,Doutorado,411
+Maria,52,F,R$ 11738,São Paulo,Autônomo,Pós-graduação,642
+Carlo,23,M,R$ 962,Porto Alegre,Autônomo,Graduação,450
+Carla,71,F,R$ 11593,Porto Alegre,Empregado,Graduação,447
+Pedro,34,M,R$ 73,São Paulo,Empregado,Pós-graduação,585
+Mario,26,M,R$ 75,Salvador,Autônomo,Mestrado,624
+Felipe,79,M,R$ 3966,Salvador,Desempregado,Ensino Médio,768
+Carla,19,F,R$ 5123,Porto Alegre,Autônomo,Doutorado,665
+Pedro,35,M,R$ 8644,Salvador,Desempregado,Pós-graduação,763
+Pedra,66,F,R$ 141,São Paulo,Empregado,Mestrado,352
+Maria,53,F,R$ ,Belo Horizonte,Empregado,Ensino Médio,620
+Joãa,74,F,R$ 5715,Porto Alegre,Empregado,Mestrado,829
+Fernanda,45,F,R$ 43,Rio de Janeiro,Empregado,Ensino Médio,723
+Mariano,58,M,R$ 9949,Salvador,Empregado,Graduação,574
+Paula,70,F,R$ nan,Salvador,Empregado,Pós-graduação,689
+Ano,54,M,R$ 6356,Rio de Janeiro,Empregado,Ensino Médio,614
+Maria,66,F,R$ 117,Rio de Janeiro,Desempregado,Pós-graduação,812
+Felipe,43,M,R$ 6689,São Paulo,Autônomo,Pós-graduação,847
+Felipe,21,F,R$ 5216,São Paulo,Autônomo,Mestrado,581
+Carla,57,F,R$ nan,Salvador,Empregado,Doutorado,640
+João,78,M,R$ 856,Belo Horizonte,Empregado,Mestrado,749
+Maria,53,F,R$ 11483,São Paulo,Empregado,Mestrado,560
+Fernanda,68,F,R$ 342,São Paulo,Autônomo,Doutorado,521
+Luiz,48,F,R$ 5644,Porto Alegre,Desempregado,Doutorado,745
+Maria,47,F,R$ 11435,Porto Alegre,Desempregado,Mestrado,572
+Maria,67,F,R$ 6738,São Paulo,Desempregado,Pós-graduação,494
+Luiz,51,F,R$ ,Belo Horizonte,Autônomo,Graduação,662
+Joãa,36,F,R$ 7192,Salvador,Desempregado,Doutorado,324
+Ana,35,F,R$ 8438,Rio de Janeiro,Empregado,Graduação,705
+Fernando,47,M,R$ 3588,São Paulo,Empregado,Pós-graduação,820
+Paula,38,F,R$ 4392,Belo Horizonte,Autônomo,Doutorado,589
+Mariano,79,M,R$ 13157,Belo Horizonte,Desempregado,Ensino Médio,369
+Ana,20,F,R$ 4463,Belo Horizonte,Autônomo,Ensino Médio,556
+Luiz,23,M,R$ 947,São Paulo,Autônomo,Mestrado,671
+Mario,55,M,R$ 5734,São Paulo,Desempregado,Graduação,562
+Ano,30,M,R$ 130,Belo Horizonte,Desempregado,Ensino Médio,698
+Felipe,62,F,R$ 11514,Belo Horizonte,Empregado,Mestrado,465
+Maria,71,F,R$ 8331,São Paulo,Desempregado,Mestrado,648
+Mario,79,M,R$ 12975,Salvador,Desempregado,Mestrado,764
+Paula,20,F,R$ 23,São Paulo,Empregado,Pós-graduação,609
+Mariana,65,F,R$ 89,Porto Alegre,Empregado,Graduação,329
+Fernando,45,M,R$ 12834,Belo Horizonte,Empregado,Doutorado,422
+Felipe,39,F,R$ 155,Salvador,Empregado,Mestrado,431
+Ano,57,M,R$ 7913,Rio de Janeiro,Desempregado,Doutorado,374
+Felipe,57,M,R$ 7945,São Paulo,Autônomo,Ensino Médio,597
+Luiz,29,F,R$ 9365,Belo Horizonte,Autônomo,Pós-graduação,723
+Felipe,40,M,R$ 8489,São Paulo,Autônomo,Doutorado,396
+Pedra,48,F,R$ 21,Rio de Janeiro,Empregado,Mestrado,716
+Joãa,35,F,R$ 12163,São Paulo,Desempregado,Pós-graduação,456
+Fernanda,24,F,R$ 3339,Salvador,Autônomo,Mestrado,570
+Carla,25,F,R$ 3964,Rio de Janeiro,Desempregado,Pós-graduação,779
+Paulo,36,M,R$ nan,Porto Alegre,Desempregado,Doutorado,657
+Mariana,46,F,R$ nan,Porto Alegre,Empregado,Doutorado,527
+Maria,61,F,R$ 4677,Belo Horizonte,Empregado,Ensino Médio,637
+Mariana,37,F,R$ 6729,Porto Alegre,Desempregado,Graduação,617
+Mariano,67,M,R$ 8,São Paulo,Desempregado,Mestrado,590
+Mario,59,M,R$ 114,Salvador,Desempregado,Mestrado,639
+Luiz,47,F,R$ nan,Porto Alegre,Desempregado,Ensino Médio,798
+Luiz,64,F,R$ 5399,Belo Horizonte,Desempregado,Pós-graduação,752
+Felipe,39,F,R$ 14384,São Paulo,Desempregado,Pós-graduação,431
+Carla,27,F,R$ nan,Belo Horizonte,Empregado,Doutorado,413
+Ana,43,F,R$ 2513,Belo Horizonte,Desempregado,Doutorado,334
+Ano,68,M,R$ 5574,Salvador,Desempregado,Mestrado,511
+Pedra,50,F,R$ 9548,Salvador,Autônomo,Graduação,789
+Luiz,45,M,R$ 4413,Belo Horizonte,Autônomo,Mestrado,762
+Felipe,27,M,R$ 13382,Belo Horizonte,Autônomo,Pós-graduação,765
+Ana,46,F,R$ 9339,Porto Alegre,Empregado,Graduação,406
+Mario,61,M,R$ 4522,Porto Alegre,Desempregado,Graduação,765
+Mariana,35,F,R$ nan,Rio de Janeiro,Empregado,Ensino Médio,524
+João,59,M,R$ 4,Salvador,Desempregado,Doutorado,477
+Ano,76,M,R$ 3226,Porto Alegre,Empregado,Graduação,823
+Luiz,18,F,R$ 8229,Belo Horizonte,Empregado,Mestrado,622
+Carlo,40,M,R$ 13943,Porto Alegre,Empregado,Pós-graduação,496
+Mariana,34,F,R$ 26,Rio de Janeiro,Empregado,Doutorado,597
+Mariana,60,F,R$ 9659,Porto Alegre,Autônomo,Mestrado,487
+Fernanda,54,F,R$ 6352,Belo Horizonte,Empregado,Pós-graduação,616
+Mariana,48,F,R$ 119,Porto Alegre,Empregado,Mestrado,637
+Ana,42,F,R$ nan,Porto Alegre,Desempregado,Mestrado,505
+Ana,70,F,R$ 13276,Salvador,Desempregado,Doutorado,815
+Carlo,21,M,R$ 7339,Salvador,Autônomo,Pós-graduação,806
+Fernando,69,M,R$ 46,Rio de Janeiro,Empregado,Mestrado,607
+Fernanda,26,F,R$ 623,Rio de Janeiro,Desempregado,Graduação,638
+Fernando,74,M,R$ 982,Porto Alegre,Empregado,Doutorado,408
+Mario,45,M,R$ nan,Salvador,Empregado,Ensino Médio,566
+Carla,47,F,R$ 122,Salvador,Empregado,Graduação,825
+Paulo,77,M,R$ 174,Porto Alegre,Desempregado,Pós-graduação,303
+Ana,64,F,R$ 5396,Salvador,Desempregado,Graduação,440
+Joãa,41,F,R$ nan,São Paulo,Empregado,Mestrado,308
+Pedro,50,M,R$ 28,Belo Horizonte,Empregado,Ensino Médio,715
+Carla,37,F,R$ 5876,São Paulo,Empregado,Doutorado,599
+Luiz,26,F,R$ 14115,São Paulo,Desempregado,Ensino Médio,569
+Felipe,25,F,R$ 12412,São Paulo,Empregado,Graduação,627
+Joãa,41,F,R$ 913,Salvador,Autônomo,Ensino Médio,601
+Mario,31,M,R$ 124,Porto Alegre,Empregado,Pós-graduação,840
+Paula,76,F,R$ 3,Rio de Janeiro,Autônomo,Mestrado,638
+João,35,M,R$ 454,Belo Horizonte,Desempregado,Mestrado,617
+Maria,74,F,R$ nan,Belo Horizonte,Empregado,Pós-graduação,710
+Paulo,70,M,R$ 98,São Paulo,Desempregado,Mestrado,606
+Paulo,73,M,R$ 6173,Rio de Janeiro,Autônomo,Doutorado,827
+Mariana,18,F,R$ 4441,Porto Alegre,Desempregado,Mestrado,409
+Carlo,29,M,R$ 2469,Rio de Janeiro,Desempregado,Mestrado,830
+Joãa,46,F,R$ 1,Rio de Janeiro,Desempregado,Graduação,839
+Mariana,54,F,R$ 91,Belo Horizonte,Empregado,Ensino Médio,759
+Pedro,43,M,R$ 3188,Salvador,Desempregado,Mestrado,344
+Fernando,50,M,R$ 476,São Paulo,Autônomo,Graduação,541
+Pedro,60,M,R$ 76,Salvador,Empregado,Pós-graduação,300
+Fernando,32,M,R$ 29,Belo Horizonte,Autônomo,Doutorado,834
+Pedra,40,F,R$ 117,Rio de Janeiro,Autônomo,Pós-graduação,483
+Luiz,46,M,R$ 4469,São Paulo,Empregado,Doutorado,581
+Fernanda,38,F,R$ 9111,Porto Alegre,Desempregado,Graduação,823
+Carlo,36,M,R$ 9255,Porto Alegre,Desempregado,Pós-graduação,679
+Mariano,22,M,R$ 3758,Rio de Janeiro,Desempregado,Graduação,485
+Carla,40,F,R$ 49,Salvador,Desempregado,Doutorado,404
+Pedro,53,M,R$ 11731,Salvador,Desempregado,Mestrado,556
+Carla,76,F,R$ 2111,São Paulo,Autônomo,Graduação,848
+Carlo,37,M,R$ 8992,Belo Horizonte,Autônomo,Ensino Médio,505
+Mariano,25,M,R$ 3779,Salvador,Empregado,Mestrado,564
+Mariana,26,F,R$ 66,Porto Alegre,Desempregado,Mestrado,619
+Maria,79,F,R$ 6914,Porto Alegre,Desempregado,Ensino Médio,694
+Felipe,31,F,R$ 3981,Porto Alegre,Desempregado,Pós-graduação,309
+Maria,23,F,R$ 4538,Salvador,Autônomo,Ensino Médio,384
+Carla,18,F,R$ nan,Rio de Janeiro,Empregado,Mestrado,560
+Ana,26,F,R$ 3827,Salvador,Desempregado,Pós-graduação,743
+Pedra,33,F,R$ 1,Salvador,Empregado,Pós-graduação,339
+João,33,M,R$ 158,São Paulo,Autônomo,Doutorado,766
+Joãa,71,F,R$ 5441,Belo Horizonte,Desempregado,Ensino Médio,515
+Fernando,29,M,R$ 7479,Salvador,Autônomo,Mestrado,608
+Fernando,22,M,R$ nan,Salvador,Desempregado,Graduação,655
+Ana,57,F,R$ 178,Belo Horizonte,Empregado,Doutorado,423
+João,46,M,R$ 14485,Porto Alegre,Desempregado,Graduação,586
+Mario,63,M,R$ 8684,Belo Horizonte,Desempregado,Pós-graduação,303
+Carla,44,F,R$ 319,Salvador,Autônomo,Mestrado,310
+Mariano,28,M,R$ 363,Rio de Janeiro,Empregado,Mestrado,588
+Maria,70,F,R$ 11299,São Paulo,Empregado,Ensino Médio,449
+Luiz,64,M,R$ nan,São Paulo,Desempregado,Mestrado,410
+Mariano,67,M,R$ 13466,Belo Horizonte,Autônomo,Mestrado,653
+Luiz,45,F,R$ nan,Belo Horizonte,Desempregado,Ensino Médio,525
+Mario,69,M,R$ 3243,Porto Alegre,Autônomo,Ensino Médio,479
+João,53,M,R$ 6835,São Paulo,Desempregado,Mestrado,504
+Maria,59,F,R$ 4912,Belo Horizonte,Desempregado,Mestrado,491
+Joãa,36,F,R$ 14454,Salvador,Autônomo,Doutorado,750
+Pedro,71,M,R$ 8175,Salvador,Desempregado,Graduação,790
+Paulo,52,M,R$ 119,Rio de Janeiro,Empregado,Doutorado,778
+Pedra,69,F,R$ 086,Rio de Janeiro,Empregado,Doutorado,648
+Pedro,48,M,R$ 5454,Belo Horizonte,Autônomo,Pós-graduação,469
+Ana,71,F,R$ 7945,Porto Alegre,Autônomo,Mestrado,313
+Maria,76,F,R$ 9189,Porto Alegre,Desempregado,Doutorado,544
+Mariano,61,M,R$ 101,Porto Alegre,Desempregado,Mestrado,644
+Luiz,73,F,R$ 51,Porto Alegre,Empregado,Doutorado,714
+Ana,78,F,R$ 5881,São Paulo,Autônomo,Pós-graduação,459
+Ano,78,M,R$ 6971,Porto Alegre,Autônomo,Mestrado,332
+Luiz,36,F,R$ 12595,Rio de Janeiro,Empregado,Graduação,477
+Pedro,63,M,R$ 124,Rio de Janeiro,Autônomo,Pós-graduação,684
+Carlo,41,M,R$ 9831,São Paulo,Desempregado,Ensino Médio,836
+Mariano,19,M,R$ nan,Belo Horizonte,Autônomo,Graduação,640
+Maria,24,F,R$ 4792,Salvador,Autônomo,Doutorado,661
+Luiz,60,M,R$ 79,Rio de Janeiro,Desempregado,Mestrado,519
+João,71,M,R$ 2279,Rio de Janeiro,Desempregado,Mestrado,390
+Mariano,66,M,R$ 11338,São Paulo,Empregado,Graduação,757
+João,48,M,R$ 5912,Rio de Janeiro,Empregado,Ensino Médio,646
+Carla,77,F,R$ 13817,Salvador,Empregado,Mestrado,725
+Felipe,34,F,R$ 59,São Paulo,Autônomo,Ensino Médio,459
+Felipe,44,M,R$ 2815,Porto Alegre,Desempregado,Ensino Médio,523
+Pedra,78,F,R$ 11871,Porto Alegre,Autônomo,Pós-graduação,564
+Felipe,53,F,R$ 81,Porto Alegre,Desempregado,Graduação,733
+Luiz,76,F,R$ 4654,Salvador,Desempregado,Graduação,637
+Fernando,67,M,R$ 12213,Belo Horizonte,Autônomo,Graduação,685
+Pedra,60,F,R$ nan,Rio de Janeiro,Autônomo,Doutorado,486
+Carla,27,F,R$ 9934,Salvador,Autônomo,Graduação,585
+Felipe,62,F,R$ 2512,Belo Horizonte,Desempregado,Mestrado,545
+Felipe,31,F,R$ 49,São Paulo,Desempregado,Mestrado,508
+Luiz,75,F,R$ 6829,Salvador,Autônomo,Graduação,384
+Mariano,24,M,R$ nan,São Paulo,Desempregado,Mestrado,592
+Maria,56,F,R$ 6383,Belo Horizonte,Desempregado,Pós-graduação,535
+Luiz,57,F,R$ 4845,Salvador,Autônomo,Doutorado,408
+Luiz,26,M,R$ 81,Rio de Janeiro,Desempregado,Doutorado,571
+Mariano,31,M,R$ 12179,Belo Horizonte,Empregado,Ensino Médio,313
+Ano,74,M,R$ 93,Rio de Janeiro,Autônomo,Ensino Médio,529
+Pedro,25,M,R$ 11478,São Paulo,Empregado,Doutorado,602
+Carla,34,F,R$ 6329,Rio de Janeiro,Empregado,Graduação,430
+Mariana,74,F,R$ 13749,Salvador,Empregado,Graduação,461
+Pedra,40,F,R$ 6363,Salvador,Empregado,Pós-graduação,776
+Ana,74,F,R$ 59,Porto Alegre,Empregado,Doutorado,557
+Paula,33,F,R$ 163,Rio de Janeiro,Empregado,Mestrado,710
+Felipe,43,M,R$ 6989,Porto Alegre,Autônomo,Mestrado,756
+Maria,26,F,R$ 11515,Belo Horizonte,Autônomo,Ensino Médio,639
+Mariano,53,M,R$ 8467,São Paulo,Desempregado,Doutorado,711
+Felipe,24,M,R$ 148,Belo Horizonte,Autônomo,Ensino Médio,450
+Carlo,35,M,R$ 14763,São Paulo,Empregado,Pós-graduação,516
+Luiz,25,F,R$ 2511,Rio de Janeiro,Autônomo,Ensino Médio,664
+Pedra,38,F,R$ 4679,Salvador,Empregado,Pós-graduação,545
+Mario,43,M,R$ 6366,Rio de Janeiro,Empregado,Doutorado,842
+Luiz,20,M,R$ nan,São Paulo,Autônomo,Pós-graduação,547
+Felipe,78,M,R$ 123,Porto Alegre,Empregado,Ensino Médio,520
+Paulo,34,M,R$ 2447,São Paulo,Empregado,Doutorado,368
+Pedro,74,M,R$ 6469,Porto Alegre,Empregado,Ensino Médio,369
+Carlo,68,M,R$ 43,Belo Horizonte,Empregado,Mestrado,472
+Pedra,63,F,R$ 9526,Salvador,Empregado,Graduação,641
+Mario,41,M,R$ 13991,Belo Horizonte,Autônomo,Pós-graduação,436
+Luiz,42,M,R$ 12,Rio de Janeiro,Empregado,Pós-graduação,792
+Pedro,22,M,R$ 4583,Porto Alegre,Autônomo,Graduação,422
+Mario,54,M,R$ 74,Porto Alegre,Autônomo,Pós-graduação,668
+Ano,62,M,R$ 53,Belo Horizonte,Autônomo,Pós-graduação,678
+Paula,67,F,R$ 4881,Salvador,Autônomo,Mestrado,714
+João,41,M,R$ 4837,Salvador,Autônomo,Doutorado,588
+Carla,48,F,R$ 14729,Belo Horizonte,Empregado,Pós-graduação,641
+Mariano,72,M,R$ 4628,Salvador,Autônomo,Mestrado,485
+Ano,43,M,R$ 9981,Rio de Janeiro,Autônomo,Pós-graduação,637
+Maria,38,F,R$ ,São Paulo,Desempregado,Doutorado,426
+Carlo,51,M,R$ nan,Porto Alegre,Autônomo,Mestrado,445
+Luiz,55,F,R$ 6888,Porto Alegre,Autônomo,Pós-graduação,631
+Carla,75,F,R$ 12582,Porto Alegre,Desempregado,Mestrado,702
+Felipe,41,F,R$ ,São Paulo,Autônomo,Graduação,793
+Maria,45,F,R$ 13738,Rio de Janeiro,Empregado,Pós-graduação,599
+Joãa,47,F,R$ 57,Belo Horizonte,Autônomo,Ensino Médio,747
+Paula,51,F,R$ 113,Salvador,Desempregado,Doutorado,654
+Luiz,69,M,R$ nan,Salvador,Autônomo,Pós-graduação,671
+Ana,71,F,R$ 146,São Paulo,Empregado,Pós-graduação,397
+Pedro,73,M,R$ 442,Porto Alegre,Autônomo,Ensino Médio,455
+João,69,M,R$ 13858,Salvador,Empregado,Mestrado,525
+Ana,40,F,R$ nan,Belo Horizonte,Empregado,Doutorado,695
+Pedra,72,F,R$ nan,Salvador,Desempregado,Ensino Médio,537
+Ana,25,F,R$ 3565,Porto Alegre,Desempregado,Doutorado,794
+Fernando,59,M,R$ 2139,Belo Horizonte,Empregado,Pós-graduação,717
+Maria,67,F,R$ 12398,Porto Alegre,Autônomo,Doutorado,442
+Pedra,27,F,R$ 519,Porto Alegre,Desempregado,Mestrado,666
+Mariano,72,M,R$ 5642,São Paulo,Desempregado,Graduação,515
+Fernanda,18,F,R$ 149,Porto Alegre,Empregado,Doutorado,833
+Mariano,37,M,R$ 8471,Belo Horizonte,Desempregado,Graduação,686
+Carla,74,F,R$ 857,São Paulo,Autônomo,Mestrado,528
+Mario,54,M,R$ 2492,São Paulo,Desempregado,Ensino Médio,794
+Paula,35,F,R$ 2822,Belo Horizonte,Autônomo,Doutorado,309
+Carlo,38,M,R$ 7238,São Paulo,Empregado,Doutorado,685
+Fernanda,71,F,R$ 2339,Belo Horizonte,Empregado,Doutorado,557
+Fernanda,66,F,R$ 12413,Salvador,Desempregado,Doutorado,412
+Pedro,21,M,R$ 31,São Paulo,Desempregado,Graduação,586
+Mariana,60,F,R$ 24,Salvador,Empregado,Mestrado,846
+Paula,19,F,R$ 9299,São Paulo,Desempregado,Graduação,310
+Luiz,38,M,R$ 2884,Porto Alegre,Desempregado,Pós-graduação,549
+Mario,54,M,R$ 9124,Belo Horizonte,Autônomo,Pós-graduação,817
+Ana,22,F,R$ 81,Porto Alegre,Desempregado,Ensino Médio,598
+Fernando,34,M,R$ 2851,Salvador,Empregado,Ensino Médio,498
+Luiz,66,F,R$ 4297,Belo Horizonte,Empregado,Doutorado,405
+Pedra,65,F,R$ 4597,Belo Horizonte,Empregado,Pós-graduação,817
+Mariano,28,M,R$ 8588,Salvador,Autônomo,Graduação,616
+João,63,M,R$ 2876,Belo Horizonte,Desempregado,Mestrado,308
+Pedra,58,F,R$ 13993,Belo Horizonte,Autônomo,Pós-graduação,491
+Carlo,48,M,R$ 11735,São Paulo,Empregado,Pós-graduação,509
+Carla,45,F,R$ 04,Rio de Janeiro,Empregado,Graduação,675
+Carlo,61,M,R$ nan,Porto Alegre,Empregado,Pós-graduação,431
+Carla,49,F,R$ 64,Rio de Janeiro,Empregado,Graduação,666
+Luiz,38,F,R$ nan,Belo Horizonte,Autônomo,Graduação,800
+Joãa,24,F,R$ 9335,Rio de Janeiro,Empregado,Graduação,306
+Paula,27,F,R$ 9713,São Paulo,Autônomo,Graduação,322
+Luiz,78,F,R$ 033,Salvador,Desempregado,Pós-graduação,310
+Ana,45,F,R$ 149,Salvador,Desempregado,Pós-graduação,647
+Pedra,65,F,R$ 8345,Rio de Janeiro,Desempregado,Mestrado,796
+Paulo,53,M,R$ 8231,São Paulo,Autônomo,Ensino Médio,383
+Pedro,37,M,R$ 7444,Salvador,Desempregado,Mestrado,814
+Mario,30,M,R$ 11222,Rio de Janeiro,Desempregado,Graduação,671
+Joãa,36,F,R$ 033,Rio de Janeiro,Empregado,Doutorado,627
+Mariano,67,M,R$ 3394,Porto Alegre,Empregado,Mestrado,760
+Luiz,28,M,R$ 6863,São Paulo,Autônomo,Doutorado,479
+João,52,M,R$ 13836,Porto Alegre,Autônomo,Doutorado,575
+Felipe,51,M,R$ 49,Rio de Janeiro,Desempregado,Pós-graduação,543
+Fernanda,61,F,R$ 9156,Porto Alegre,Empregado,Graduação,426
+Maria,21,F,R$ 9355,Porto Alegre,Empregado,Ensino Médio,583
+Pedro,30,M,R$ 5575,Rio de Janeiro,Desempregado,Ensino Médio,347
+Maria,54,F,R$ 12698,Salvador,Desempregado,Ensino Médio,835
+Paula,76,F,R$ 6893,Belo Horizonte,Desempregado,Ensino Médio,436
+Joãa,19,F,R$ nan,Salvador,Autônomo,Ensino Médio,594
+Maria,67,F,R$ 118,São Paulo,Autônomo,Doutorado,558
+Felipe,18,F,R$ nan,Salvador,Empregado,Doutorado,351
+Luiz,57,M,R$ 93,Rio de Janeiro,Empregado,Doutorado,368
+Maria,42,F,R$ 13651,Porto Alegre,Empregado,Graduação,737
+Carlo,76,M,R$ nan,São Paulo,Autônomo,Mestrado,362
+Luiz,54,F,R$ 11877,São Paulo,Empregado,Pós-graduação,666
+Fernando,53,M,R$ 5334,São Paulo,Empregado,Doutorado,717
+Felipe,23,M,R$ nan,Porto Alegre,Empregado,Graduação,388
+Felipe,24,F,R$ 53,Salvador,Autônomo,Graduação,520
+Fernando,21,M,R$ 49,Porto Alegre,Autônomo,Pós-graduação,553
+Pedra,52,F,R$ 153,Belo Horizonte,Desempregado,Ensino Médio,472
+Ano,75,M,R$ 14736,São Paulo,Empregado,Graduação,542
+Pedro,58,M,R$ 12627,Rio de Janeiro,Autônomo,Mestrado,672
+Maria,78,F,R$ 8949,Porto Alegre,Empregado,Mestrado,661
+Mariano,51,M,R$ 30,São Paulo,Autônomo,Mestrado,381
+Felipe,46,F,R$ 9627,Porto Alegre,Desempregado,Graduação,464
+Felipe,22,M,R$ 4699,Porto Alegre,Autônomo,Graduação,696
+Carla,44,F,R$ 122,Salvador,Autônomo,Graduação,487
+Felipe,50,M,R$ 9478,Porto Alegre,Empregado,Graduação,777
+Mario,74,M,R$ 11733,Rio de Janeiro,Empregado,Mestrado,842
+Fernanda,63,F,R$ 125,Belo Horizonte,Empregado,Pós-graduação,654
+Paula,69,F,R$ 99,Belo Horizonte,Autônomo,Pós-graduação,767
+Luiz,27,M,R$ 061,Porto Alegre,Empregado,Graduação,843
+Mariana,71,F,R$ 9758,Porto Alegre,Empregado,Mestrado,533
+Luiz,23,M,R$ 11449,Porto Alegre,Desempregado,Pós-graduação,307
+Pedro,51,M,R$ nan,Belo Horizonte,Empregado,Mestrado,369
+João,25,M,R$ nan,Porto Alegre,Empregado,Graduação,633
+Paula,79,F,R$ 54,Salvador,Autônomo,Graduação,782
+Maria,48,F,R$ 5938,Porto Alegre,Desempregado,Doutorado,730
+Joãa,26,F,R$ 11987,Rio de Janeiro,Empregado,Graduação,844
+Mario,72,M,R$ 2128,Rio de Janeiro,Empregado,Mestrado,332
+Mario,38,M,R$ 3885,Belo Horizonte,Autônomo,Graduação,840
+Pedro,25,M,R$ 125,Rio de Janeiro,Empregado,Ensino Médio,312
+Maria,21,F,R$ 32,Belo Horizonte,Empregado,Doutorado,393
+Mario,39,M,R$ 5967,Rio de Janeiro,Empregado,Graduação,374
+Carla,45,F,R$ 12867,Belo Horizonte,Desempregado,Graduação,355
+Carla,62,F,R$ 13197,São Paulo,Desempregado,Doutorado,605
+Carla,21,F,R$ 42,Rio de Janeiro,Desempregado,Ensino Médio,807
+Paula,56,F,R$ 72,Porto Alegre,Empregado,Doutorado,319
+Felipe,38,F,R$ 149,Belo Horizonte,Autônomo,Mestrado,514
+Fernando,25,M,R$ 4461,Belo Horizonte,Autônomo,Mestrado,707
+Mariano,37,M,R$ 3627,Salvador,Empregado,Ensino Médio,842
+Paulo,49,M,R$ ,São Paulo,Autônomo,Graduação,736
+Felipe,18,M,R$ 9155,São Paulo,Autônomo,Doutorado,798
+Paula,23,F,R$ 11444,Porto Alegre,Autônomo,Pós-graduação,486
+Carla,45,F,R$ 3211,Belo Horizonte,Desempregado,Ensino Médio,552
+Mariana,61,F,R$ nan,São Paulo,Autônomo,Doutorado,315
+Felipe,48,M,R$ 7854,São Paulo,Desempregado,Doutorado,378
+João,27,M,R$ 11829,Salvador,Empregado,Ensino Médio,495
+Fernanda,37,F,R$ 96,Porto Alegre,Empregado,Pós-graduação,370
+Felipe,25,M,R$ 11935,Porto Alegre,Autônomo,Mestrado,507
+Carlo,39,M,R$ 13137,São Paulo,Desempregado,Mestrado,479
+Fernando,55,M,R$ 13241,Rio de Janeiro,Desempregado,Graduação,486
+Ana,46,F,R$ 88,Salvador,Empregado,Graduação,838
+Fernando,26,M,R$ 3773,Rio de Janeiro,Desempregado,Mestrado,648
+Felipe,61,F,R$ 9697,Salvador,Empregado,Pós-graduação,617
+Mario,64,M,R$ 32,Rio de Janeiro,Autônomo,Ensino Médio,805
+Pedra,18,F,R$ 12165,Porto Alegre,Desempregado,Doutorado,391
+Luiz,58,M,R$ 4674,Belo Horizonte,Empregado,Graduação,724
+Ano,69,M,R$ 13439,Porto Alegre,Desempregado,Mestrado,460
+Luiz,56,F,R$ nan,São Paulo,Empregado,Doutorado,413
+Mariana,43,F,R$ 459,Rio de Janeiro,Autônomo,Ensino Médio,698
+Carla,28,F,R$ 3929,São Paulo,Desempregado,Ensino Médio,645
+Luiz,69,M,R$ 148,Porto Alegre,Desempregado,Graduação,780
+Carla,52,F,R$ 14214,Rio de Janeiro,Desempregado,Graduação,568
+João,77,M,R$ 2947,Salvador,Desempregado,Pós-graduação,615
+Carla,41,F,R$ 14335,Belo Horizonte,Empregado,Ensino Médio,726
+Pedro,50,M,R$ 964,Porto Alegre,Autônomo,Mestrado,697
+Mario,37,M,R$ 13761,Porto Alegre,Autônomo,Ensino Médio,736
+Mario,44,M,R$ 14934,Belo Horizonte,Empregado,Ensino Médio,478
+Maria,32,F,R$ 13638,Porto Alegre,Autônomo,Pós-graduação,420
+Paulo,50,M,R$ 50,Rio de Janeiro,Desempregado,Ensino Médio,771
+Pedra,69,F,R$ nan,Rio de Janeiro,Autônomo,Mestrado,776
+Fernando,24,M,R$ 2492,Porto Alegre,Desempregado,Pós-graduação,482
+João,51,M,R$ 105,Rio de Janeiro,Desempregado,Ensino Médio,677
+Carlo,62,M,R$ 146,Porto Alegre,Desempregado,Graduação,362
+Carlo,77,M,R$ 12437,Porto Alegre,Desempregado,Doutorado,566
+Pedra,75,F,R$ 25,Salvador,Empregado,Ensino Médio,396
+Luiz,68,M,R$ 3253,Belo Horizonte,Autônomo,Mestrado,354
+Mariano,63,M,R$ 2362,Rio de Janeiro,Desempregado,Mestrado,817
+Fernanda,59,F,R$ 45,Belo Horizonte,Desempregado,Graduação,347
+Mariano,22,M,R$ nan,Salvador,Empregado,Ensino Médio,794
+Ana,75,F,R$ 81,São Paulo,Autônomo,Ensino Médio,711
+Carla,47,F,R$ 147,Porto Alegre,Empregado,Ensino Médio,645
+Felipe,45,M,R$ 2395,Rio de Janeiro,Desempregado,Mestrado,717
+Pedro,35,M,R$ 5377,São Paulo,Desempregado,Pós-graduação,635
+Fernanda,53,F,R$ 64,São Paulo,Autônomo,Pós-graduação,718
+Ana,20,F,R$ 11731,Rio de Janeiro,Empregado,Graduação,743
+Ana,38,F,R$ nan,São Paulo,Autônomo,Mestrado,369
+Fernanda,63,F,R$ 5897,Porto Alegre,Desempregado,Doutorado,372
+Pedra,75,F,R$ 56,Porto Alegre,Empregado,Graduação,530
+Joãa,33,F,R$ 14217,Porto Alegre,Desempregado,Pós-graduação,787
+Ana,73,F,R$ 2131,Salvador,Autônomo,Doutorado,300
+Ana,54,F,R$ 054,São Paulo,Desempregado,Graduação,835
+Luiz,59,M,R$ 91,Porto Alegre,Empregado,Graduação,808
+Carla,22,F,R$ 76,Salvador,Desempregado,Mestrado,458
+João,67,M,R$ 12151,Porto Alegre,Autônomo,Ensino Médio,374
+João,68,M,R$ 12197,Porto Alegre,Desempregado,Pós-graduação,574
+Luiz,31,F,R$ 6253,Rio de Janeiro,Desempregado,Pós-graduação,788
+Carla,48,F,R$ nan,Porto Alegre,Autônomo,Ensino Médio,583
+Luiz,63,M,R$ 14355,Porto Alegre,Autônomo,Doutorado,607
+Pedro,41,M,R$ 11784,Porto Alegre,Desempregado,Doutorado,726
+Paula,52,F,R$ 8347,Porto Alegre,Autônomo,Doutorado,786
+Paula,53,F,R$ 9543,Porto Alegre,Empregado,Ensino Médio,637
+Carla,27,F,R$ 7199,Belo Horizonte,Desempregado,Mestrado,552
+Joãa,44,F,R$ 12541,Belo Horizonte,Autônomo,Mestrado,675
+Fernando,73,M,R$ 6698,Salvador,Desempregado,Graduação,469
+Ano,44,M,R$ 4127,Salvador,Empregado,Pós-graduação,536
+Mario,72,M,R$ 9393,Salvador,Empregado,Ensino Médio,796
+João,40,M,R$ 7131,Belo Horizonte,Autônomo,Mestrado,417
+Fernando,30,M,R$ 9671,Salvador,Desempregado,Pós-graduação,516
+Carlo,33,M,R$ 12373,Rio de Janeiro,Empregado,Doutorado,515
+Pedro,52,M,R$ 2926,São Paulo,Empregado,Ensino Médio,635
+Fernanda,44,F,R$ 134,Rio de Janeiro,Desempregado,Pós-graduação,321
+Luiz,69,F,R$ 34,São Paulo,Empregado,Mestrado,360
+Joãa,56,F,R$ nan,São Paulo,Empregado,Doutorado,329
+Ana,64,F,R$ 736,Porto Alegre,Empregado,Graduação,834
+João,34,M,R$ 5877,Salvador,Empregado,Graduação,324
+Carlo,79,M,R$ 9339,São Paulo,Empregado,Graduação,367
+Felipe,78,F,R$ 829,Porto Alegre,Autônomo,Mestrado,635
+Fernando,65,M,R$ 14845,Rio de Janeiro,Empregado,Ensino Médio,792
+Mario,76,M,R$ 8429,Porto Alegre,Empregado,Pós-graduação,442
+Mariano,58,M,R$ 22,São Paulo,Desempregado,Mestrado,381
+Paulo,18,M,R$ 11371,Porto Alegre,Desempregado,Pós-graduação,661
+Luiz,28,F,R$ 107,Porto Alegre,Autônomo,Mestrado,540
+Ana,29,F,R$ nan,Rio de Janeiro,Autônomo,Doutorado,511
+Paula,31,F,R$ 318,Rio de Janeiro,Empregado,Mestrado,382
+Ana,25,F,R$ 8216,São Paulo,Desempregado,Graduação,663
+Carlo,48,M,R$ 7195,Porto Alegre,Empregado,Ensino Médio,685
+Fernanda,24,F,R$ 12337,Belo Horizonte,Desempregado,Pós-graduação,820
+Luiz,63,M,R$ 5278,Porto Alegre,Autônomo,Doutorado,843
+Joãa,71,F,R$ 13814,São Paulo,Empregado,Graduação,570
+João,48,M,R$ 13531,Belo Horizonte,Empregado,Doutorado,506
+Mariana,33,F,R$ 55,Porto Alegre,Autônomo,Pós-graduação,704
+Mario,59,M,R$ 3782,Rio de Janeiro,Desempregado,Mestrado,446
+Paulo,56,M,R$ 025,São Paulo,Autônomo,Ensino Médio,463
+Mario,71,M,R$ 8176,Porto Alegre,Empregado,Graduação,659
+Carlo,61,M,R$ 116,Rio de Janeiro,Desempregado,Ensino Médio,493
+Fernando,36,M,R$ 98,São Paulo,Empregado,Pós-graduação,549
+Mariano,25,M,R$ 11414,Belo Horizonte,Autônomo,Doutorado,708
+Ano,46,M,R$ 84,Belo Horizonte,Desempregado,Ensino Médio,594
+Mario,19,M,R$ 3686,São Paulo,Empregado,Doutorado,341
+Mario,59,M,R$ 11339,Rio de Janeiro,Desempregado,Ensino Médio,484
+Mariana,20,F,R$ nan,Belo Horizonte,Desempregado,Pós-graduação,796
+Fernanda,68,F,R$ 6564,São Paulo,Desempregado,Doutorado,631
+Felipe,46,F,R$ 12,Porto Alegre,Desempregado,Ensino Médio,733
+Luiz,32,F,R$ 11791,São Paulo,Autônomo,Ensino Médio,670
+Luiz,55,F,R$ 6868,São Paulo,Empregado,Pós-graduação,539
+Ano,45,M,R$ 14977,São Paulo,Empregado,Doutorado,665
+Pedra,72,F,R$ 69,Rio de Janeiro,Empregado,Ensino Médio,585
+Felipe,54,F,R$ 11373,Salvador,Autônomo,Graduação,421
+Mario,49,M,R$ 7823,Porto Alegre,Empregado,Pós-graduação,838
+Mariana,47,F,R$ 23,Rio de Janeiro,Desempregado,Ensino Médio,503
+Ana,68,F,R$ 9379,São Paulo,Empregado,Pós-graduação,405
+Paulo,78,M,R$ 552,Porto Alegre,Desempregado,Mestrado,755
+Fernanda,64,F,R$ 8234,Rio de Janeiro,Desempregado,Ensino Médio,672
+Pedra,47,F,R$ 132,Belo Horizonte,Desempregado,Graduação,519
+Pedro,68,M,R$ 777,Porto Alegre,Autônomo,Mestrado,563
+Felipe,51,M,R$ 66,Salvador,Empregado,Pós-graduação,739
+Felipe,30,M,R$ 12463,Salvador,Autônomo,Doutorado,512
+Ano,50,M,R$ 5934,Porto Alegre,Desempregado,Doutorado,701
+Carla,59,F,R$ 101,Porto Alegre,Empregado,Pós-graduação,374
+Ana,34,F,R$ 11927,São Paulo,Autônomo,Doutorado,712
+Ana,20,F,R$ 9992,São Paulo,Autônomo,Doutorado,555
+Mario,26,M,R$ 393,São Paulo,Desempregado,Graduação,361
+Felipe,69,F,R$ 11948,Porto Alegre,Desempregado,Mestrado,497
+Carlo,79,M,R$ 179,Salvador,Desempregado,Ensino Médio,772
+Ana,28,F,R$ 96,Belo Horizonte,Empregado,Mestrado,610
+Carlo,66,M,R$ 14663,Salvador,Autônomo,Pós-graduação,739
+Mariana,44,F,R$ 15,São Paulo,Desempregado,Graduação,749
+Mariana,45,F,R$ 8773,Rio de Janeiro,Autônomo,Pós-graduação,568
+Ano,74,M,R$ 12819,Salvador,Desempregado,Mestrado,709
+Fernando,74,M,R$ 57,São Paulo,Autônomo,Graduação,625
+Fernando,19,M,R$ 9879,Porto Alegre,Desempregado,Graduação,376
+Ana,18,F,R$ 4366,Belo Horizonte,Autônomo,Mestrado,712
+Luiz,23,F,R$ 4341,Rio de Janeiro,Empregado,Ensino Médio,800
+Fernando,42,M,R$ nan,Salvador,Empregado,Mestrado,584
+Paulo,52,M,R$ 9777,São Paulo,Empregado,Graduação,311
+Ano,33,M,R$ nan,Salvador,Desempregado,Graduação,404
+Paulo,21,M,R$ 9644,Belo Horizonte,Desempregado,Ensino Médio,684
+Maria,78,F,R$ nan,Rio de Janeiro,Autônomo,Ensino Médio,408
+Ano,64,M,R$ 14849,Salvador,Autônomo,Pós-graduação,711
+Fernando,55,M,R$ 4312,Belo Horizonte,Empregado,Pós-graduação,484
+Joãa,61,F,R$ 119,Rio de Janeiro,Desempregado,Graduação,379
+Paula,37,F,R$ 7442,Salvador,Desempregado,Pós-graduação,572
+Felipe,42,M,R$ 7182,São Paulo,Desempregado,Ensino Médio,646
+Pedra,24,F,R$ nan,Belo Horizonte,Desempregado,Pós-graduação,837
+Pedro,38,M,R$ 79,São Paulo,Empregado,Pós-graduação,616
+Fernanda,24,F,R$ 14482,Belo Horizonte,Desempregado,Graduação,703
+Fernanda,46,F,R$ 8559,São Paulo,Desempregado,Mestrado,786
+Pedro,69,M,R$ 5466,São Paulo,Empregado,Mestrado,407
+Joãa,24,F,R$ 6116,Salvador,Empregado,Doutorado,746
+Carlo,20,M,R$ 11316,Salvador,Autônomo,Doutorado,468
+Pedro,46,M,R$ 72,São Paulo,Empregado,Graduação,624
+Felipe,46,F,R$ 54,Belo Horizonte,Autônomo,Graduação,443
+Luiz,56,F,R$ 52,Salvador,Empregado,Mestrado,321
+Fernando,55,M,R$ 647,Salvador,Empregado,Graduação,575
+Joãa,77,F,R$ 3925,São Paulo,Desempregado,Ensino Médio,324
+Fernanda,23,F,R$ 5342,Belo Horizonte,Desempregado,Graduação,453
+Ana,63,F,R$ nan,São Paulo,Empregado,Pós-graduação,481
+João,27,M,R$ 27,Porto Alegre,Desempregado,Graduação,819
+Carla,54,F,R$ 13215,São Paulo,Autônomo,Mestrado,704
+Ana,72,F,R$ 2819,Belo Horizonte,Empregado,Ensino Médio,515
+Ano,31,M,R$ 90,Salvador,Autônomo,Doutorado,746
+Maria,39,F,R$ 599,Salvador,Empregado,Ensino Médio,443
+Fernando,77,M,R$ 7881,Rio de Janeiro,Empregado,Ensino Médio,663
+Fernando,49,M,R$ 151,São Paulo,Empregado,Pós-graduação,522
+João,35,M,R$ 68,Salvador,Empregado,Ensino Médio,396
+Mariano,53,M,R$ 123,Porto Alegre,Empregado,Graduação,790
+Felipe,63,F,R$ 99,Salvador,Desempregado,Mestrado,323
+Pedro,69,M,R$ nan,Porto Alegre,Autônomo,Ensino Médio,364
+Ano,76,M,R$ 4556,Salvador,Empregado,Ensino Médio,570
+Paulo,26,M,R$ 78,Salvador,Desempregado,Graduação,775
+Joãa,43,F,R$ 148,Belo Horizonte,Empregado,Ensino Médio,800
+Luiz,39,M,R$ 13964,Salvador,Empregado,Doutorado,505
+Fernando,63,M,R$ 7156,Porto Alegre,Autônomo,Ensino Médio,593
+Ano,55,M,R$ 27,Belo Horizonte,Empregado,Ensino Médio,654
+Mario,40,M,R$ 254,Salvador,Autônomo,Ensino Médio,686
+Ano,34,M,R$ 3477,Belo Horizonte,Empregado,Doutorado,414
+Fernando,43,M,R$ 2442,Salvador,Desempregado,Doutorado,653
+Carlo,64,M,R$ 6684,Rio de Janeiro,Empregado,Doutorado,803
+Mario,73,M,R$ 13794,Belo Horizonte,Desempregado,Doutorado,506
+Carlo,55,M,R$ 12624,Porto Alegre,Desempregado,Ensino Médio,600
+Fernando,19,M,R$ 25,Rio de Janeiro,Desempregado,Graduação,327
+Carlo,23,M,R$ 2717,Salvador,Desempregado,Mestrado,707
+Fernando,24,M,R$ 11818,Salvador,Empregado,Mestrado,399
+Maria,30,F,R$ 96,Rio de Janeiro,Empregado,Ensino Médio,371
+Pedra,44,F,R$ 5139,São Paulo,Desempregado,Pós-graduação,357
+Paulo,28,M,R$ 3897,Rio de Janeiro,Desempregado,Mestrado,803
+Ana,77,F,R$ 8545,Porto Alegre,Autônomo,Doutorado,485
+Carla,72,F,R$ 26,Salvador,Empregado,Pós-graduação,531
+Maria,32,F,R$ 11965,Belo Horizonte,Autônomo,Graduação,566
+Mariano,26,M,R$ 6621,São Paulo,Desempregado,Pós-graduação,308
+Paula,25,F,R$ 13696,Belo Horizonte,Autônomo,Graduação,725
+Paula,63,F,R$ 7,Rio de Janeiro,Autônomo,Pós-graduação,341
+Mariano,23,M,R$ nan,Salvador,Desempregado,Mestrado,553
+Felipe,65,F,R$ 13281,Porto Alegre,Autônomo,Doutorado,651
+Fernanda,77,F,R$ 8364,Rio de Janeiro,Autônomo,Graduação,401
+Mariana,60,F,R$ 583,Rio de Janeiro,Empregado,Graduação,577
+Joãa,21,F,R$ 12522,Belo Horizonte,Desempregado,Pós-graduação,302
+Mario,28,M,R$ 8417,Belo Horizonte,Empregado,Doutorado,539
+Fernanda,68,F,R$ 8852,Salvador,Empregado,Ensino Médio,716
+João,75,M,R$ 7675,Belo Horizonte,Desempregado,Graduação,424
+Felipe,45,F,R$ 12671,São Paulo,Autônomo,Doutorado,493
+Paula,43,F,R$ 13998,Salvador,Desempregado,Ensino Médio,609
+Carla,21,F,R$ 8269,Porto Alegre,Desempregado,Graduação,674
+Maria,79,F,R$ 3372,São Paulo,Desempregado,Doutorado,659
+Maria,32,F,R$ 5577,Rio de Janeiro,Desempregado,Graduação,352
+Mario,36,M,R$ nan,Belo Horizonte,Autônomo,Mestrado,534
+Felipe,23,M,R$ 57,Porto Alegre,Empregado,Doutorado,675
+Carlo,76,M,R$ 9963,Salvador,Autônomo,Pós-graduação,504
+Mariana,22,F,R$ 12246,Belo Horizonte,Empregado,Pós-graduação,729
+Paulo,35,M,R$ 23,São Paulo,Desempregado,Ensino Médio,572
+Luiz,23,F,R$ 4741,Rio de Janeiro,Autônomo,Mestrado,623
+Mario,48,M,R$ 14151,Rio de Janeiro,Desempregado,Ensino Médio,514
+Mario,42,M,R$ 12266,Belo Horizonte,Desempregado,Pós-graduação,433
+Paulo,21,M,R$ 57,Salvador,Desempregado,Doutorado,404
+Luiz,23,F,R$ 6811,Salvador,Autônomo,Mestrado,488
+Carlo,58,M,R$ 3117,Belo Horizonte,Desempregado,Graduação,645
+Felipe,54,F,R$ 6529,Belo Horizonte,Empregado,Graduação,326
+Fernando,76,M,R$ 6573,Belo Horizonte,Desempregado,Doutorado,522
+Fernanda,67,F,R$ 4935,Porto Alegre,Autônomo,Pós-graduação,581
+Luiz,73,F,R$ 8584,Belo Horizonte,Autônomo,Ensino Médio,583
+Paula,42,F,R$ 125,Porto Alegre,Desempregado,Pós-graduação,492
+Paula,51,F,R$ 14727,São Paulo,Empregado,Doutorado,757
+Felipe,36,F,R$ 343,Belo Horizonte,Desempregado,Pós-graduação,506
+Maria,51,F,R$ 4745,Belo Horizonte,Autônomo,Ensino Médio,745
+Carla,32,F,R$ 7769,Salvador,Desempregado,Ensino Médio,707
+Mariana,67,F,R$ 4688,Belo Horizonte,Desempregado,Mestrado,736
+Paula,25,F,R$ 23,Porto Alegre,Autônomo,Mestrado,497
+Mariana,71,F,R$ 5122,Porto Alegre,Autônomo,Mestrado,334
+Fernando,61,M,R$ 5486,Belo Horizonte,Autônomo,Pós-graduação,779
+Maria,64,F,R$ 5621,Porto Alegre,Autônomo,Graduação,656
+Ano,66,M,R$ 72,Belo Horizonte,Empregado,Pós-graduação,492
+Mariano,70,M,R$ 3918,São Paulo,Desempregado,Ensino Médio,641
+Carla,51,F,R$ 73,Porto Alegre,Autônomo,Mestrado,548
+Fernando,35,M,R$ nan,Porto Alegre,Autônomo,Doutorado,436
+Mariana,47,F,R$ 14347,Porto Alegre,Desempregado,Graduação,832
+Ana,30,F,R$ 144,Porto Alegre,Empregado,Pós-graduação,705
+Fernando,72,M,R$ 7594,Belo Horizonte,Autônomo,Graduação,643
+Pedra,64,F,R$ 6541,Belo Horizonte,Autônomo,Doutorado,429
+Pedro,72,M,R$ 2966,São Paulo,Empregado,Mestrado,715
+Fernando,50,M,R$ 5275,Belo Horizonte,Empregado,Mestrado,788
+João,52,M,R$ 11873,Porto Alegre,Autônomo,Ensino Médio,621
+Mario,69,M,R$ 53,São Paulo,Autônomo,Pós-graduação,348
+Felipe,41,F,R$ 6767,Rio de Janeiro,Autônomo,Ensino Médio,799
+Mariana,78,F,R$ nan,Salvador,Desempregado,Graduação,432
+Mariana,43,F,R$ nan,São Paulo,Autônomo,Doutorado,786
+Luiz,64,M,R$ 2757,Salvador,Empregado,Doutorado,423
+Carla,68,F,R$ 4226,Porto Alegre,Empregado,Ensino Médio,408
+Paulo,61,M,R$ 36,Rio de Janeiro,Empregado,Ensino Médio,506
+Pedro,70,M,R$ nan,Salvador,Autônomo,Graduação,737
+Pedro,59,M,R$ 12619,São Paulo,Autônomo,Mestrado,783
+João,64,M,R$ 14839,Belo Horizonte,Empregado,Doutorado,804
+Luiz,18,M,R$ 6223,Salvador,Desempregado,Ensino Médio,726
+Mario,30,M,R$ 13471,Belo Horizonte,Autônomo,Doutorado,628
+Fernanda,72,F,R$ 13,Salvador,Empregado,Mestrado,334
+Felipe,27,F,R$ 11379,Porto Alegre,Desempregado,Doutorado,591
+Ana,36,F,R$ 678,Belo Horizonte,Empregado,Mestrado,800
+Felipe,22,M,R$ 127,Rio de Janeiro,Autônomo,Mestrado,736
+Luiz,25,M,R$ 5467,São Paulo,Desempregado,Pós-graduação,523
+Ana,21,F,R$ 2359,Rio de Janeiro,Desempregado,Graduação,720
+Ana,66,F,R$ nan,Salvador,Autônomo,Doutorado,830
+Joãa,30,F,R$ 8128,Salvador,Autônomo,Mestrado,737
+João,55,M,R$ nan,Rio de Janeiro,Autônomo,Doutorado,697
+Luiz,70,F,R$ 12443,Salvador,Desempregado,Ensino Médio,610
+Mariana,63,F,R$ 4739,Porto Alegre,Empregado,Graduação,546
+João,66,M,R$ 86,São Paulo,Empregado,Graduação,491
+Pedro,63,M,R$ 74,Porto Alegre,Empregado,Ensino Médio,347
+Pedra,36,F,R$ ,Belo Horizonte,Autônomo,Ensino Médio,542
+Paula,69,F,R$ 25,São Paulo,Autônomo,Doutorado,445
+Paulo,67,M,R$ 14296,São Paulo,Empregado,Pós-graduação,717
+Luiz,25,M,R$ 14433,Salvador,Autônomo,Doutorado,340
+Pedro,44,M,R$ 428,Belo Horizonte,Autônomo,Doutorado,527
+Fernando,67,M,R$ 11436,Rio de Janeiro,Empregado,Mestrado,719
+Mariana,64,F,R$ 11881,Belo Horizonte,Empregado,Doutorado,590
+Joãa,47,F,R$ 5422,Rio de Janeiro,Autônomo,Graduação,783
+Pedra,21,F,R$ 13387,Belo Horizonte,Desempregado,Pós-graduação,415
+Mariana,28,F,R$ 21,Belo Horizonte,Autônomo,Ensino Médio,844
+Felipe,38,F,R$ nan,Rio de Janeiro,Desempregado,Graduação,309
+Carlo,60,M,R$ 11595,Porto Alegre,Desempregado,Ensino Médio,825
+João,19,M,R$ 158,Salvador,Desempregado,Mestrado,464
+Maria,73,F,R$ 7113,Salvador,Desempregado,Doutorado,598
+Paulo,38,M,R$ 112,Salvador,Desempregado,Mestrado,580
+Luiz,34,F,R$ 5346,Rio de Janeiro,Autônomo,Ensino Médio,607
+Felipe,60,F,R$ 8668,Salvador,Empregado,Doutorado,796
+Joãa,68,F,R$ 4945,São Paulo,Desempregado,Doutorado,804
+Mariana,46,F,R$ 6618,Belo Horizonte,Desempregado,Mestrado,783
+Mario,44,M,R$ 12179,Rio de Janeiro,Desempregado,Ensino Médio,459
+Ana,41,F,R$ 12173,Rio de Janeiro,Autônomo,Pós-graduação,472
+Joãa,70,F,R$ 2784,São Paulo,Empregado,Mestrado,436
+Mariana,66,F,R$ 4684,Belo Horizonte,Desempregado,Graduação,317
+João,20,M,R$ 5846,Salvador,Desempregado,Graduação,713
+Luiz,56,F,R$ 8656,Rio de Janeiro,Autônomo,Graduação,794
+Ano,27,M,R$ 8151,Rio de Janeiro,Desempregado,Ensino Médio,818
+Carlo,20,M,R$ 8211,Rio de Janeiro,Empregado,Graduação,507
+Luiz,70,F,R$ 3851,Rio de Janeiro,Empregado,Graduação,449
+Mariano,62,M,R$ 5832,Rio de Janeiro,Desempregado,Doutorado,417
+Felipe,59,M,R$ 8516,Rio de Janeiro,Autônomo,Doutorado,415
+Maria,43,F,R$ 14799,São Paulo,Empregado,Doutorado,835
+Carla,78,F,R$ 8564,Rio de Janeiro,Autônomo,Ensino Médio,614
+Carlo,71,M,R$ 5797,Porto Alegre,Empregado,Graduação,439
+Paula,54,F,R$ 3782,Belo Horizonte,Empregado,Mestrado,354
+Fernando,44,M,R$ nan,Belo Horizonte,Desempregado,Graduação,620
+Luiz,22,F,R$ 5238,Salvador,Empregado,Doutorado,528
+Luiz,59,F,R$ nan,Rio de Janeiro,Desempregado,Graduação,324
+Fernanda,28,F,R$ 41,Rio de Janeiro,Empregado,Doutorado,341
+Ano,30,M,R$ 9844,São Paulo,Empregado,Graduação,590
+Felipe,58,M,R$ 8212,Porto Alegre,Empregado,Ensino Médio,494
+Pedro,51,M,R$ 14379,Belo Horizonte,Desempregado,Pós-graduação,436
+Paula,55,F,R$ 973,Belo Horizonte,Empregado,Pós-graduação,495
+Ano,57,M,R$ 13177,Salvador,Empregado,Graduação,720
+Joãa,50,F,R$ 2328,Rio de Janeiro,Autônomo,Mestrado,645
+Luiz,76,F,R$ 87,São Paulo,Autônomo,Graduação,845
+Mariano,51,M,R$ 11566,Salvador,Empregado,Graduação,732
+Joãa,44,F,R$ 11356,Salvador,Desempregado,Pós-graduação,600
+Mariano,53,M,R$ 2,Salvador,Autônomo,Graduação,693
+Luiz,43,F,R$ 3923,São Paulo,Desempregado,Graduação,475
+Paulo,68,M,R$ nan,São Paulo,Empregado,Doutorado,631
+Maria,42,F,R$ 9696,Rio de Janeiro,Autônomo,Graduação,660
+Maria,36,F,R$ 49,São Paulo,Desempregado,Doutorado,326
+Fernando,38,M,R$ 5624,Salvador,Desempregado,Ensino Médio,423
+Pedro,48,M,R$ nan,Rio de Janeiro,Autônomo,Mestrado,712
+Maria,46,F,R$ 3717,Salvador,Empregado,Graduação,389
+Mariano,26,M,R$ 4,Salvador,Empregado,Doutorado,624
+Joãa,36,F,R$ 14645,Belo Horizonte,Autônomo,Doutorado,842
+Joãa,43,F,R$ 4583,São Paulo,Desempregado,Graduação,717
+Luiz,42,F,R$ 443,Belo Horizonte,Autônomo,Pós-graduação,417
+Mariana,57,F,R$ 5962,Belo Horizonte,Autônomo,Pós-graduação,768
+Joãa,60,F,R$ 11124,Salvador,Autônomo,Graduação,609
+João,77,M,R$ nan,São Paulo,Empregado,Graduação,636
+Carlo,46,M,R$ 14475,Salvador,Empregado,Pós-graduação,722
+Pedro,42,M,R$ 13298,Porto Alegre,Desempregado,Graduação,493
+Felipe,36,F,R$ 91,Salvador,Autônomo,Graduação,621
+Pedro,21,M,R$ 8534,Salvador,Autônomo,Pós-graduação,793
+Pedro,62,M,R$ 2344,São Paulo,Autônomo,Doutorado,465
+Carlo,37,M,R$ 114,Salvador,Autônomo,Ensino Médio,598
+Joãa,63,F,R$ 7137,Salvador,Empregado,Graduação,813
+Felipe,72,M,R$ 11776,Belo Horizonte,Empregado,Pós-graduação,305
+Mariano,18,M,R$ nan,Salvador,Desempregado,Graduação,437
+Mario,28,M,R$ 55,São Paulo,Desempregado,Graduação,330
+Carla,21,F,R$ 8769,Belo Horizonte,Autônomo,Doutorado,637
+Pedro,24,M,R$ 13116,Rio de Janeiro,Desempregado,Ensino Médio,438
+Ana,45,F,R$ 9172,Rio de Janeiro,Autônomo,Graduação,739
+Pedra,53,F,R$ 9775,Salvador,Empregado,Ensino Médio,690
+Felipe,75,M,R$ nan,Belo Horizonte,Empregado,Pós-graduação,626
+Paula,24,F,R$ 3663,Porto Alegre,Empregado,Pós-graduação,321
+Mario,37,M,R$ 8666,Rio de Janeiro,Desempregado,Mestrado,719
+Joãa,52,F,R$ 6893,Belo Horizonte,Autônomo,Doutorado,535
+Mario,68,M,R$ 7993,Rio de Janeiro,Desempregado,Pós-graduação,583
