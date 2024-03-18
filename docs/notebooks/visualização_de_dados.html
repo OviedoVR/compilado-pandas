@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>🖥️ Compilado de Pandas - Visualização de dados</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/bookup_fonts_gwf-0.0/fonts-embed.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">🖥️ Compilado de Pandas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Início</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aulas" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Aulas</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-aulas">    
+        <li>
+    <a class="dropdown-item" href="../sections/leitura_arquivos.html">
+ <span class="dropdown-text">1. Leitura de arquivos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sections/metodos_basicos_pandas.html">
+ <span class="dropdown-text">2. Métodos básicos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sections/slicing_e_filtros.html">
+ <span class="dropdown-text">3. Slicing e filtros</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sections/estatistica_com_pandas.html">
+ <span class="dropdown-text">4. Métodos estatísticos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sections/agregacoes.html">
+ <span class="dropdown-text">5. Agregações</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sections/juncoes.html">
+ <span class="dropdown-text">6. Junções</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sections/limpeza_de_dados.html">
+ <span class="dropdown-text">7. Limpeza de dados</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sections/visualizacao.html">
+ <span class="dropdown-text">8. Visualização de dados</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#visualização-de-dados" id="toc-visualização-de-dados" class="nav-link active" data-scroll-target="#visualização-de-dados">Visualização de dados</a>
+  <ul class="collapse">
+  <li><a href="#métodos-built-in" id="toc-métodos-built-in" class="nav-link" data-scroll-target="#métodos-built-in"><strong>1. Métodos <em>built-in</em></strong></a></li>
+  <li><a href="#esitlos" id="toc-esitlos" class="nav-link" data-scroll-target="#esitlos"><strong>3. Esitlos</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Visualização de dados</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="visualização-de-dados" class="level1">
+<h1>Visualização de dados</h1>
+<ol type="1">
+<li>Métodos de plotagem <em>built-in</em> do <code>Pandas</code></li>
+<li>Um exemplo usando <em>seaborn</em></li>
+<li>Como aplicar estilos em <em>dataframes</em>.</li>
+</ol>
+<div id="cell-2" class="cell" data-outputid="c6c07c95-5baf-4adf-e4d7-45914889e982" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># bibliotecas:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># dados:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline <span class="op">=</span> pd.read_csv(<span class="st">'clientes_cifraonline_limpo.csv'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+
+  <div id="df-86084c92-a730-4228-b870-df2774ac4dae" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">nome</th>
+<th data-quarto-table-cell-role="th">idade</th>
+<th data-quarto-table-cell-role="th">genero</th>
+<th data-quarto-table-cell-role="th">salario</th>
+<th data-quarto-table-cell-role="th">cidade</th>
+<th data-quarto-table-cell-role="th">status_emprego</th>
+<th data-quarto-table-cell-role="th">formacao</th>
+<th data-quarto-table-cell-role="th">score_credito</th>
+<th data-quarto-table-cell-role="th">genero_cod</th>
+<th data-quarto-table-cell-role="th">salario_anual</th>
+<th data-quarto-table-cell-role="th">genero_cod_lambda</th>
+<th data-quarto-table-cell-role="th">faixa_score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Mariano</td>
+<td>65</td>
+<td>M</td>
+<td>7000.0</td>
+<td>Porto Alegre</td>
+<td>Autônomo</td>
+<td>Pós-graduação</td>
+<td>626</td>
+<td>1</td>
+<td>84000.0</td>
+<td>1</td>
+<td>Médio</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Luiz</td>
+<td>71</td>
+<td>M</td>
+<td>6545.0</td>
+<td>Rio de Janeiro</td>
+<td>Autônomo</td>
+<td>Graduação</td>
+<td>438</td>
+<td>1</td>
+<td>78540.0</td>
+<td>1</td>
+<td>Baixo</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Carlo</td>
+<td>21</td>
+<td>M</td>
+<td>12383.0</td>
+<td>Salvador</td>
+<td>Autônomo</td>
+<td>Graduação</td>
+<td>384</td>
+<td>1</td>
+<td>148596.0</td>
+<td>1</td>
+<td>Baixo</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Luiz</td>
+<td>77</td>
+<td>M</td>
+<td>1823.0</td>
+<td>Porto Alegre</td>
+<td>Autônomo</td>
+<td>Ensino Médio</td>
+<td>737</td>
+<td>1</td>
+<td>21876.0</td>
+<td>1</td>
+<td>Alto</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Felipe</td>
+<td>21</td>
+<td>M</td>
+<td>1490.0</td>
+<td>Porto Alegre</td>
+<td>Autônomo</td>
+<td>Ensino Médio</td>
+<td>482</td>
+<td>1</td>
+<td>17880.0</td>
+<td>1</td>
+<td>Baixo</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-86084c92-a730-4228-b870-df2774ac4dae')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-86084c92-a730-4228-b870-df2774ac4dae button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-86084c92-a730-4228-b870-df2774ac4dae');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-5fb50f30-11f7-422f-9afa-006626155fc9">
+  <button class="colab-df-quickchart" onclick="quickchart('df-5fb50f30-11f7-422f-9afa-006626155fc9')" title="Suggest charts" style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-5fb50f30-11f7-422f-9afa-006626155fc9 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+
+    </div>
+  </div>
+</div>
+</div>
+<section id="métodos-built-in" class="level3">
+<h3 class="anchored" data-anchor-id="métodos-built-in"><strong>1. Métodos <em>built-in</em></strong></h3>
+<blockquote class="blockquote">
+<p>Scatter plot</p>
+</blockquote>
+<div id="cell-5" class="cell" data-outputid="72069638-6bca-4d99-970b-354a1c704a95" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># idade e salário:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.plot.scatter(x<span class="op">=</span><span class="st">'idade'</span>, y<span class="op">=</span><span class="st">'salario'</span>, color<span class="op">=</span><span class="st">'royalblue'</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualização_de_dados_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Gráfico de barras</p>
+</blockquote>
+<div id="cell-7" class="cell" data-outputid="2171b508-70d1-413e-dfb3-5ea3a104652f" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># score de crédito:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[[<span class="st">'score_credito'</span>]].head(<span class="dv">10</span>).plot.barh()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualização_de_dados_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Boxplot</p>
+</blockquote>
+<div id="cell-9" class="cell" data-outputid="1ca9801c-c2f5-44f9-8677-223183561b7b" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># score de crédito:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[[<span class="st">'score_credito'</span>]].plot.box()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualização_de_dados_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Adicionalmente, podemos mudar a biblioteca por trás das plotagens (<strong>backend</strong>). Seguem algumas opções:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pd.options.plotting.backend <span class="op">=</span> <span class="st">'matplotlib'</span>    <span class="co"># (default)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pd.options.plotting.backend <span class="op">=</span> <span class="st">'plotly'</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>pd.options.plotting.backend <span class="op">=</span> <span class="st">'pandas_bokeh'</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>pd.options.plotting.backend <span class="op">=</span> <span class="st">'hvplot'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>Histograma com <code>plotly</code></p>
+</blockquote>
+<div id="cell-12" class="cell" data-outputid="cfa6ed1f-8b7d-43b3-a37f-373c33822541" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pd.options.plotting.backend <span class="op">=</span> <span class="st">'plotly'</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># score de crédito:</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[[<span class="st">'genero'</span>, <span class="st">'score_credito'</span>]].hist(template<span class="op">=</span><span class="st">'simple_white'</span>, color<span class="op">=</span><span class="st">'genero'</span>, width<span class="op">=</span><span class="dv">600</span>, height<span class="op">=</span><span class="dv">400</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<meta charset="utf-8">
+
+    <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>                <div id="c1ce4786-a53b-4554-834b-26a5cb90b161" class="plotly-graph-div" style="height:400px; width:600px;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("c1ce4786-a53b-4554-834b-26a5cb90b161")) {                    Plotly.newPlot(                        "c1ce4786-a53b-4554-834b-26a5cb90b161",                        [{"alignmentgroup":"True","bingroup":"x","hovertemplate":"genero=M\u003cbr\u003evalue=%{x}\u003cbr\u003ecount=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"M","marker":{"color":"#1F77B4","pattern":{"shape":""}},"name":"M","offsetgroup":"M","orientation":"v","showlegend":true,"x":[626,438,384,737,482,693,387,392,336,825,577,615,489,780,588,391,648,622,642,577,475,825,642,338,708,757,337,667,580,531,454,483,695,498,648,558,467,416,475,438,447,377,485,848,308,680,672,603,311,382,516,744,500,813,551,347,734,511,781,775,808,511,543,371,740,523,522,544,765,484,503,489,718,810,389,768,679,307,492,568,490,787,486,626,366,605,415,705,713,351,401,787,332,707,465,621,815,489,349,813,402,397,488,665,380,690,574,446,821,796,733,653,538,467,626,576,428,332,623,518,696,588,629,367,815,722,736,324,749,501,646,468,705,632,370,716,642,320,409,692,313,682,409,579,549,501,531,311,429,586,717,387,768,465,598,420,753,449,316,835,721,727,832,517,697,411,450,585,624,768,763,574,614,847,749,820,369,671,562,698,764,422,374,597,396,657,590,639,511,762,765,765,477,823,496,806,607,408,566,303,715,840,617,606,827,830,344,541,300,834,581,679,485,556,505,564,766,608,655,586,303,588,410,653,479,504,790,778,469,644,332,684,836,640,519,390,757,646,523,685,592,571,313,529,602,756,711,450,516,842,547,520,368,369,472,436,792,422,668,678,588,485,637,445,671,455,525,717,515,686,794,685,586,549,817,498,616,308,509,431,383,814,671,760,479,575,543,347,368,362,717,388,553,542,672,381,696,777,842,843,307,369,633,332,840,312,374,707,842,736,798,378,495,507,479,486,648,805,724,460,780,615,697,736,478,771,482,677,362,566,354,817,794,717,635,808,374,574,607,726,469,536,796,417,516,515,635,324,367,792,442,381,661,685,843,506,446,463,659,493,549,708,594,341,484,665,838,755,563,739,512,701,361,772,739,709,625,376,584,311,404,684,711,484,646,616,407,468,624,575,819,746,663,522,396,790,364,570,775,505,593,654,686,414,653,803,506,600,327,707,399,803,308,553,539,424,534,675,504,572,514,433,404,645,522,779,492,641,436,643,715,788,621,348,423,506,737,783,804,726,628,736,523,697,491,347,717,340,527,825,464,580,459,713,818,507,417,415,439,620,590,494,436,720,732,693,631,423,712,624,636,722,493,465,598,305,437,330,438,626,583],"xaxis":"x","yaxis":"y","type":"histogram"},{"alignmentgroup":"True","bingroup":"x","hovertemplate":"genero=F\u003cbr\u003evalue=%{x}\u003cbr\u003ecount=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"F","marker":{"color":"#FF7F0E","pattern":{"shape":""}},"name":"F","offsetgroup":"F","orientation":"v","showlegend":true,"x":[848,728,656,463,318,448,668,788,539,330,745,740,721,388,739,728,647,741,461,641,366,509,837,614,368,550,544,550,715,440,492,683,310,619,510,815,384,765,521,741,417,711,750,836,428,387,649,530,536,425,807,846,661,432,735,361,667,453,681,349,457,548,456,834,317,333,541,627,302,606,824,713,761,548,318,741,646,714,591,482,474,468,624,354,356,366,845,770,306,495,519,663,395,505,388,601,612,820,789,653,555,699,701,411,749,372,672,770,680,822,321,497,583,620,303,727,320,836,626,712,763,524,301,445,490,731,564,629,371,369,668,658,726,487,431,362,584,543,771,811,696,531,487,418,309,518,695,614,375,421,536,620,604,405,320,691,729,842,497,682,468,667,437,736,353,688,797,335,562,538,445,642,447,665,352,620,829,723,689,812,581,640,560,521,745,572,494,662,324,705,589,556,465,648,609,329,431,723,716,456,570,779,527,637,617,798,752,431,413,334,789,406,524,622,597,487,616,637,505,815,638,825,440,308,599,569,627,601,638,710,409,839,759,483,823,404,848,619,694,309,384,560,743,339,515,423,310,449,525,491,750,648,313,544,714,459,477,661,725,459,564,733,637,486,585,545,508,384,535,408,430,461,776,557,710,639,664,545,641,714,641,426,631,702,599,747,654,397,695,537,794,442,666,833,528,309,557,412,846,310,598,405,817,491,675,666,800,306,322,310,647,796,627,426,583,835,436,594,558,351,737,666,520,472,661,464,487,654,767,533,782,730,844,393,355,605,807,319,514,486,552,315,370,838,617,391,413,698,645,568,726,420,776,396,347,711,645,718,743,369,372,530,787,300,835,458,788,583,786,637,552,675,321,360,329,834,635,540,511,382,663,820,570,704,796,631,733,670,539,585,421,503,405,672,519,374,712,555,497,610,749,568,712,800,408,379,572,837,703,786,746,443,321,324,453,481,704,515,443,323,800,371,357,485,531,566,725,341,651,401,577,302,716,493,609,674,659,352,729,623,488,326,581,583,492,757,506,745,707,736,497,334,656,548,832,705,429,799,432,786,408,334,591,800,720,830,737,610,546,542,445,590,783,415,844,309,598,607,796,804,783,472,436,317,794,449,835,614,354,528,324,341,495,645,845,600,475,660,326,389,842,717,417,768,609,621,813,637,739,690,321,535],"xaxis":"x","yaxis":"y","type":"histogram"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"rgb(36,36,36)"},"error_y":{"color":"rgb(36,36,36)"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"rgb(36,36,36)","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"rgb(36,36,36)"},"baxis":{"endlinecolor":"rgb(36,36,36)","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"rgb(36,36,36)"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"histogram2d"}],"histogram":[{"marker":{"line":{"color":"white","width":0.6}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"rgb(237,237,237)"},"line":{"color":"white"}},"header":{"fill":{"color":"rgb(217,217,217)"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"colorscale":{"diverging":[[0.0,"rgb(103,0,31)"],[0.1,"rgb(178,24,43)"],[0.2,"rgb(214,96,77)"],[0.3,"rgb(244,165,130)"],[0.4,"rgb(253,219,199)"],[0.5,"rgb(247,247,247)"],[0.6,"rgb(209,229,240)"],[0.7,"rgb(146,197,222)"],[0.8,"rgb(67,147,195)"],[0.9,"rgb(33,102,172)"],[1.0,"rgb(5,48,97)"]],"sequential":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"sequentialminus":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]]},"colorway":["#1F77B4","#FF7F0E","#2CA02C","#D62728","#9467BD","#8C564B","#E377C2","#7F7F7F","#BCBD22","#17BECF"],"font":{"color":"rgb(36,36,36)"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"},"bgcolor":"white","radialaxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"rgb(232,232,232)","gridwidth":2,"linecolor":"rgb(36,36,36)","showbackground":true,"showgrid":false,"showline":true,"ticks":"outside","zeroline":false,"zerolinecolor":"rgb(36,36,36)"},"yaxis":{"backgroundcolor":"white","gridcolor":"rgb(232,232,232)","gridwidth":2,"linecolor":"rgb(36,36,36)","showbackground":true,"showgrid":false,"showline":true,"ticks":"outside","zeroline":false,"zerolinecolor":"rgb(36,36,36)"},"zaxis":{"backgroundcolor":"white","gridcolor":"rgb(232,232,232)","gridwidth":2,"linecolor":"rgb(36,36,36)","showbackground":true,"showgrid":false,"showline":true,"ticks":"outside","zeroline":false,"zerolinecolor":"rgb(36,36,36)"}},"shapedefaults":{"fillcolor":"black","line":{"width":0},"opacity":0.3},"ternary":{"aaxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"},"baxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"},"bgcolor":"white","caxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside","title":{"standoff":15},"zeroline":false,"zerolinecolor":"rgb(36,36,36)"},"yaxis":{"automargin":true,"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside","title":{"standoff":15},"zeroline":false,"zerolinecolor":"rgb(36,36,36)"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"value"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"count"}},"legend":{"title":{"text":"genero"},"tracegroupgap":0},"margin":{"t":60},"barmode":"relative","height":400,"width":600},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('c1ce4786-a53b-4554-834b-26a5cb90b161');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                            </script>        </div>
+
+
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Boxplot com <code>plotly</code></p>
+</blockquote>
+<div id="cell-14" class="cell" data-outputid="8c38a25d-9c8f-4b2f-9239-dd85384ab9f7" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[[<span class="st">'status_emprego'</span>, <span class="st">'score_credito'</span>]].boxplot(template<span class="op">=</span><span class="st">'simple_white'</span>, color<span class="op">=</span><span class="st">'status_emprego'</span>, width<span class="op">=</span><span class="dv">600</span>, height<span class="op">=</span><span class="dv">400</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<meta charset="utf-8">
+
+    <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>                <div id="86e0a391-9d35-451b-983a-1dd128051ee1" class="plotly-graph-div" style="height:400px; width:600px;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("86e0a391-9d35-451b-983a-1dd128051ee1")) {                    Plotly.newPlot(                        "86e0a391-9d35-451b-983a-1dd128051ee1",                        [{"alignmentgroup":"True","hovertemplate":"status_emprego=Aut\u00f4nomo\u003cbr\u003evariable=%{x}\u003cbr\u003evalue=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Aut\u00f4nomo","marker":{"color":"#1F77B4"},"name":"Aut\u00f4nomo","notched":false,"offsetgroup":"Aut\u00f4nomo","orientation":"v","showlegend":true,"x":["score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito"],"x0":" ","xaxis":"x","y":[626,438,384,737,482,656,318,448,577,588,391,648,577,721,388,739,642,647,338,708,757,667,531,550,483,467,440,492,619,848,680,741,711,603,750,311,382,516,836,500,425,543,453,522,349,765,484,810,456,834,768,627,302,606,486,761,548,318,415,705,482,354,401,366,306,495,519,813,402,395,488,505,653,699,538,626,332,321,623,629,367,815,763,301,490,731,629,371,646,668,632,362,692,543,682,696,549,418,531,311,518,614,717,768,465,598,604,405,320,667,688,335,538,697,445,642,450,624,665,847,581,521,662,589,556,671,597,723,396,570,789,762,765,487,806,601,638,827,541,834,483,848,505,384,766,608,310,653,479,750,469,313,459,332,684,640,661,459,564,685,486,585,384,408,529,756,639,450,664,547,436,422,668,678,714,588,485,637,445,631,747,671,455,442,528,309,817,616,491,800,322,383,479,575,594,558,362,520,553,672,381,696,487,767,782,840,514,707,736,798,486,315,507,805,698,697,736,420,776,354,711,718,369,300,374,583,607,786,675,417,635,540,511,843,704,463,708,670,421,563,512,712,555,739,568,625,712,408,711,468,443,704,746,364,593,686,485,566,725,341,651,401,493,534,504,623,488,581,583,745,497,334,779,656,548,436,643,429,621,348,799,786,737,783,628,736,830,737,697,542,445,340,527,783,844,607,472,794,415,614,645,845,693,660,712,842,417,768,609,621,465,598,637,739,535],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","hovertemplate":"status_emprego=Empregado\u003cbr\u003evariable=%{x}\u003cbr\u003evalue=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Empregado","marker":{"color":"#FF7F0E"},"name":"Empregado","notched":false,"offsetgroup":"Empregado","orientation":"v","showlegend":true,"x":["score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito"],"x0":" ","xaxis":"x","y":[848,728,336,668,615,780,475,461,337,614,580,454,544,498,648,558,550,715,683,310,510,416,447,815,765,521,672,417,744,813,551,649,536,846,781,808,511,371,667,544,457,503,389,333,307,824,787,713,366,605,714,591,468,713,351,356,332,465,388,612,821,796,555,701,576,428,680,822,583,696,620,320,836,626,524,722,445,324,468,658,716,320,409,431,584,771,811,409,487,501,309,375,429,421,536,387,620,691,729,753,449,316,721,727,437,832,517,411,447,585,352,620,829,723,574,689,614,640,749,560,705,820,465,609,329,422,431,716,527,637,413,406,524,823,622,496,597,616,637,607,408,566,825,308,715,599,627,840,710,759,300,581,564,560,339,423,588,449,778,648,714,477,757,646,725,313,602,430,461,776,557,710,516,545,842,520,368,369,472,641,792,641,599,397,525,695,717,833,685,557,846,498,405,817,509,675,431,666,306,627,760,426,583,351,368,737,666,717,388,542,661,777,842,654,843,533,369,633,844,332,312,393,374,319,842,495,370,838,617,724,413,726,478,396,794,645,743,530,808,637,536,796,515,635,360,329,834,324,367,792,442,382,685,570,506,659,549,341,539,665,585,838,405,739,374,610,800,584,311,484,616,407,746,624,321,575,481,515,443,663,522,396,790,570,800,505,654,414,803,399,371,531,577,539,716,675,729,326,757,492,705,715,788,423,408,506,804,334,800,546,491,347,717,590,796,436,507,449,835,439,354,528,341,590,494,495,720,732,631,389,624,636,722,813,305,690,626,321],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","hovertemplate":"status_emprego=Desempregado\u003cbr\u003evariable=%{x}\u003cbr\u003evalue=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Desempregado","marker":{"color":"#2CA02C"},"name":"Desempregado","notched":false,"offsetgroup":"Desempregado","orientation":"v","showlegend":true,"x":["score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito","score_credito"],"x0":" ","xaxis":"x","y":[693,387,463,392,825,788,539,489,330,745,622,642,740,825,728,741,641,366,509,837,368,695,475,438,377,485,384,308,428,387,347,530,734,511,807,775,661,432,735,740,523,361,681,489,718,548,317,679,492,568,541,490,626,741,646,474,624,787,845,770,707,621,815,489,349,397,663,665,380,601,690,574,820,446,789,733,653,467,411,749,372,672,770,497,518,303,727,588,712,564,736,369,749,501,705,370,726,642,487,313,579,531,695,586,420,842,497,682,835,468,736,353,797,562,768,763,812,745,572,494,324,369,562,698,648,764,374,456,779,657,617,590,639,798,752,431,334,511,765,477,505,815,638,303,440,569,617,606,409,830,839,344,823,679,485,404,556,619,694,309,743,515,655,586,303,410,525,504,491,790,544,644,836,519,390,523,733,637,545,508,592,535,571,711,426,702,654,537,794,666,515,686,794,412,586,310,549,598,308,310,647,796,814,671,543,347,835,436,472,464,307,730,355,605,807,552,378,479,486,648,391,460,645,780,568,615,771,482,677,362,566,817,347,717,635,372,787,835,458,574,788,726,552,469,516,321,381,661,663,820,446,493,594,484,796,631,733,503,755,672,519,701,361,497,772,749,709,376,404,684,379,572,646,837,703,786,324,453,819,323,775,653,506,600,327,707,357,803,308,553,302,424,609,674,659,352,572,514,433,404,645,522,492,506,707,736,641,832,432,726,591,523,720,610,415,309,825,464,598,580,804,783,459,317,713,818,417,620,324,436,600,475,326,423,717,493,437,330,438,583],"y0":" ","yaxis":"y","type":"box"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"rgb(36,36,36)"},"error_y":{"color":"rgb(36,36,36)"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"rgb(36,36,36)","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"rgb(36,36,36)"},"baxis":{"endlinecolor":"rgb(36,36,36)","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"rgb(36,36,36)"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"histogram2d"}],"histogram":[{"marker":{"line":{"color":"white","width":0.6}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"rgb(237,237,237)"},"line":{"color":"white"}},"header":{"fill":{"color":"rgb(217,217,217)"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"colorscale":{"diverging":[[0.0,"rgb(103,0,31)"],[0.1,"rgb(178,24,43)"],[0.2,"rgb(214,96,77)"],[0.3,"rgb(244,165,130)"],[0.4,"rgb(253,219,199)"],[0.5,"rgb(247,247,247)"],[0.6,"rgb(209,229,240)"],[0.7,"rgb(146,197,222)"],[0.8,"rgb(67,147,195)"],[0.9,"rgb(33,102,172)"],[1.0,"rgb(5,48,97)"]],"sequential":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"sequentialminus":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]]},"colorway":["#1F77B4","#FF7F0E","#2CA02C","#D62728","#9467BD","#8C564B","#E377C2","#7F7F7F","#BCBD22","#17BECF"],"font":{"color":"rgb(36,36,36)"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"},"bgcolor":"white","radialaxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"rgb(232,232,232)","gridwidth":2,"linecolor":"rgb(36,36,36)","showbackground":true,"showgrid":false,"showline":true,"ticks":"outside","zeroline":false,"zerolinecolor":"rgb(36,36,36)"},"yaxis":{"backgroundcolor":"white","gridcolor":"rgb(232,232,232)","gridwidth":2,"linecolor":"rgb(36,36,36)","showbackground":true,"showgrid":false,"showline":true,"ticks":"outside","zeroline":false,"zerolinecolor":"rgb(36,36,36)"},"zaxis":{"backgroundcolor":"white","gridcolor":"rgb(232,232,232)","gridwidth":2,"linecolor":"rgb(36,36,36)","showbackground":true,"showgrid":false,"showline":true,"ticks":"outside","zeroline":false,"zerolinecolor":"rgb(36,36,36)"}},"shapedefaults":{"fillcolor":"black","line":{"width":0},"opacity":0.3},"ternary":{"aaxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"},"baxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"},"bgcolor":"white","caxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside","title":{"standoff":15},"zeroline":false,"zerolinecolor":"rgb(36,36,36)"},"yaxis":{"automargin":true,"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside","title":{"standoff":15},"zeroline":false,"zerolinecolor":"rgb(36,36,36)"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"variable"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"value"}},"legend":{"title":{"text":"status_emprego"},"tracegroupgap":0},"margin":{"t":60},"boxmode":"group","height":400,"width":600},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('86e0a391-9d35-451b-983a-1dd128051ee1');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                            </script>        </div>
+
+
+</div>
+</div>
+<section id="bibliotecas-de-visualização" class="level4">
+<h4 class="anchored" data-anchor-id="bibliotecas-de-visualização"><strong>2. Bibliotecas de visualização</strong></h4>
+<p>O Python conta com inúmeras bibliotecas de visualização. Alguns exemplos são:</p>
+<ol type="1">
+<li>Matplotlib</li>
+<li>Seaborn (baseada em matplotlib)</li>
+<li>Plotly</li>
+<li>Bokeh</li>
+</ol>
+<div id="cell-17" class="cell" data-outputid="1a3b792c-ea74-4a8b-9206-be8f781dcdf8" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># bibliotecas:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># gráfico de stripplot (score):</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>sns.stripplot(</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>clientes_cifraonline,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'score_credito'</span>,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'lightgray'</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    size<span class="op">=</span><span class="dv">9</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.75</span>,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    jitter <span class="op">=</span> <span class="fl">0.3</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualização_de_dados_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Quantos clientes tem o score de crédito acima de 700?</strong></p>
+</blockquote>
+<div id="cell-19" class="cell" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regra de negócio:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline[<span class="st">'score_700'</span>] <span class="op">=</span> clientes_cifraonline[<span class="st">'score_credito'</span>].<span class="bu">apply</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> score: <span class="st">'Sim'</span> <span class="cf">if</span> score <span class="op">&gt;=</span> <span class="dv">700</span> <span class="cf">else</span> <span class="st">'Não'</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Contagem de clientes com score maior ou igual a 700:</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>contagem_clientes_score_700 <span class="op">=</span> clientes_cifraonline[<span class="st">'score_700'</span>].value_counts() <span class="op">/</span> <span class="bu">len</span>(clientes_cifraonline) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>percentual <span class="op">=</span> <span class="bu">round</span>(contagem_clientes_score_700[<span class="dv">1</span>], <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-20" class="cell" data-outputid="1467127d-f887-4103-f56d-d115e0102404" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualização de dados:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>sns.stripplot(</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>clientes_cifraonline,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>     y<span class="op">=</span><span class="st">'score_credito'</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>     hue<span class="op">=</span><span class="st">'score_700'</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>     palette<span class="op">=</span>[<span class="st">'lightgray'</span>, <span class="st">'royalblue'</span>],</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>     size<span class="op">=</span><span class="fl">7.5</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, jitter<span class="op">=</span><span class="fl">0.3</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>plt.axhline(</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="dv">700</span>, lw<span class="op">=</span><span class="dv">1</span>, ls<span class="op">=</span><span class="st">'--'</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'royalblue'</span>,</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="st">'Score 700'</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f'Aproximadamente (</span><span class="sc">{</span>percentual<span class="sc">}</span><span class="ss">%) dos clientes têm score acima de 700'</span>,</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    weight<span class="op">=</span><span class="st">'bold'</span>, color<span class="op">=</span><span class="st">'royalblue'</span>, loc<span class="op">=</span><span class="st">'left'</span>, size<span class="op">=</span><span class="dv">10</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>plt.legend().remove()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualização_de_dados_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="esitlos" class="level3">
+<h3 class="anchored" data-anchor-id="esitlos"><strong>3. Esitlos</strong></h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>dados.style.<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">2</span>).<span class="op">&lt;</span>FORMATO<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p><code>.background_gradient()</code></p>
+</blockquote>
+<div id="cell-24" class="cell" data-outputid="cf38549c-c6a4-4502-f984-ad0f1e950a00" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head().style.<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">2</span>).background_gradient()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="52">
+
+
+<table id="T_717eb" class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_717eb_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">nome</th>
+<th id="T_717eb_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">idade</th>
+<th id="T_717eb_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">genero</th>
+<th id="T_717eb_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">salario</th>
+<th id="T_717eb_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">cidade</th>
+<th id="T_717eb_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">status_emprego</th>
+<th id="T_717eb_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">formacao</th>
+<th id="T_717eb_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">score_credito</th>
+<th id="T_717eb_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">genero_cod</th>
+<th id="T_717eb_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">salario_anual</th>
+<th id="T_717eb_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">genero_cod_lambda</th>
+<th id="T_717eb_level0_col11" class="col_heading level0 col11" data-quarto-table-cell-role="th">faixa_score</th>
+<th id="T_717eb_level0_col12" class="col_heading level0 col12" data-quarto-table-cell-role="th">score_700</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_717eb_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_717eb_row0_col0" class="data row0 col0">Mariano</td>
+<td id="T_717eb_row0_col1" class="data row0 col1">65</td>
+<td id="T_717eb_row0_col2" class="data row0 col2">M</td>
+<td id="T_717eb_row0_col3" class="data row0 col3">7000.00</td>
+<td id="T_717eb_row0_col4" class="data row0 col4">Porto Alegre</td>
+<td id="T_717eb_row0_col5" class="data row0 col5">Autônomo</td>
+<td id="T_717eb_row0_col6" class="data row0 col6">Pós-graduação</td>
+<td id="T_717eb_row0_col7" class="data row0 col7">626</td>
+<td id="T_717eb_row0_col8" class="data row0 col8">1</td>
+<td id="T_717eb_row0_col9" class="data row0 col9">84000.00</td>
+<td id="T_717eb_row0_col10" class="data row0 col10">1</td>
+<td id="T_717eb_row0_col11" class="data row0 col11">Médio</td>
+<td id="T_717eb_row0_col12" class="data row0 col12">Não</td>
+</tr>
+<tr class="even">
+<td id="T_717eb_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_717eb_row1_col0" class="data row1 col0">Luiz</td>
+<td id="T_717eb_row1_col1" class="data row1 col1">71</td>
+<td id="T_717eb_row1_col2" class="data row1 col2">M</td>
+<td id="T_717eb_row1_col3" class="data row1 col3">6545.00</td>
+<td id="T_717eb_row1_col4" class="data row1 col4">Rio de Janeiro</td>
+<td id="T_717eb_row1_col5" class="data row1 col5">Autônomo</td>
+<td id="T_717eb_row1_col6" class="data row1 col6">Graduação</td>
+<td id="T_717eb_row1_col7" class="data row1 col7">438</td>
+<td id="T_717eb_row1_col8" class="data row1 col8">1</td>
+<td id="T_717eb_row1_col9" class="data row1 col9">78540.00</td>
+<td id="T_717eb_row1_col10" class="data row1 col10">1</td>
+<td id="T_717eb_row1_col11" class="data row1 col11">Baixo</td>
+<td id="T_717eb_row1_col12" class="data row1 col12">Não</td>
+</tr>
+<tr class="odd">
+<td id="T_717eb_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_717eb_row2_col0" class="data row2 col0">Carlo</td>
+<td id="T_717eb_row2_col1" class="data row2 col1">21</td>
+<td id="T_717eb_row2_col2" class="data row2 col2">M</td>
+<td id="T_717eb_row2_col3" class="data row2 col3">12383.00</td>
+<td id="T_717eb_row2_col4" class="data row2 col4">Salvador</td>
+<td id="T_717eb_row2_col5" class="data row2 col5">Autônomo</td>
+<td id="T_717eb_row2_col6" class="data row2 col6">Graduação</td>
+<td id="T_717eb_row2_col7" class="data row2 col7">384</td>
+<td id="T_717eb_row2_col8" class="data row2 col8">1</td>
+<td id="T_717eb_row2_col9" class="data row2 col9">148596.00</td>
+<td id="T_717eb_row2_col10" class="data row2 col10">1</td>
+<td id="T_717eb_row2_col11" class="data row2 col11">Baixo</td>
+<td id="T_717eb_row2_col12" class="data row2 col12">Não</td>
+</tr>
+<tr class="even">
+<td id="T_717eb_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_717eb_row3_col0" class="data row3 col0">Luiz</td>
+<td id="T_717eb_row3_col1" class="data row3 col1">77</td>
+<td id="T_717eb_row3_col2" class="data row3 col2">M</td>
+<td id="T_717eb_row3_col3" class="data row3 col3">1823.00</td>
+<td id="T_717eb_row3_col4" class="data row3 col4">Porto Alegre</td>
+<td id="T_717eb_row3_col5" class="data row3 col5">Autônomo</td>
+<td id="T_717eb_row3_col6" class="data row3 col6">Ensino Médio</td>
+<td id="T_717eb_row3_col7" class="data row3 col7">737</td>
+<td id="T_717eb_row3_col8" class="data row3 col8">1</td>
+<td id="T_717eb_row3_col9" class="data row3 col9">21876.00</td>
+<td id="T_717eb_row3_col10" class="data row3 col10">1</td>
+<td id="T_717eb_row3_col11" class="data row3 col11">Alto</td>
+<td id="T_717eb_row3_col12" class="data row3 col12">Sim</td>
+</tr>
+<tr class="odd">
+<td id="T_717eb_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_717eb_row4_col0" class="data row4 col0">Felipe</td>
+<td id="T_717eb_row4_col1" class="data row4 col1">21</td>
+<td id="T_717eb_row4_col2" class="data row4 col2">M</td>
+<td id="T_717eb_row4_col3" class="data row4 col3">1490.00</td>
+<td id="T_717eb_row4_col4" class="data row4 col4">Porto Alegre</td>
+<td id="T_717eb_row4_col5" class="data row4 col5">Autônomo</td>
+<td id="T_717eb_row4_col6" class="data row4 col6">Ensino Médio</td>
+<td id="T_717eb_row4_col7" class="data row4 col7">482</td>
+<td id="T_717eb_row4_col8" class="data row4 col8">1</td>
+<td id="T_717eb_row4_col9" class="data row4 col9">17880.00</td>
+<td id="T_717eb_row4_col10" class="data row4 col10">1</td>
+<td id="T_717eb_row4_col11" class="data row4 col11">Baixo</td>
+<td id="T_717eb_row4_col12" class="data row4 col12">Não</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><code>.bar()</code></p>
+</blockquote>
+<div id="cell-26" class="cell" data-outputid="6239a982-adc4-4085-977e-1d24ac342854" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># geral (todo o dataframe):</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head().style.<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">2</span>).bar(color<span class="op">=</span><span class="st">'chartreuse'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="53">
+
+
+<table id="T_e8397" class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_e8397_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">nome</th>
+<th id="T_e8397_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">idade</th>
+<th id="T_e8397_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">genero</th>
+<th id="T_e8397_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">salario</th>
+<th id="T_e8397_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">cidade</th>
+<th id="T_e8397_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">status_emprego</th>
+<th id="T_e8397_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">formacao</th>
+<th id="T_e8397_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">score_credito</th>
+<th id="T_e8397_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">genero_cod</th>
+<th id="T_e8397_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">salario_anual</th>
+<th id="T_e8397_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">genero_cod_lambda</th>
+<th id="T_e8397_level0_col11" class="col_heading level0 col11" data-quarto-table-cell-role="th">faixa_score</th>
+<th id="T_e8397_level0_col12" class="col_heading level0 col12" data-quarto-table-cell-role="th">score_700</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_e8397_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_e8397_row0_col0" class="data row0 col0">Mariano</td>
+<td id="T_e8397_row0_col1" class="data row0 col1">65</td>
+<td id="T_e8397_row0_col2" class="data row0 col2">M</td>
+<td id="T_e8397_row0_col3" class="data row0 col3">7000.00</td>
+<td id="T_e8397_row0_col4" class="data row0 col4">Porto Alegre</td>
+<td id="T_e8397_row0_col5" class="data row0 col5">Autônomo</td>
+<td id="T_e8397_row0_col6" class="data row0 col6">Pós-graduação</td>
+<td id="T_e8397_row0_col7" class="data row0 col7">626</td>
+<td id="T_e8397_row0_col8" class="data row0 col8">1</td>
+<td id="T_e8397_row0_col9" class="data row0 col9">84000.00</td>
+<td id="T_e8397_row0_col10" class="data row0 col10">1</td>
+<td id="T_e8397_row0_col11" class="data row0 col11">Médio</td>
+<td id="T_e8397_row0_col12" class="data row0 col12">Não</td>
+</tr>
+<tr class="even">
+<td id="T_e8397_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_e8397_row1_col0" class="data row1 col0">Luiz</td>
+<td id="T_e8397_row1_col1" class="data row1 col1">71</td>
+<td id="T_e8397_row1_col2" class="data row1 col2">M</td>
+<td id="T_e8397_row1_col3" class="data row1 col3">6545.00</td>
+<td id="T_e8397_row1_col4" class="data row1 col4">Rio de Janeiro</td>
+<td id="T_e8397_row1_col5" class="data row1 col5">Autônomo</td>
+<td id="T_e8397_row1_col6" class="data row1 col6">Graduação</td>
+<td id="T_e8397_row1_col7" class="data row1 col7">438</td>
+<td id="T_e8397_row1_col8" class="data row1 col8">1</td>
+<td id="T_e8397_row1_col9" class="data row1 col9">78540.00</td>
+<td id="T_e8397_row1_col10" class="data row1 col10">1</td>
+<td id="T_e8397_row1_col11" class="data row1 col11">Baixo</td>
+<td id="T_e8397_row1_col12" class="data row1 col12">Não</td>
+</tr>
+<tr class="odd">
+<td id="T_e8397_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_e8397_row2_col0" class="data row2 col0">Carlo</td>
+<td id="T_e8397_row2_col1" class="data row2 col1">21</td>
+<td id="T_e8397_row2_col2" class="data row2 col2">M</td>
+<td id="T_e8397_row2_col3" class="data row2 col3">12383.00</td>
+<td id="T_e8397_row2_col4" class="data row2 col4">Salvador</td>
+<td id="T_e8397_row2_col5" class="data row2 col5">Autônomo</td>
+<td id="T_e8397_row2_col6" class="data row2 col6">Graduação</td>
+<td id="T_e8397_row2_col7" class="data row2 col7">384</td>
+<td id="T_e8397_row2_col8" class="data row2 col8">1</td>
+<td id="T_e8397_row2_col9" class="data row2 col9">148596.00</td>
+<td id="T_e8397_row2_col10" class="data row2 col10">1</td>
+<td id="T_e8397_row2_col11" class="data row2 col11">Baixo</td>
+<td id="T_e8397_row2_col12" class="data row2 col12">Não</td>
+</tr>
+<tr class="even">
+<td id="T_e8397_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_e8397_row3_col0" class="data row3 col0">Luiz</td>
+<td id="T_e8397_row3_col1" class="data row3 col1">77</td>
+<td id="T_e8397_row3_col2" class="data row3 col2">M</td>
+<td id="T_e8397_row3_col3" class="data row3 col3">1823.00</td>
+<td id="T_e8397_row3_col4" class="data row3 col4">Porto Alegre</td>
+<td id="T_e8397_row3_col5" class="data row3 col5">Autônomo</td>
+<td id="T_e8397_row3_col6" class="data row3 col6">Ensino Médio</td>
+<td id="T_e8397_row3_col7" class="data row3 col7">737</td>
+<td id="T_e8397_row3_col8" class="data row3 col8">1</td>
+<td id="T_e8397_row3_col9" class="data row3 col9">21876.00</td>
+<td id="T_e8397_row3_col10" class="data row3 col10">1</td>
+<td id="T_e8397_row3_col11" class="data row3 col11">Alto</td>
+<td id="T_e8397_row3_col12" class="data row3 col12">Sim</td>
+</tr>
+<tr class="odd">
+<td id="T_e8397_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_e8397_row4_col0" class="data row4 col0">Felipe</td>
+<td id="T_e8397_row4_col1" class="data row4 col1">21</td>
+<td id="T_e8397_row4_col2" class="data row4 col2">M</td>
+<td id="T_e8397_row4_col3" class="data row4 col3">1490.00</td>
+<td id="T_e8397_row4_col4" class="data row4 col4">Porto Alegre</td>
+<td id="T_e8397_row4_col5" class="data row4 col5">Autônomo</td>
+<td id="T_e8397_row4_col6" class="data row4 col6">Ensino Médio</td>
+<td id="T_e8397_row4_col7" class="data row4 col7">482</td>
+<td id="T_e8397_row4_col8" class="data row4 col8">1</td>
+<td id="T_e8397_row4_col9" class="data row4 col9">17880.00</td>
+<td id="T_e8397_row4_col10" class="data row4 col10">1</td>
+<td id="T_e8397_row4_col11" class="data row4 col11">Baixo</td>
+<td id="T_e8397_row4_col12" class="data row4 col12">Não</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="cell-27" class="cell" data-outputid="2955ffb5-abd7-49b9-fdd2-8627443b5355" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># com subset:</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head().style.<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">2</span>).bar(subset<span class="op">=</span><span class="st">'salario'</span>, color<span class="op">=</span><span class="st">'chartreuse'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="54">
+
+
+<table id="T_77aa7" class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_77aa7_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">nome</th>
+<th id="T_77aa7_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">idade</th>
+<th id="T_77aa7_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">genero</th>
+<th id="T_77aa7_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">salario</th>
+<th id="T_77aa7_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">cidade</th>
+<th id="T_77aa7_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">status_emprego</th>
+<th id="T_77aa7_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">formacao</th>
+<th id="T_77aa7_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">score_credito</th>
+<th id="T_77aa7_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">genero_cod</th>
+<th id="T_77aa7_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">salario_anual</th>
+<th id="T_77aa7_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">genero_cod_lambda</th>
+<th id="T_77aa7_level0_col11" class="col_heading level0 col11" data-quarto-table-cell-role="th">faixa_score</th>
+<th id="T_77aa7_level0_col12" class="col_heading level0 col12" data-quarto-table-cell-role="th">score_700</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_77aa7_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_77aa7_row0_col0" class="data row0 col0">Mariano</td>
+<td id="T_77aa7_row0_col1" class="data row0 col1">65</td>
+<td id="T_77aa7_row0_col2" class="data row0 col2">M</td>
+<td id="T_77aa7_row0_col3" class="data row0 col3">7000.00</td>
+<td id="T_77aa7_row0_col4" class="data row0 col4">Porto Alegre</td>
+<td id="T_77aa7_row0_col5" class="data row0 col5">Autônomo</td>
+<td id="T_77aa7_row0_col6" class="data row0 col6">Pós-graduação</td>
+<td id="T_77aa7_row0_col7" class="data row0 col7">626</td>
+<td id="T_77aa7_row0_col8" class="data row0 col8">1</td>
+<td id="T_77aa7_row0_col9" class="data row0 col9">84000.00</td>
+<td id="T_77aa7_row0_col10" class="data row0 col10">1</td>
+<td id="T_77aa7_row0_col11" class="data row0 col11">Médio</td>
+<td id="T_77aa7_row0_col12" class="data row0 col12">Não</td>
+</tr>
+<tr class="even">
+<td id="T_77aa7_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_77aa7_row1_col0" class="data row1 col0">Luiz</td>
+<td id="T_77aa7_row1_col1" class="data row1 col1">71</td>
+<td id="T_77aa7_row1_col2" class="data row1 col2">M</td>
+<td id="T_77aa7_row1_col3" class="data row1 col3">6545.00</td>
+<td id="T_77aa7_row1_col4" class="data row1 col4">Rio de Janeiro</td>
+<td id="T_77aa7_row1_col5" class="data row1 col5">Autônomo</td>
+<td id="T_77aa7_row1_col6" class="data row1 col6">Graduação</td>
+<td id="T_77aa7_row1_col7" class="data row1 col7">438</td>
+<td id="T_77aa7_row1_col8" class="data row1 col8">1</td>
+<td id="T_77aa7_row1_col9" class="data row1 col9">78540.00</td>
+<td id="T_77aa7_row1_col10" class="data row1 col10">1</td>
+<td id="T_77aa7_row1_col11" class="data row1 col11">Baixo</td>
+<td id="T_77aa7_row1_col12" class="data row1 col12">Não</td>
+</tr>
+<tr class="odd">
+<td id="T_77aa7_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_77aa7_row2_col0" class="data row2 col0">Carlo</td>
+<td id="T_77aa7_row2_col1" class="data row2 col1">21</td>
+<td id="T_77aa7_row2_col2" class="data row2 col2">M</td>
+<td id="T_77aa7_row2_col3" class="data row2 col3">12383.00</td>
+<td id="T_77aa7_row2_col4" class="data row2 col4">Salvador</td>
+<td id="T_77aa7_row2_col5" class="data row2 col5">Autônomo</td>
+<td id="T_77aa7_row2_col6" class="data row2 col6">Graduação</td>
+<td id="T_77aa7_row2_col7" class="data row2 col7">384</td>
+<td id="T_77aa7_row2_col8" class="data row2 col8">1</td>
+<td id="T_77aa7_row2_col9" class="data row2 col9">148596.00</td>
+<td id="T_77aa7_row2_col10" class="data row2 col10">1</td>
+<td id="T_77aa7_row2_col11" class="data row2 col11">Baixo</td>
+<td id="T_77aa7_row2_col12" class="data row2 col12">Não</td>
+</tr>
+<tr class="even">
+<td id="T_77aa7_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_77aa7_row3_col0" class="data row3 col0">Luiz</td>
+<td id="T_77aa7_row3_col1" class="data row3 col1">77</td>
+<td id="T_77aa7_row3_col2" class="data row3 col2">M</td>
+<td id="T_77aa7_row3_col3" class="data row3 col3">1823.00</td>
+<td id="T_77aa7_row3_col4" class="data row3 col4">Porto Alegre</td>
+<td id="T_77aa7_row3_col5" class="data row3 col5">Autônomo</td>
+<td id="T_77aa7_row3_col6" class="data row3 col6">Ensino Médio</td>
+<td id="T_77aa7_row3_col7" class="data row3 col7">737</td>
+<td id="T_77aa7_row3_col8" class="data row3 col8">1</td>
+<td id="T_77aa7_row3_col9" class="data row3 col9">21876.00</td>
+<td id="T_77aa7_row3_col10" class="data row3 col10">1</td>
+<td id="T_77aa7_row3_col11" class="data row3 col11">Alto</td>
+<td id="T_77aa7_row3_col12" class="data row3 col12">Sim</td>
+</tr>
+<tr class="odd">
+<td id="T_77aa7_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_77aa7_row4_col0" class="data row4 col0">Felipe</td>
+<td id="T_77aa7_row4_col1" class="data row4 col1">21</td>
+<td id="T_77aa7_row4_col2" class="data row4 col2">M</td>
+<td id="T_77aa7_row4_col3" class="data row4 col3">1490.00</td>
+<td id="T_77aa7_row4_col4" class="data row4 col4">Porto Alegre</td>
+<td id="T_77aa7_row4_col5" class="data row4 col5">Autônomo</td>
+<td id="T_77aa7_row4_col6" class="data row4 col6">Ensino Médio</td>
+<td id="T_77aa7_row4_col7" class="data row4 col7">482</td>
+<td id="T_77aa7_row4_col8" class="data row4 col8">1</td>
+<td id="T_77aa7_row4_col9" class="data row4 col9">17880.00</td>
+<td id="T_77aa7_row4_col10" class="data row4 col10">1</td>
+<td id="T_77aa7_row4_col11" class="data row4 col11">Baixo</td>
+<td id="T_77aa7_row4_col12" class="data row4 col12">Não</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><code>.highlight_between()</code></p>
+</blockquote>
+<div id="cell-29" class="cell" data-outputid="1db4762e-2d6c-42ef-aadf-d84a1c21d458" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head().style.<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">2</span>).highlight_between(subset<span class="op">=</span><span class="st">'idade'</span>, left<span class="op">=</span><span class="dv">60</span>, right<span class="op">=</span><span class="dv">75</span>, color<span class="op">=</span><span class="st">'orange'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="56">
+
+
+<table id="T_07ced" class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_07ced_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">nome</th>
+<th id="T_07ced_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">idade</th>
+<th id="T_07ced_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">genero</th>
+<th id="T_07ced_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">salario</th>
+<th id="T_07ced_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">cidade</th>
+<th id="T_07ced_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">status_emprego</th>
+<th id="T_07ced_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">formacao</th>
+<th id="T_07ced_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">score_credito</th>
+<th id="T_07ced_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">genero_cod</th>
+<th id="T_07ced_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">salario_anual</th>
+<th id="T_07ced_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">genero_cod_lambda</th>
+<th id="T_07ced_level0_col11" class="col_heading level0 col11" data-quarto-table-cell-role="th">faixa_score</th>
+<th id="T_07ced_level0_col12" class="col_heading level0 col12" data-quarto-table-cell-role="th">score_700</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_07ced_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_07ced_row0_col0" class="data row0 col0">Mariano</td>
+<td id="T_07ced_row0_col1" class="data row0 col1">65</td>
+<td id="T_07ced_row0_col2" class="data row0 col2">M</td>
+<td id="T_07ced_row0_col3" class="data row0 col3">7000.00</td>
+<td id="T_07ced_row0_col4" class="data row0 col4">Porto Alegre</td>
+<td id="T_07ced_row0_col5" class="data row0 col5">Autônomo</td>
+<td id="T_07ced_row0_col6" class="data row0 col6">Pós-graduação</td>
+<td id="T_07ced_row0_col7" class="data row0 col7">626</td>
+<td id="T_07ced_row0_col8" class="data row0 col8">1</td>
+<td id="T_07ced_row0_col9" class="data row0 col9">84000.00</td>
+<td id="T_07ced_row0_col10" class="data row0 col10">1</td>
+<td id="T_07ced_row0_col11" class="data row0 col11">Médio</td>
+<td id="T_07ced_row0_col12" class="data row0 col12">Não</td>
+</tr>
+<tr class="even">
+<td id="T_07ced_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_07ced_row1_col0" class="data row1 col0">Luiz</td>
+<td id="T_07ced_row1_col1" class="data row1 col1">71</td>
+<td id="T_07ced_row1_col2" class="data row1 col2">M</td>
+<td id="T_07ced_row1_col3" class="data row1 col3">6545.00</td>
+<td id="T_07ced_row1_col4" class="data row1 col4">Rio de Janeiro</td>
+<td id="T_07ced_row1_col5" class="data row1 col5">Autônomo</td>
+<td id="T_07ced_row1_col6" class="data row1 col6">Graduação</td>
+<td id="T_07ced_row1_col7" class="data row1 col7">438</td>
+<td id="T_07ced_row1_col8" class="data row1 col8">1</td>
+<td id="T_07ced_row1_col9" class="data row1 col9">78540.00</td>
+<td id="T_07ced_row1_col10" class="data row1 col10">1</td>
+<td id="T_07ced_row1_col11" class="data row1 col11">Baixo</td>
+<td id="T_07ced_row1_col12" class="data row1 col12">Não</td>
+</tr>
+<tr class="odd">
+<td id="T_07ced_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_07ced_row2_col0" class="data row2 col0">Carlo</td>
+<td id="T_07ced_row2_col1" class="data row2 col1">21</td>
+<td id="T_07ced_row2_col2" class="data row2 col2">M</td>
+<td id="T_07ced_row2_col3" class="data row2 col3">12383.00</td>
+<td id="T_07ced_row2_col4" class="data row2 col4">Salvador</td>
+<td id="T_07ced_row2_col5" class="data row2 col5">Autônomo</td>
+<td id="T_07ced_row2_col6" class="data row2 col6">Graduação</td>
+<td id="T_07ced_row2_col7" class="data row2 col7">384</td>
+<td id="T_07ced_row2_col8" class="data row2 col8">1</td>
+<td id="T_07ced_row2_col9" class="data row2 col9">148596.00</td>
+<td id="T_07ced_row2_col10" class="data row2 col10">1</td>
+<td id="T_07ced_row2_col11" class="data row2 col11">Baixo</td>
+<td id="T_07ced_row2_col12" class="data row2 col12">Não</td>
+</tr>
+<tr class="even">
+<td id="T_07ced_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_07ced_row3_col0" class="data row3 col0">Luiz</td>
+<td id="T_07ced_row3_col1" class="data row3 col1">77</td>
+<td id="T_07ced_row3_col2" class="data row3 col2">M</td>
+<td id="T_07ced_row3_col3" class="data row3 col3">1823.00</td>
+<td id="T_07ced_row3_col4" class="data row3 col4">Porto Alegre</td>
+<td id="T_07ced_row3_col5" class="data row3 col5">Autônomo</td>
+<td id="T_07ced_row3_col6" class="data row3 col6">Ensino Médio</td>
+<td id="T_07ced_row3_col7" class="data row3 col7">737</td>
+<td id="T_07ced_row3_col8" class="data row3 col8">1</td>
+<td id="T_07ced_row3_col9" class="data row3 col9">21876.00</td>
+<td id="T_07ced_row3_col10" class="data row3 col10">1</td>
+<td id="T_07ced_row3_col11" class="data row3 col11">Alto</td>
+<td id="T_07ced_row3_col12" class="data row3 col12">Sim</td>
+</tr>
+<tr class="odd">
+<td id="T_07ced_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_07ced_row4_col0" class="data row4 col0">Felipe</td>
+<td id="T_07ced_row4_col1" class="data row4 col1">21</td>
+<td id="T_07ced_row4_col2" class="data row4 col2">M</td>
+<td id="T_07ced_row4_col3" class="data row4 col3">1490.00</td>
+<td id="T_07ced_row4_col4" class="data row4 col4">Porto Alegre</td>
+<td id="T_07ced_row4_col5" class="data row4 col5">Autônomo</td>
+<td id="T_07ced_row4_col6" class="data row4 col6">Ensino Médio</td>
+<td id="T_07ced_row4_col7" class="data row4 col7">482</td>
+<td id="T_07ced_row4_col8" class="data row4 col8">1</td>
+<td id="T_07ced_row4_col9" class="data row4 col9">17880.00</td>
+<td id="T_07ced_row4_col10" class="data row4 col10">1</td>
+<td id="T_07ced_row4_col11" class="data row4 col11">Baixo</td>
+<td id="T_07ced_row4_col12" class="data row4 col12">Não</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="cell-30" class="cell" data-outputid="c1d4c7c5-9056-4df9-f88f-4353abd7dafa" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head().style.<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">2</span>).highlight_between(subset<span class="op">=</span><span class="st">'score_credito'</span>, left<span class="op">=</span><span class="dv">700</span>, right<span class="op">=</span><span class="dv">1000</span>, color<span class="op">=</span><span class="st">'orange'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="57">
+
+
+<table id="T_a28cf" class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_a28cf_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">nome</th>
+<th id="T_a28cf_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">idade</th>
+<th id="T_a28cf_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">genero</th>
+<th id="T_a28cf_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">salario</th>
+<th id="T_a28cf_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">cidade</th>
+<th id="T_a28cf_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">status_emprego</th>
+<th id="T_a28cf_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">formacao</th>
+<th id="T_a28cf_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">score_credito</th>
+<th id="T_a28cf_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">genero_cod</th>
+<th id="T_a28cf_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">salario_anual</th>
+<th id="T_a28cf_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">genero_cod_lambda</th>
+<th id="T_a28cf_level0_col11" class="col_heading level0 col11" data-quarto-table-cell-role="th">faixa_score</th>
+<th id="T_a28cf_level0_col12" class="col_heading level0 col12" data-quarto-table-cell-role="th">score_700</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_a28cf_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_a28cf_row0_col0" class="data row0 col0">Mariano</td>
+<td id="T_a28cf_row0_col1" class="data row0 col1">65</td>
+<td id="T_a28cf_row0_col2" class="data row0 col2">M</td>
+<td id="T_a28cf_row0_col3" class="data row0 col3">7000.00</td>
+<td id="T_a28cf_row0_col4" class="data row0 col4">Porto Alegre</td>
+<td id="T_a28cf_row0_col5" class="data row0 col5">Autônomo</td>
+<td id="T_a28cf_row0_col6" class="data row0 col6">Pós-graduação</td>
+<td id="T_a28cf_row0_col7" class="data row0 col7">626</td>
+<td id="T_a28cf_row0_col8" class="data row0 col8">1</td>
+<td id="T_a28cf_row0_col9" class="data row0 col9">84000.00</td>
+<td id="T_a28cf_row0_col10" class="data row0 col10">1</td>
+<td id="T_a28cf_row0_col11" class="data row0 col11">Médio</td>
+<td id="T_a28cf_row0_col12" class="data row0 col12">Não</td>
+</tr>
+<tr class="even">
+<td id="T_a28cf_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_a28cf_row1_col0" class="data row1 col0">Luiz</td>
+<td id="T_a28cf_row1_col1" class="data row1 col1">71</td>
+<td id="T_a28cf_row1_col2" class="data row1 col2">M</td>
+<td id="T_a28cf_row1_col3" class="data row1 col3">6545.00</td>
+<td id="T_a28cf_row1_col4" class="data row1 col4">Rio de Janeiro</td>
+<td id="T_a28cf_row1_col5" class="data row1 col5">Autônomo</td>
+<td id="T_a28cf_row1_col6" class="data row1 col6">Graduação</td>
+<td id="T_a28cf_row1_col7" class="data row1 col7">438</td>
+<td id="T_a28cf_row1_col8" class="data row1 col8">1</td>
+<td id="T_a28cf_row1_col9" class="data row1 col9">78540.00</td>
+<td id="T_a28cf_row1_col10" class="data row1 col10">1</td>
+<td id="T_a28cf_row1_col11" class="data row1 col11">Baixo</td>
+<td id="T_a28cf_row1_col12" class="data row1 col12">Não</td>
+</tr>
+<tr class="odd">
+<td id="T_a28cf_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_a28cf_row2_col0" class="data row2 col0">Carlo</td>
+<td id="T_a28cf_row2_col1" class="data row2 col1">21</td>
+<td id="T_a28cf_row2_col2" class="data row2 col2">M</td>
+<td id="T_a28cf_row2_col3" class="data row2 col3">12383.00</td>
+<td id="T_a28cf_row2_col4" class="data row2 col4">Salvador</td>
+<td id="T_a28cf_row2_col5" class="data row2 col5">Autônomo</td>
+<td id="T_a28cf_row2_col6" class="data row2 col6">Graduação</td>
+<td id="T_a28cf_row2_col7" class="data row2 col7">384</td>
+<td id="T_a28cf_row2_col8" class="data row2 col8">1</td>
+<td id="T_a28cf_row2_col9" class="data row2 col9">148596.00</td>
+<td id="T_a28cf_row2_col10" class="data row2 col10">1</td>
+<td id="T_a28cf_row2_col11" class="data row2 col11">Baixo</td>
+<td id="T_a28cf_row2_col12" class="data row2 col12">Não</td>
+</tr>
+<tr class="even">
+<td id="T_a28cf_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_a28cf_row3_col0" class="data row3 col0">Luiz</td>
+<td id="T_a28cf_row3_col1" class="data row3 col1">77</td>
+<td id="T_a28cf_row3_col2" class="data row3 col2">M</td>
+<td id="T_a28cf_row3_col3" class="data row3 col3">1823.00</td>
+<td id="T_a28cf_row3_col4" class="data row3 col4">Porto Alegre</td>
+<td id="T_a28cf_row3_col5" class="data row3 col5">Autônomo</td>
+<td id="T_a28cf_row3_col6" class="data row3 col6">Ensino Médio</td>
+<td id="T_a28cf_row3_col7" class="data row3 col7">737</td>
+<td id="T_a28cf_row3_col8" class="data row3 col8">1</td>
+<td id="T_a28cf_row3_col9" class="data row3 col9">21876.00</td>
+<td id="T_a28cf_row3_col10" class="data row3 col10">1</td>
+<td id="T_a28cf_row3_col11" class="data row3 col11">Alto</td>
+<td id="T_a28cf_row3_col12" class="data row3 col12">Sim</td>
+</tr>
+<tr class="odd">
+<td id="T_a28cf_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_a28cf_row4_col0" class="data row4 col0">Felipe</td>
+<td id="T_a28cf_row4_col1" class="data row4 col1">21</td>
+<td id="T_a28cf_row4_col2" class="data row4 col2">M</td>
+<td id="T_a28cf_row4_col3" class="data row4 col3">1490.00</td>
+<td id="T_a28cf_row4_col4" class="data row4 col4">Porto Alegre</td>
+<td id="T_a28cf_row4_col5" class="data row4 col5">Autônomo</td>
+<td id="T_a28cf_row4_col6" class="data row4 col6">Ensino Médio</td>
+<td id="T_a28cf_row4_col7" class="data row4 col7">482</td>
+<td id="T_a28cf_row4_col8" class="data row4 col8">1</td>
+<td id="T_a28cf_row4_col9" class="data row4 col9">17880.00</td>
+<td id="T_a28cf_row4_col10" class="data row4 col10">1</td>
+<td id="T_a28cf_row4_col11" class="data row4 col11">Baixo</td>
+<td id="T_a28cf_row4_col12" class="data row4 col12">Não</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Combinando estilos:</p>
+</blockquote>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando uma função definida:</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> estilizar_dataframe(style):</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    style.<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">2</span>).<span class="op">&lt;</span>FORMATO <span class="dv">1</span><span class="op">&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    style.<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">2</span>).<span class="op">&lt;</span>FORMATO <span class="dv">2</span><span class="op">&gt;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> style</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicação:</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>dados.style.pipe(estilizar_dataframe)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-32" class="cell" data-outputid="6052c94d-74be-47e1-e3ca-7c89e2e217c6" data-execution_count="60">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Função -- bar() em `salario`e background_graient() em idade:</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> estilizar_dataframe(style):</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    style.<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">2</span>).background_gradient(subset<span class="op">=</span><span class="st">'salario'</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    style.<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">2</span>).bar(subset<span class="op">=</span><span class="st">'idade'</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> style</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicação:</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>clientes_cifraonline.head(<span class="dv">10</span>).style.pipe(estilizar_dataframe)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="60">
+
+
+<table id="T_acb29" class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_acb29_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">nome</th>
+<th id="T_acb29_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">idade</th>
+<th id="T_acb29_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">genero</th>
+<th id="T_acb29_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">salario</th>
+<th id="T_acb29_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">cidade</th>
+<th id="T_acb29_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">status_emprego</th>
+<th id="T_acb29_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">formacao</th>
+<th id="T_acb29_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">score_credito</th>
+<th id="T_acb29_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">genero_cod</th>
+<th id="T_acb29_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">salario_anual</th>
+<th id="T_acb29_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">genero_cod_lambda</th>
+<th id="T_acb29_level0_col11" class="col_heading level0 col11" data-quarto-table-cell-role="th">faixa_score</th>
+<th id="T_acb29_level0_col12" class="col_heading level0 col12" data-quarto-table-cell-role="th">score_700</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_acb29_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_acb29_row0_col0" class="data row0 col0">Mariano</td>
+<td id="T_acb29_row0_col1" class="data row0 col1">65</td>
+<td id="T_acb29_row0_col2" class="data row0 col2">M</td>
+<td id="T_acb29_row0_col3" class="data row0 col3">7000.00</td>
+<td id="T_acb29_row0_col4" class="data row0 col4">Porto Alegre</td>
+<td id="T_acb29_row0_col5" class="data row0 col5">Autônomo</td>
+<td id="T_acb29_row0_col6" class="data row0 col6">Pós-graduação</td>
+<td id="T_acb29_row0_col7" class="data row0 col7">626</td>
+<td id="T_acb29_row0_col8" class="data row0 col8">1</td>
+<td id="T_acb29_row0_col9" class="data row0 col9">84000.00</td>
+<td id="T_acb29_row0_col10" class="data row0 col10">1</td>
+<td id="T_acb29_row0_col11" class="data row0 col11">Médio</td>
+<td id="T_acb29_row0_col12" class="data row0 col12">Não</td>
+</tr>
+<tr class="even">
+<td id="T_acb29_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_acb29_row1_col0" class="data row1 col0">Luiz</td>
+<td id="T_acb29_row1_col1" class="data row1 col1">71</td>
+<td id="T_acb29_row1_col2" class="data row1 col2">M</td>
+<td id="T_acb29_row1_col3" class="data row1 col3">6545.00</td>
+<td id="T_acb29_row1_col4" class="data row1 col4">Rio de Janeiro</td>
+<td id="T_acb29_row1_col5" class="data row1 col5">Autônomo</td>
+<td id="T_acb29_row1_col6" class="data row1 col6">Graduação</td>
+<td id="T_acb29_row1_col7" class="data row1 col7">438</td>
+<td id="T_acb29_row1_col8" class="data row1 col8">1</td>
+<td id="T_acb29_row1_col9" class="data row1 col9">78540.00</td>
+<td id="T_acb29_row1_col10" class="data row1 col10">1</td>
+<td id="T_acb29_row1_col11" class="data row1 col11">Baixo</td>
+<td id="T_acb29_row1_col12" class="data row1 col12">Não</td>
+</tr>
+<tr class="odd">
+<td id="T_acb29_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_acb29_row2_col0" class="data row2 col0">Carlo</td>
+<td id="T_acb29_row2_col1" class="data row2 col1">21</td>
+<td id="T_acb29_row2_col2" class="data row2 col2">M</td>
+<td id="T_acb29_row2_col3" class="data row2 col3">12383.00</td>
+<td id="T_acb29_row2_col4" class="data row2 col4">Salvador</td>
+<td id="T_acb29_row2_col5" class="data row2 col5">Autônomo</td>
+<td id="T_acb29_row2_col6" class="data row2 col6">Graduação</td>
+<td id="T_acb29_row2_col7" class="data row2 col7">384</td>
+<td id="T_acb29_row2_col8" class="data row2 col8">1</td>
+<td id="T_acb29_row2_col9" class="data row2 col9">148596.00</td>
+<td id="T_acb29_row2_col10" class="data row2 col10">1</td>
+<td id="T_acb29_row2_col11" class="data row2 col11">Baixo</td>
+<td id="T_acb29_row2_col12" class="data row2 col12">Não</td>
+</tr>
+<tr class="even">
+<td id="T_acb29_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_acb29_row3_col0" class="data row3 col0">Luiz</td>
+<td id="T_acb29_row3_col1" class="data row3 col1">77</td>
+<td id="T_acb29_row3_col2" class="data row3 col2">M</td>
+<td id="T_acb29_row3_col3" class="data row3 col3">1823.00</td>
+<td id="T_acb29_row3_col4" class="data row3 col4">Porto Alegre</td>
+<td id="T_acb29_row3_col5" class="data row3 col5">Autônomo</td>
+<td id="T_acb29_row3_col6" class="data row3 col6">Ensino Médio</td>
+<td id="T_acb29_row3_col7" class="data row3 col7">737</td>
+<td id="T_acb29_row3_col8" class="data row3 col8">1</td>
+<td id="T_acb29_row3_col9" class="data row3 col9">21876.00</td>
+<td id="T_acb29_row3_col10" class="data row3 col10">1</td>
+<td id="T_acb29_row3_col11" class="data row3 col11">Alto</td>
+<td id="T_acb29_row3_col12" class="data row3 col12">Sim</td>
+</tr>
+<tr class="odd">
+<td id="T_acb29_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_acb29_row4_col0" class="data row4 col0">Felipe</td>
+<td id="T_acb29_row4_col1" class="data row4 col1">21</td>
+<td id="T_acb29_row4_col2" class="data row4 col2">M</td>
+<td id="T_acb29_row4_col3" class="data row4 col3">1490.00</td>
+<td id="T_acb29_row4_col4" class="data row4 col4">Porto Alegre</td>
+<td id="T_acb29_row4_col5" class="data row4 col5">Autônomo</td>
+<td id="T_acb29_row4_col6" class="data row4 col6">Ensino Médio</td>
+<td id="T_acb29_row4_col7" class="data row4 col7">482</td>
+<td id="T_acb29_row4_col8" class="data row4 col8">1</td>
+<td id="T_acb29_row4_col9" class="data row4 col9">17880.00</td>
+<td id="T_acb29_row4_col10" class="data row4 col10">1</td>
+<td id="T_acb29_row4_col11" class="data row4 col11">Baixo</td>
+<td id="T_acb29_row4_col12" class="data row4 col12">Não</td>
+</tr>
+<tr class="even">
+<td id="T_acb29_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_acb29_row5_col0" class="data row5 col0">Ana</td>
+<td id="T_acb29_row5_col1" class="data row5 col1">57</td>
+<td id="T_acb29_row5_col2" class="data row5 col2">F</td>
+<td id="T_acb29_row5_col3" class="data row5 col3">12548.00</td>
+<td id="T_acb29_row5_col4" class="data row5 col4">São Paulo</td>
+<td id="T_acb29_row5_col5" class="data row5 col5">Empregado</td>
+<td id="T_acb29_row5_col6" class="data row5 col6">Graduação</td>
+<td id="T_acb29_row5_col7" class="data row5 col7">848</td>
+<td id="T_acb29_row5_col8" class="data row5 col8">0</td>
+<td id="T_acb29_row5_col9" class="data row5 col9">150576.00</td>
+<td id="T_acb29_row5_col10" class="data row5 col10">0</td>
+<td id="T_acb29_row5_col11" class="data row5 col11">Alto</td>
+<td id="T_acb29_row5_col12" class="data row5 col12">Sim</td>
+</tr>
+<tr class="odd">
+<td id="T_acb29_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_acb29_row6_col0" class="data row6 col0">Paula</td>
+<td id="T_acb29_row6_col1" class="data row6 col1">27</td>
+<td id="T_acb29_row6_col2" class="data row6 col2">F</td>
+<td id="T_acb29_row6_col3" class="data row6 col3">8432.00</td>
+<td id="T_acb29_row6_col4" class="data row6 col4">São Paulo</td>
+<td id="T_acb29_row6_col5" class="data row6 col5">Empregado</td>
+<td id="T_acb29_row6_col6" class="data row6 col6">Graduação</td>
+<td id="T_acb29_row6_col7" class="data row6 col7">728</td>
+<td id="T_acb29_row6_col8" class="data row6 col8">0</td>
+<td id="T_acb29_row6_col9" class="data row6 col9">101184.00</td>
+<td id="T_acb29_row6_col10" class="data row6 col10">0</td>
+<td id="T_acb29_row6_col11" class="data row6 col11">Alto</td>
+<td id="T_acb29_row6_col12" class="data row6 col12">Sim</td>
+</tr>
+<tr class="even">
+<td id="T_acb29_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_acb29_row7_col0" class="data row7 col0">Paulo</td>
+<td id="T_acb29_row7_col1" class="data row7 col1">37</td>
+<td id="T_acb29_row7_col2" class="data row7 col2">M</td>
+<td id="T_acb29_row7_col3" class="data row7 col3">13351.00</td>
+<td id="T_acb29_row7_col4" class="data row7 col4">Belo Horizonte</td>
+<td id="T_acb29_row7_col5" class="data row7 col5">Desempregado</td>
+<td id="T_acb29_row7_col6" class="data row7 col6">Mestrado</td>
+<td id="T_acb29_row7_col7" class="data row7 col7">693</td>
+<td id="T_acb29_row7_col8" class="data row7 col8">1</td>
+<td id="T_acb29_row7_col9" class="data row7 col9">160212.00</td>
+<td id="T_acb29_row7_col10" class="data row7 col10">1</td>
+<td id="T_acb29_row7_col11" class="data row7 col11">Médio</td>
+<td id="T_acb29_row7_col12" class="data row7 col12">Não</td>
+</tr>
+<tr class="odd">
+<td id="T_acb29_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_acb29_row8_col0" class="data row8 col0">Felipe</td>
+<td id="T_acb29_row8_col1" class="data row8 col1">39</td>
+<td id="T_acb29_row8_col2" class="data row8 col2">F</td>
+<td id="T_acb29_row8_col3" class="data row8 col3">4978.00</td>
+<td id="T_acb29_row8_col4" class="data row8 col4">Salvador</td>
+<td id="T_acb29_row8_col5" class="data row8 col5">Autônomo</td>
+<td id="T_acb29_row8_col6" class="data row8 col6">Graduação</td>
+<td id="T_acb29_row8_col7" class="data row8 col7">656</td>
+<td id="T_acb29_row8_col8" class="data row8 col8">0</td>
+<td id="T_acb29_row8_col9" class="data row8 col9">59736.00</td>
+<td id="T_acb29_row8_col10" class="data row8 col10">0</td>
+<td id="T_acb29_row8_col11" class="data row8 col11">Médio</td>
+<td id="T_acb29_row8_col12" class="data row8 col12">Não</td>
+</tr>
+<tr class="even">
+<td id="T_acb29_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_acb29_row9_col0" class="data row9 col0">Ano</td>
+<td id="T_acb29_row9_col1" class="data row9 col1">68</td>
+<td id="T_acb29_row9_col2" class="data row9 col2">M</td>
+<td id="T_acb29_row9_col3" class="data row9 col3">7661.00</td>
+<td id="T_acb29_row9_col4" class="data row9 col4">Belo Horizonte</td>
+<td id="T_acb29_row9_col5" class="data row9 col5">Desempregado</td>
+<td id="T_acb29_row9_col6" class="data row9 col6">Doutorado</td>
+<td id="T_acb29_row9_col7" class="data row9 col7">387</td>
+<td id="T_acb29_row9_col8" class="data row9 col8">1</td>
+<td id="T_acb29_row9_col9" class="data row9 col9">91932.00</td>
+<td id="T_acb29_row9_col10" class="data row9 col10">1</td>
+<td id="T_acb29_row9_col11" class="data row9 col11">Baixo</td>
+<td id="T_acb29_row9_col12" class="data row9 col12">Não</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

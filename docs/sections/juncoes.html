@@ -236,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="concatenação-com-o-método-concat" class="level2">
 <h2 class="anchored" data-anchor-id="concatenação-com-o-método-concat">1. Concatenação com o método <code>concat</code></h2>
 <p>Consideremos dois dataframes distintos que trazem preços de café em três determinadas lojas, nos dias 18/02/2024 e 19/02/2024, respectivamente.</p>
-<div id="459ee764" class="cell" data-execution_count="1">
+<div id="4761d821" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>precos_cafe_18022024 <span class="op">=</span> pd.read_csv(<span class="st">'dados/preco_cafes/precos_cafe_dia18.csv'</span>)</span>
@@ -245,7 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p><strong>Dia 18-02-204:</strong></p>
 </blockquote>
-<div id="27b0c68a" class="cell" data-execution_count="2">
+<div id="f16193fd" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>precos_cafe_18022024.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
@@ -296,7 +296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p><strong>Dia 19-02-204:</strong></p>
 </blockquote>
-<div id="8b885268" class="cell" data-execution_count="3">
+<div id="a9275dea" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>precos_cafe_19022024.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -352,7 +352,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>Nesse caso, fica nítido que a concatenação deve ocorrer no eixo das linhas. Isso pode ser feito da seguinte maneira:</p>
-<div id="1e59c0dc" class="cell" data-execution_count="4">
+<div id="70c634c3" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pd.concat([df_1, df_2], axis=EIXO, ignore_index=True):</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>preco_cafes <span class="op">=</span> pd.concat(</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  [precos_cafe_18022024, precos_cafe_19022024], </span>
@@ -443,7 +443,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Para ilustrar os três primeiros casos (<em>inner</em>, <em>left</em> e <em>right</em>), criaremos dois <em>dataframes</em> para funcionários e dapartamentos.</p>
 <p>Registro dos clientes (cadastro):</p>
-<div id="0ffd13f6" class="cell" data-execution_count="5">
+<div id="7c883c30" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DataFrame de funcionários:</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>funcionarios <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'ID_funcionario'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>],</span>
@@ -503,7 +503,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Registro dos departamentos:</p>
-<div id="054bfd5d" class="cell" data-execution_count="6">
+<div id="88fa8878" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DataFrame de departamentos:</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>departamentos <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'ID_depto'</span>: [<span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>, <span class="dv">104</span>],</span>
@@ -554,7 +554,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Junção <code>inner join</code></strong></p>
 </blockquote>
 <p>Nesse caso queremos a intersecção entre os dataframes A e B, isto é, aquilo que é comum a ambos apenas.</p>
-<div id="f5134946" class="cell" data-execution_count="7">
+<div id="88d9a0d7" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inner Join: retorna apenas os registros comuns aos dois dataframes</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>inner_join <span class="op">=</span> pd.merge(</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  funcionarios, departamentos, </span>
@@ -630,7 +630,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Junção <code>left join</code>/<code>right join</code></strong></p>
 </blockquote>
 <p>Neste caso, desejamos obter os dados de A mais a interseção de A e B (todo os dados de A, mais o que há de comum entre A e B) - no <code>left</code>.</p>
-<div id="bd318b28" class="cell" data-execution_count="8">
+<div id="0572f380" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Left Join: retorna todos os registros do dataframe da esquerda (funcionarios) e os registros correspondentes do dataframe da direita (departamentos_)</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>left_join <span class="op">=</span> pd.merge(</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  funcionarios, departamentos,  </span>
@@ -707,7 +707,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Junção <code>full outer join</code></strong></p>
 </blockquote>
 <p>Aqui, quermos juntar tudo. Quando não há correspondência (assim como em <code>left</code> e <code>right</code>), o <code>Pandas</code>retorna uma entrada nula.</p>
-<div id="03a8e2ed" class="cell" data-execution_count="9">
+<div id="a955d67b" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Full Outer Join: retorna todos os registros quando há uma correspondência em um dos dataframes</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>full_outer_join <span class="op">=</span> pd.merge(funcionarios, departamentos, how<span class="op">=</span><span class="st">'outer'</span>, left_on<span class="op">=</span><span class="st">'Departamento_ID'</span>, right_on<span class="op">=</span><span class="st">'ID_depto'</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>full_outer_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
